@@ -10,6 +10,8 @@ p {
     font-size: 160%;
     border: 2px solid olive;
     margin: 3px;
+    text-transform: capitalize;
+
 }
 
 a:link, a:visited {
