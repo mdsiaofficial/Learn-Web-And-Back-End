@@ -1,0 +1,12 @@
+let js = 'amazing';
+if (js==='amazing') alert ('JavaScript is FUN!');
+console.log(4+56+5);
+5 + 6 + 5;
+console.log('Ashiq');
+console.log(25);
+let firstName = "Chester";
+console.log(firstName);
+console.log(firstName);
+console.log(firstName);
+firstName="Ashiq";
+console.log(firstName);
