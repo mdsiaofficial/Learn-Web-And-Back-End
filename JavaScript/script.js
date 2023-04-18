@@ -10,3 +10,5 @@ console.log(firstName);
 console.log(firstName);
 firstName="Ashiq";
 console.log(firstName);
+let $name=3;
+console.log($name);
