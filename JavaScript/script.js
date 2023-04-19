@@ -30,6 +30,7 @@ console.log(pi);
 
 /* 
 // Assignment  LECTURE: Values and Variables
+
 let country = 'Bangladesh';
 let continent = 'Asia';
 let population = '180 million';
@@ -59,6 +60,7 @@ console.log("Break here.");
 
 /* 
 // Assignment LECTURE: Data Types
+
 let isIsland = false;
 let language;
 console.log(typeof isIsland);
@@ -86,6 +88,7 @@ console.log(job);
 
 /* 
 // Assignment LECTURE: let, const and var
+
 let val = 10;
 val = 11;
 
@@ -118,7 +121,9 @@ console.log(x>y?x:y);
 console.log("break");
 
 
+/* 
 // Assignment LECTURE: Basic Operators
+
 let bd_population = 180; // in million
 let bd_half_population = (bd_population/2);
 console.log(bd_population, bd_half_population);
@@ -139,4 +144,4 @@ console.log(bd_population < avrg_population ? "Yes" : "No");
 
 let description = 'Portugal is in Europe, and its 11 million people speak portuguese';
 // end
-
+ */
