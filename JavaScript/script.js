@@ -28,14 +28,16 @@ let pi = 3.14159;
 console.log(pi);
 
 
+/* 
+// Assignment  LECTURE: Values and Variables
 let country = 'Bangladesh';
 let continent = 'Asia';
 let population = '180 million';
-
 console.log(country);
 console.log(continent);
 console.log(population);
-
+// end
+ */
 
 let a = true;
 console.log(a);
@@ -55,12 +57,16 @@ console.log(typeof ashiq);
 
 console.log("Break here.");
 
+/* 
+// Assignment LECTURE: Data Types
 let isIsland = false;
 let language;
 console.log(typeof isIsland);
 console.log(typeof country);
 console.log(typeof population);
 console.log(typeof language);
+// end
+ */
 
 
 console.log("Break");
@@ -77,13 +83,29 @@ console.log(job);
 var job = 'analyst';
 console.log(job);
 
+
+/* 
+// Assignment LECTURE: let, const and var
+let val = 10;
+val = 11;
+
+var sixx = 6;
+var sixx = 'vi';
+
+const language = 'Bangla';
+language = 'English'; 
+// Gets error:  Uncaught TypeError: Assignment to constant variable. at script.js:94:10
+// end
+ */
+
+
 const now = 23423;
 const then = 2433;
 const brk = now - then;
 console.log(brk);
 console.log(now, then);
 let x = 'Ashiq ';
-let y = 'Chester ';
+let y = 'two ';
 let z = x+y;
 z += z;
 z = z + z;
@@ -91,3 +113,30 @@ console.log(z);
 console.log(x,y);
 console.log(x+y);
 console.log(x>y);
+console.log(x>y?x:y);
+
+console.log("break");
+
+
+// Assignment LECTURE: Basic Operators
+let bd_population = 180; // in million
+let bd_half_population = (bd_population/2);
+console.log(bd_population, bd_half_population);
+
+bd_population +=1;
+//bd_population = bd_population + 1;
+//bd_population++;
+console.log(bd_population);
+
+let finland = 6;
+let is_bd_large = bd_population > finland;
+console.log(is_bd_large);
+console.log(bd_population>finland ? "Yes" : "No");
+
+let avrg_population = 33;
+console.log(bd_population < avrg_population);
+console.log(bd_population < avrg_population ? "Yes" : "No");
+
+let description = 'Portugal is in Europe, and its 11 million people speak portuguese';
+// end
+
