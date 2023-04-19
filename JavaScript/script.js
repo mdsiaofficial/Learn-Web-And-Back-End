@@ -4,12 +4,14 @@ let js = 'amazing';
 console.log(4+56+5);
 5 + 6 + 5;
 console.log('Ashiq');
+console.log("Ashiq");
 console.log(25);
 let firstName = "Chester";
+let jemin = 45;
 console.log(firstName);
 console.log(firstName);
 console.log(firstName);
-firstName="Ashiq";
+firstName= "Ashiq";
 console.log(firstName);
 let $name=3;
 console.log($name);
@@ -28,7 +30,7 @@ let pi = 3.14159;
 console.log(pi);
 
 
-/* 
+
 // Assignment  LECTURE: Values and Variables
 
 let country = 'Bangladesh';
@@ -38,7 +40,7 @@ console.log(country);
 console.log(continent);
 console.log(population);
 // end
- */
+ 
 
 let a = true;
 console.log(a);
@@ -58,7 +60,7 @@ console.log(typeof ashiq);
 
 console.log("Break here.");
 
-/* 
+
 // Assignment LECTURE: Data Types
 
 let isIsland = false;
@@ -68,26 +70,22 @@ console.log(typeof country);
 console.log(typeof population);
 console.log(typeof language);
 // end
- */
-
-
+ 
 console.log("Break");
 
 let age = 30;
 age = 32;
-
+//let age = 34;
 const b = 213;
 //b = 3;
 //const newvar;
 
 var job = 'programmer';
 console.log(job);
+job = 'dsa';
 var job = 'analyst';
 console.log(job);
 
-
-/* 
-// Assignment LECTURE: let, const and var
 
 let val = 10;
 val = 11;
@@ -95,11 +93,15 @@ val = 11;
 var sixx = 6;
 var sixx = 'vi';
 
-const language = 'Bangla';
+
+// Assignment LECTURE: let, const and var
+const huge=7;
+language = 'Bangla';
 language = 'English'; 
-// Gets error:  Uncaught TypeError: Assignment to constant variable. at script.js:94:10
+//huge = 9;
+// Gets error:  Uncaught TypeError: Assignment to constant variable.
 // end
- */
+
 
 
 const now = 23423;
@@ -107,21 +109,24 @@ const then = 2433;
 const brk = now - then;
 console.log(brk);
 console.log(now, then);
-let x = 'Ashiq ';
-let y = 'two ';
+let x = 'Ashiq';
+let y = 'Two';
 let z = x+y;
+console.log(z);
+console.log(x, y);
 z += z;
+console.log(z);
 z = z + z;
 console.log(z);
 console.log(x,y);
 console.log(x+y);
 console.log(x>y);
-console.log(x>y?x:y);
+console.log(x>y ? x : y);
 
 console.log("break");
 
 
-/* 
+
 // Assignment LECTURE: Basic Operators
 
 let bd_population = 180; // in million
@@ -144,7 +149,7 @@ console.log(bd_population < avrg_population ? "Yes" : "No");
 
 let description = 'Portugal is in Europe, and its 11 million people speak portuguese';
 // end
- */
+
 
 
 // new
