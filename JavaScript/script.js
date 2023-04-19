@@ -35,3 +35,11 @@ let population = '180 million';
 console.log(country);
 console.log(continent);
 console.log(population);
+
+
+let a = true;
+console.log(a);
+console.log(typeof a);
+a = 'yes';
+console.log(a);
+console.log(typeof a);
