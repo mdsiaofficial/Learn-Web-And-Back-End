@@ -43,3 +43,51 @@ console.log(typeof a);
 a = 'yes';
 console.log(a);
 console.log(typeof a);
+
+let ashiq;
+let fake;
+console.log(typeof ashiq);
+console.log(ashiq);
+console.log(fake);
+
+ashiq = 'The Name';
+console.log(typeof ashiq);
+
+console.log("Break here.");
+
+let isIsland = false;
+let language;
+console.log(typeof isIsland);
+console.log(typeof country);
+console.log(typeof population);
+console.log(typeof language);
+
+
+console.log("Break");
+
+let age = 30;
+age = 32;
+
+const b = 213;
+//b = 3;
+//const newvar;
+
+var job = 'programmer';
+console.log(job);
+var job = 'analyst';
+console.log(job);
+
+const now = 23423;
+const then = 2433;
+const brk = now - then;
+console.log(brk);
+console.log(now, then);
+let x = 'Ashiq ';
+let y = 'Chester ';
+let z = x+y;
+z += z;
+z = z + z;
+console.log(z);
+console.log(x,y);
+console.log(x+y);
+console.log(x>y);
