@@ -145,3 +145,6 @@ console.log(bd_population < avrg_population ? "Yes" : "No");
 let description = 'Portugal is in Europe, and its 11 million people speak portuguese';
 // end
  */
+
+
+// new
