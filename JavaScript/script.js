@@ -207,3 +207,13 @@ if(isOldEnough){
     console.log("Reject.");
     console.log(`You are too young. Wait for ${18-Age} years`);
 }
+
+// example 2
+var birthYear = 1991;
+var century;
+if(birthYear <= 2000) {
+    century = 20;
+}else{
+    century = 21;
+}
+console.log(`${century}th century.`);
