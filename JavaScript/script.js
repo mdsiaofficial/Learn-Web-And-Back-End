@@ -150,4 +150,60 @@ console.log(bd_population < avrg_population ? "Yes" : "No");
 let description = 'Portugal is in Europe, and its 11 million people speak portuguese';
 // end
 
-// new
+
+// Coding Callenge #1
+// test 1:
+let MarkH = 1.69;
+let JohnH = 1.95;
+let MarkW = 78;
+let JohnW = 92;
+
+let BMI_Mark = MarkW / (MarkH*MarkH);
+let BMI_John = JohnW / (JohnH ** 2);
+
+let isMarkHigherBMI = BMI_Mark>BMI_John;
+console.log(BMI_Mark, BMI_John, isMarkHigherBMI);
+
+// test 2:
+MarkH = 1.88;
+JohnH = 1.76;
+MarkW = 95;
+JohnW = 85;
+
+BMI_Mark = MarkW / (MarkH*MarkH);
+BMI_John = JohnW / (JohnH ** 2);
+
+isMarkHigherBMI = BMI_Mark>BMI_John;
+console.log(BMI_Mark, BMI_John, isMarkHigherBMI);
+// end
+
+
+// String and Literals:
+console.log("Break");
+console.log("Break");
+
+var fName = 'Ashiq';
+var job = 'student';
+var birthYear = 2020;
+
+var Ashiq = "I'm " + fName + ', a ' + (2023-birthYear) + ' years old ' + job + '!';
+console.log(Ashiq);
+
+var Ashiq = `I'm ${fName}, a ${2023-birthYear} years old ${job}!`;
+console.log(Ashiq);
+console.log('This is\nnew');
+console.log(`New string 
+for 
+this.`);
+
+
+// if else
+var Age = 15;
+var isOldEnough = Age>=18;
+
+if(isOldEnough){
+    console.log("Procceed.");
+}else{
+    console.log("Reject.");
+    console.log(`You are too young. Wait for ${18-Age} years`);
+}
