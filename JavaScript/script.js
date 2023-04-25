@@ -222,7 +222,7 @@ console.log(`${century}th century.`);
 
 // Coding challenge #2
 
-
+// ajke korum
 
 
 // end
