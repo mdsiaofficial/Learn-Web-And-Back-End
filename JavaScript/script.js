@@ -153,15 +153,15 @@ let description = 'Portugal is in Europe, and its 11 million people speak portug
 
 // Coding Callenge #1
 // test 1:
-let MarkH = 1.69;
-let JohnH = 1.95;
-let MarkW = 78;
-let JohnW = 92;
+var MarkH = 1.69;
+var JohnH = 1.95;
+var MarkW = 78;
+var JohnW = 92;
 
-let BMI_Mark = MarkW / (MarkH*MarkH);
-let BMI_John = JohnW / (JohnH ** 2);
+var BMI_Mark = MarkW / (MarkH*MarkH);
+var BMI_John = JohnW / (JohnH ** 2);
 
-let isMarkHigherBMI = BMI_Mark>BMI_John;
+var isMarkHigherBMI = BMI_Mark>BMI_John;
 console.log(BMI_Mark, BMI_John, isMarkHigherBMI);
 
 // test 2:
@@ -222,7 +222,30 @@ console.log(`${century}th century.`);
 
 // Coding challenge #2
 
-// ajke korum
+// test 1:
+var MarkH = 1.69;
+var JohnH = 1.95;
+var MarkW = 78;
+var JohnW = 92;
+
+var BMI_Mark = MarkW / (MarkH*MarkH);
+var BMI_John = JohnW / (JohnH ** 2);
+
+var isMarkHigherBMI = BMI_Mark>BMI_John;
+console.log(BMI_John>BMI_Mark?"John's BMI is higher than Mark's" : "Mark's BMI is higher than John's");
+
+// test 2:
+MarkH = 1.88;
+JohnH = 1.76;
+MarkW = 95;
+JohnW = 85;
+
+BMI_Mark = MarkW / (MarkH*MarkH);
+BMI_John = JohnW / (JohnH ** 2);
+
+isMarkHigherBMI = BMI_Mark>BMI_John;
+console.log(BMI_John>BMI_Mark?`John's BMI ${BMI_John} is higher than Mark's ${BMI_Mark}!` : `Mark's BMI${BMI_Mark} is higher than John's${BMI_John}!`);
+// end
 
 
 // end
