@@ -270,8 +270,11 @@ console.log(Boolean({}));
 
 
 // Equality Operator
-var fv = prompt("Whats that?");
+var fv;
+//fv= prompt("Whats that?");
 console.log(fv);
 console.log(typeof fv);
 if(fv==23) console.log("I know what!");
 else console.log("I don't");
+
+
