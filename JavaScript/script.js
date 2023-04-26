@@ -255,3 +255,23 @@ var inputYear = '2002';
 console.log(Number(inputYear) , inputYear);
 console.log(Number(inputYear)+inputYear);
 console.log(typeof Number(inputYear));
+
+// type coercion
+console.log('I am ' + 23 + ' years old.');
+console.log('23' + '10' -3)
+
+// truthy and falsy
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Jonas'));
+console.log(Boolean(''));
+console.log(Boolean(NaN));
+console.log(Boolean({}));
+
+
+// Equality Operator
+var fv = prompt("Whats that?");
+console.log(fv);
+console.log(typeof fv);
+if(fv==23) console.log("I know what!");
+else console.log("I don't");
