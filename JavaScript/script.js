@@ -246,3 +246,12 @@ BMI_John = JohnW / (JohnH ** 2);
 isMarkHigherBMI = BMI_Mark>BMI_John;
 console.log(BMI_John>BMI_Mark?`John's BMI ${BMI_John} is higher than Mark's ${BMI_Mark}!` : `Mark's BMI${BMI_Mark} is higher than John's${BMI_John}!`);
 // end
+
+
+
+// Type Converstion
+
+var inputYear = '2002';
+console.log(Number(inputYear) , inputYear);
+console.log(Number(inputYear)+inputYear);
+console.log(typeof Number(inputYear));
