@@ -289,7 +289,9 @@ console.log(hasDriversLicense && hasGoodVision ? "Approve" : "Reject");
 
 
 // Coding Challenge #3
-// # Test 1
+//////////////
+// # Test 1 //
+//////////////
 var Dolphins1 = 96, Dolphins2 = 108, Dolphins3 = 89;
 var Koalas1 = 88, Koalas2 = 91, Koalas3 = 110;
 var avrgDolphins = (Dolphins1 + Dolphins2 + Dolphins3)/3;
@@ -302,3 +304,85 @@ if(avrgDolphins>avrgKoalas) console.log("Dolphins Winner");
 else if(avrgDolphins<avrgKoalas) console.log("Koalas Winner");
 else console.log("Draw");
 
+// Bonus 1
+if(avrgDolphins>avrgKoalas && avrgDolphins>=100) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas && avrgKoalas>=100) console.log("Koalas Winner");
+else console.log("Draw");
+
+// Bonus 2
+if(avrgDolphins>avrgKoalas && avrgDolphins>=100) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas && avrgKoalas>=100) console.log("Koalas Winner");
+else if(avrgKoalas===avrgDolphins && avrgDolphins>=100)  console.log("Both team win");
+else console.log("NO team wins");
+
+/////////////////
+// # Test Bonus 1
+/////////////////
+var Dolphins1 = 97, Dolphins2 = 112, Dolphins3 = 101;
+var Koalas1 = 109, Koalas2 = 95, Koalas3 = 123;
+var avrgDolphins = (Dolphins1 + Dolphins2 + Dolphins3)/3;
+var avrgKoalas = (Koalas1 + Koalas2 + Koalas3)/3;
+
+console.log("Dolphins average: ", avrgDolphins);
+console.log("Koalas average: ", avrgKoalas);
+
+if(avrgDolphins>avrgKoalas) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas) console.log("Koalas Winner");
+else console.log("Draw");
+
+// Bonus 1
+if(avrgDolphins>avrgKoalas && avrgDolphins>=100) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas && avrgKoalas>=100) console.log("Koalas Winner");
+else console.log("Draw");
+
+// Bonus 2
+if(avrgDolphins>avrgKoalas && avrgDolphins>=100) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas && avrgKoalas>=100) console.log("Koalas Winner");
+else if(avrgKoalas===avrgDolphins && avrgDolphins>=100)  console.log("Both team win");
+else console.log("NO team wins");
+
+/////////////////
+// # Test Bonus 2
+/////////////////
+var Dolphins1 = 97, Dolphins2 = 112, Dolphins3 = 101;
+var Koalas1 = 109, Koalas2 = 95, Koalas3 = 106;
+var avrgDolphins = (Dolphins1 + Dolphins2 + Dolphins3)/3;
+var avrgKoalas = (Koalas1 + Koalas2 + Koalas3)/3;
+
+console.log("Dolphins average: ", avrgDolphins);
+console.log("Koalas average: ", avrgKoalas);
+
+if(avrgDolphins>avrgKoalas) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas) console.log("Koalas Winner");
+else console.log("Draw");
+
+// Bonus 1
+if(avrgDolphins>avrgKoalas && avrgDolphins>=100) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas && avrgKoalas>=100) console.log("Koalas Winner");
+else console.log("Draw");
+
+// Bonus 2
+if(avrgDolphins>avrgKoalas && avrgDolphins>=100) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas && avrgKoalas>=100) console.log("Koalas Winner");
+else if(avrgKoalas===avrgDolphins && avrgDolphins>=100)  console.log("Both team win");
+else console.log("NO team wins");
+
+
+// Coding Challenge # 4
+
+/////////
+// test 1
+/////////
+
+var  bill = 275;
+var tips;
+
+if(bill>=50 && bill<=300){
+    tips = (bill * (15/100)) ;
+}else if(bill>300){
+    tips = (bill * (20/100));   
+}
+
+var tip = (bill>=50 && bill<=300) ? (bill * (15/100)) : (bill * (20/100));
+console.log(bill, tips);
+console.log(bill, tip);
