@@ -278,3 +278,27 @@ if(fv==23) console.log("I know what!");
 else console.log("I don't");
 
 
+// Logical operators
+
+var hasDriversLicense = true;
+var hasGoodVision = false;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(hasDriversLicense && hasGoodVision ? "Approve" : "Reject");
+
+
+// Coding Challenge #3
+// # Test 1
+var Dolphins1 = 96, Dolphins2 = 108, Dolphins3 = 89;
+var Koalas1 = 88, Koalas2 = 91, Koalas3 = 110;
+var avrgDolphins = (Dolphins1 + Dolphins2 + Dolphins3)/3;
+var avrgKoalas = (Koalas1 + Koalas2 + Koalas3)/3;
+
+console.log("Dolphins average: ", avrgDolphins);
+console.log("Koalas average: ", avrgKoalas);
+
+if(avrgDolphins>avrgKoalas) console.log("Dolphins Winner");
+else if(avrgDolphins<avrgKoalas) console.log("Koalas Winner");
+else console.log("Draw");
+
