@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 var hasDriversLicense = false;
 var passTest =  true;
