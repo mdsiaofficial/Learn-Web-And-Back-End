@@ -386,3 +386,37 @@ if(bill>=50 && bill<=300){
 var tip = (bill>=50 && bill<=300) ? (bill * (15/100)) : (bill * (20/100));
 console.log(bill, tips);
 console.log(bill, tip);
+
+/////////
+// test 2
+/////////
+
+var  bill = 40;
+var tips;
+
+if(bill>=50 && bill<=300){
+    tips = (bill * (15/100)) ;
+}else if(bill>300){
+    tips = (bill * (20/100));   
+}
+
+var tip = (bill>=50 && bill<=300) ? (bill * (15/100)) : (bill * (20/100));
+console.log(bill, tips);
+console.log(bill, tip);
+
+/////////
+// test 3
+/////////
+
+var  bill = 430;
+var tips;
+
+if(bill>=50 && bill<=300){
+    tips = (bill * (15/100)) ;
+}else if(bill>300){
+    tips = (bill * (20/100));   
+}
+
+var tip = (bill>=50 && bill<=300) ? (bill * (15/100)) : (bill * (20/100));
+console.log(bill, tips);
+console.log(bill, tip);
