@@ -151,6 +151,7 @@ let description = 'Portugal is in Europe, and its 11 million people speak portug
 // end
 
 
+
 // Coding Callenge #1
 // test 1:
 var MarkH = 1.69;
@@ -196,6 +197,12 @@ console.log(`New string
 for 
 this.`);
 
+// LECTURE: Strings and Template Literals
+var portugal = 11.6;
+var language_portugal = 'Portuguese';
+var continent2 = 'Europe';
+var description2 = `Portugal is in ${continent2}, and its ${portugal} million people speaks ${language_portugal}.`;
+console.log(description2);
 
 // if else
 var Age = 15;
@@ -219,6 +226,11 @@ if(birthYear <= 2000) {
 console.log(`${century}th century.`);
 
 
+// LECTURE: Taking Decisions: if / else Statements
+var bangladesh = 18;
+if(bangladesh>33) console.log("Bangladesh's population is above average.");
+else console.log(`Bangladesh's population is ${33-bangladesh} million below average`);
+bangladesh = 13;
 
 // Coding challenge #2
 
@@ -271,7 +283,7 @@ console.log(Boolean({}));
 
 // Equality Operator
 var fv;
-//fv= prompt("Whats that?");
+// fv= prompt("Whats that?");
 console.log(fv);
 console.log(typeof fv);
 if(fv==23) console.log("I know what!");
@@ -420,3 +432,6 @@ if(bill>=50 && bill<=300){
 var tip = (bill>=50 && bill<=300) ? (bill * (15/100)) : (bill * (20/100));
 console.log(bill, tips);
 console.log(bill, tip);
+
+
+
