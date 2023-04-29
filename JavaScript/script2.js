@@ -37,10 +37,14 @@ console.log(describeCountry("Bangladesh", 18, "Dhaka"));
 
 // LECTURE: Function Declarations vs. Expressions
 var world_population = 7900; 
+var c = 18;
 function percentagOfWorld1(population){
     return (population/world_population)*100;
 }
-console.log("Percentage:" , percentagOfWorld1(18)+"%");
+console.log(`${c} million people, so it's about ${percentagOfWorld1(c)}% of 
+the world population.`);
+
+
 
 // Arrow function
 
