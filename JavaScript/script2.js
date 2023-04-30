@@ -41,9 +41,13 @@ var c = 18;
 function percentagOfWorld1(population){
     return (population/world_population)*100;
 }
+var per1 = percentagOfWorld1(18);
+var per2 = percentagOfWorld1(180);
+var per3 = percentagOfWorld1(1492);
+
 console.log(`${c} million people, so it's about ${percentagOfWorld1(c)}% of 
 the world population.`);
-
+console.log(per1,per2,per3);
 
 
 // Arrow function
@@ -59,3 +63,18 @@ var newAge = (birthYear, firstName) => {
 }
 console.log(newAge(2002, 'Ashiq'));
 console.log(newAge(2008, 'Jannat'));
+
+
+// LECTURE: Arrow Functions
+var percentagOfWorld3 = (population) => {
+    return (population/world_population)*100;
+}
+
+console.log(percentagOfWorld3(19));
+
+
+// LECTURE: Functions Calling Other Functions
+function describePopulation(country, population){
+    var out = `${country} has ${population} million people, which is about ${percentagOfWorld3(population)}% of the world.`;
+    return out;
+}
