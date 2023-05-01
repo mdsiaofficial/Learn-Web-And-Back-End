@@ -596,6 +596,20 @@ if(frnds.includes("Rejon")){
     console.log("You can play games.");
 }
 
+//  LECTURE: Basic Array Operations (Methods)
+
+var neighbours = ["India", "Pakistan", "China"];
+neighbours.push("Utopia");
+neighbours.pop();
+
+if(!neighbours.includes("Germany")){
+    console.log("Probably not a central European Country :D");
+}
+console.log(neighbours.indexOf("India"));
+neighbours[0]="Randia";
+console.log(neighbours);
+
+// end
 
 
 // Coding Challenge #2
@@ -615,3 +629,52 @@ console.log(tip);
 var total = [tip[0]+bills[0],tip[1]+bills[1],tip[2]+bills[2]];
 console.log(total);
 // end
+
+
+// Object
+
+// this is the array...
+var AshiqArray = [
+    'Ashiq',
+    'Chester',
+    2023-2000,
+    'Student',
+    ['Rejon', 'Taher', 'Rony']
+];
+
+console.log(AshiqArray);
+
+
+// this is an object 
+var AshiqArr = {
+    firstName: 'Ashiq',
+    nickName: 'Chester',
+    age: 2023-2000,
+    job: 'Student',
+    friends: ['Rejon', 'Taher', 'Rony']
+};
+console.log(AshiqArr);
+console.log(AshiqArr.nickName);
+console.log(AshiqArr.friends[2]);
+
+// Array
+var myCuntry = [
+    'Bangladesh',
+    'Dhaka',
+    'Bangla',
+    180,
+    ['India', 'Nepal', 'Bhutan', 'Mayanmar']
+]
+
+// LECTURE: Introduction to Objects
+var myCuntry = {
+    country: 'Bangladesh',
+    capital: 'Dhaka',
+    language: 'Bangla',
+    population: 180,
+    neighbours: ['India', 'Nepal', 'Bhutan', 'Mayanmar']
+};
+console.log(myCuntry);
+console.log(myCuntry.country);
+console.log(myCuntry.capital);
+console.log(myCuntry.neighbours);
