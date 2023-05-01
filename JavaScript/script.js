@@ -35,7 +35,7 @@ console.log(pi);
 
 let country = 'Bangladesh';
 let continent = 'Asia';
-let population = '180 million';
+var population = '180 million';
 console.log(country);
 console.log(continent);
 console.log(population);
@@ -531,10 +531,87 @@ console.log(describePopulation("China", 1441));
 console.log(describePopulation("Russia", 40));
 
 // Coding Challenge #1
+Dolphins1=44; Dolphins2=23; Dolphins3=71; Koalas1=65; Koalas2=54; Koalas3=49;
+var avrgDolphins = (Dolphins1 + Dolphins2 + Dolphins3)/3;
+var avrgKoalas = (Koalas1 + Koalas2 + Koalas3)/3;
+
 var checkWinner = (team1, team2) => {
-    if(team1 >= team2*2) console.log(`Dolphins win(${avrgDolphins} vs ${avrgKoalas}).`);
-    else if(team1*2 <= team2) console.log(`Koalas win(${avrgKoalas} vs ${avrgDolphins}).`);
+    if(team1 >= team2*2){ 
+        console.log(`Dolphins win(${avrgDolphins} vs ${avrgKoalas}).`);
+    }else if(team1*2 <= team2){
+        console.log(`Koalas win(${avrgKoalas} vs ${avrgDolphins}).`);
+    }else{
+        console.log("No team wins.");
+    }
 }
 // Test 1
-Dolphins1=44; Dolphins2=23; Dolphins3=71; Koalas1=65; Koalas2=54; Koalas3=49;
-checkWinner(Dolphins1, Koalas1);
+checkWinner(avrgDolphins, avrgKoalas);
+console.log("Break");
+
+// test 2
+Dolphins1=85; Dolphins2=54; Dolphins3=41; Koalas1=23; Koalas2=34; Koalas3=27;
+var avrgDolphins = (Dolphins1 + Dolphins2 + Dolphins3)/3;
+var avrgKoalas = (Koalas1 + Koalas2 + Koalas3)/3;
+checkWinner(avrgDolphins, avrgKoalas);
+
+
+// Array
+
+var frnds = [ "rony", "Taher" , 'rejon', 'sourov', 'imran', 60];
+console.log(frnds);
+
+
+// LECTURE: Introduction to Arrays
+var population = [180, 2210, 370, 34];
+console.log(population);
+if(population.length == 4) console.log(true);
+else console.log(false);
+
+var percentaghes = [`${percentagOfWorld1(180)}%`, `${percentagOfWorld1(2210)}%`, `${percentagOfWorld1(370)}%`, `${percentagOfWorld1(34)}%`];
+console.log(percentaghes);
+
+
+// Basic array operations
+var frnds = ["Rony", "Taher", "Rejon"];
+frnds.push('Asif'); // add in the back
+console.log(frnds);
+
+frnds.unshift("Mahuyan"); // add in the front
+console.log(frnds);
+
+frnds.pop(); // removes the last element
+console.log(frnds, frnds.length);
+
+frnds.shift(); // removes the first element
+console.log(frnds);
+
+console.log(frnds.concat("My name", "Is Ashiq")); // adds the elements from arguments
+
+//console.log(frnds.fill("FIlling with text to all")); // filling all element with this
+
+console.log(frnds.indexOf("Taher"));
+console.log(frnds.includes('Rejon'));
+
+if(frnds.includes("Rejon")){
+    console.log("You can play games.");
+}
+
+
+
+// Coding Challenge #2
+var bills = [125, 555, 44];
+function calcTip(bill){
+    var tips;
+    if(bill >=50 && bill<=300){
+        tips = bill * 0.15;
+    }else{
+        tips = bill * 0.20;
+    }
+    return tips;
+}
+
+var tip = [calcTip(bills[0]),calcTip(bills[1]),calcTip(bills[2])];
+console.log(tip);
+var total = [tip[0]+bills[0],tip[1]+bills[1],tip[2]+bills[2]];
+console.log(total);
+// end
