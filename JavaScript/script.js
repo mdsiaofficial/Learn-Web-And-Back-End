@@ -790,5 +790,6 @@ var Mark = {
     }
 };
 
-
 console.log(Mark.calcBMI()>John.calcBMI() ? `${Mark.firstName}'s BMI (${Mark.calcBMI()}) is higher than ${John.firstName}'s (${John.calcBMI()})!` : `${Mark.firstName}'s BMI (${Mark.calcBMI()}) is higher than ${John.firstName}'s (${John.calcBMI()})!`);
+
+// end
