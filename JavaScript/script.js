@@ -150,8 +150,6 @@ console.log(bd_population < avrg_population ? "Yes" : "No");
 let description = 'Portugal is in Europe, and its 11 million people speak portuguese';
 // end
 
-
-
 // Coding Callenge #1
 // test 1:
 var MarkH = 1.69;
@@ -773,4 +771,24 @@ console.log(Ashiq.getSummary());
 
 // Coding Challenge #3
 
- 
+var Mark = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function(){
+        return this.mass / this.height**2;
+    }
+};
+ var John = {
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function(){
+        return this.mass / this.height**2;
+    }
+};
+
+
+console.log(Mark.calcBMI()>John.calcBMI() ? `${Mark.firstName}'s BMI (${Mark.calcBMI()}) is higher than ${John.firstName}'s (${John.calcBMI()})!` : `${Mark.firstName}'s BMI (${Mark.calcBMI()}) is higher than ${John.firstName}'s (${John.calcBMI()})!`);
