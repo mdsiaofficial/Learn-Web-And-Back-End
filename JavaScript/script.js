@@ -678,3 +678,99 @@ console.log(myCuntry);
 console.log(myCuntry.country);
 console.log(myCuntry.capital);
 console.log(myCuntry.neighbours);
+
+
+
+// Dot vs Bracket
+var myCuntry = {
+    firstName: 'Ashiq',
+    lastName: 'Chester',
+    country: 'Bangladesh',
+    capital: 'Dhaka',
+    language: 'Bangla',
+    population: 180,
+    neighbours: ['India', 'Nepal', 'Bhutan', 'Mayanmar']
+};
+console.log(myCuntry.country); // DOT
+console.log(myCuntry['country']); // Bracket
+
+var namKey = 'Name';
+console.log(myCuntry['first'+namKey]);
+console.log(myCuntry['last'+namKey]);
+
+
+// LECTURE: Dot vs. Bracket Notation
+var myCuntry = {
+    country: 'Bangladesh',
+    capital: 'Dhaka',
+    language: 'Bangla',
+    population: 180,
+    neighbours: ['India', 'Nepal', 'Bhutan', 'Mayanmar']
+};
+console.log(`${myCuntry.country} has ${myCuntry.population} million Bangla-speaking people, ${myCuntry.neighbours.length} neighbouring countries and a capital called ${myCuntry.capital}.`);
+
+console.log(`${myCuntry.country} has ${myCuntry.population + 2} million Bangla-speaking people, ${myCuntry.neighbours.length} neighbouring countries and a capital called ${myCuntry.capital}.`);
+
+console.log(`${myCuntry['country']} has ${myCuntry['population']-2} million Bangla-speaking people, ${myCuntry['neighbours']['length']} neighbouring countries and a capital called ${myCuntry['capital']}.`);
+// end
+
+
+// Object methods
+
+var AshiqArr = {
+    firstName: 'Ashiq',
+    nickName: 'Chester',
+    age: 2023-2000,
+    birthYear: 2000,
+    job: 'Student',
+    friends: ['Rejon', 'Taher', 'Rony'],
+    hasDriversLicense: true,
+    calcAge: function(){
+        return 2023 - this.birthYear;
+    }
+};
+
+console.log(AshiqArr.calcAge(2000));
+console.log(AshiqArr['calcAge'](2000));
+console.log(AshiqArr.calcAge());
+
+// LECTURE: Object Methods
+var myCuntry = {
+    country: 'Bangladesh',
+    capital: 'Dhaka',
+    language: 'Bangla',
+    population: 180,
+    neighbours: ['India', 'Nepal', 'Bhutan', 'Mayanmar'],
+    describe: function(){
+        return `${myCuntry.country} has ${myCuntry.population} million Bangla-speaking people, ${myCuntry.neighbours.length} neighbouring countries and a capital called ${myCuntry.capital}.`;
+    },
+    checkIsland: function(){
+        this.isIsland = this.neighbours.length === 0 ? true : false ;
+        // way 2
+        // this.isIsland = !Boolean(this.neighbours.length);
+        return isIsland;
+    }
+};
+
+console.log(myCuntry.describe());
+
+console.log(myCuntry.checkIsland());
+
+// Challenge
+var Ashiq = {
+    firstName: 'Ashiq',
+    lastName: 'Chester',
+    birthYear: 2000,
+    age: 2023-birthYear,
+    hasDriversLicense: true,
+    getSummary: function(){
+        return `${this.firstName} is a ${this.age} years old ${AshiqArr.job}, and he has ${this.hasDriversLicense ? "A " : "NO "} driver's license.`;
+    }
+};
+console.log(Ashiq.getSummary());
+
+
+
+// Coding Challenge #3
+
+ 
