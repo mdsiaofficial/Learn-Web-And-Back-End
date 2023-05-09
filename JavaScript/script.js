@@ -793,3 +793,15 @@ var Mark = {
 console.log(Mark.calcBMI()>John.calcBMI() ? `${Mark.firstName}'s BMI (${Mark.calcBMI()}) is higher than ${John.firstName}'s (${John.calcBMI()})!` : `${Mark.firstName}'s BMI (${Mark.calcBMI()}) is higher than ${John.firstName}'s (${John.calcBMI()})!`);
 
 // end
+
+// Iteration the for loop
+
+for(let i=1; i<=10; i++){
+    console.log(`Hello ${i}`);
+}
+
+// LECTURE: Iteration: The for Loop
+
+for(let i=1; i<=50; i++){
+    console.log(`Voter number ${i} is currently voting.`);
+}
