@@ -805,3 +805,50 @@ for(let i=1; i<=10; i++){
 for(let i=1; i<=50; i++){
     console.log(`Voter number ${i} is currently voting.`);
 }
+
+// Array
+var years = [1991, 2007, 1969, 2020];
+var ages = [];
+
+for(var i=0; i<5; i++){
+    if(typeof(years[i])!=='string'){
+        ages.push(2023-years[i]);
+        break;
+    }
+    
+}
+console.log(age);
+
+
+// LECTURE: Looping Arrays, Breaking and Continuing
+
+var population = [180, 2210, 370, 34];
+
+var percentaghes = [`${percentagOfWorld1(180)}%`, `${percentagOfWorld1(2210)}%`, `${percentagOfWorld1(370)}%`, `${percentagOfWorld1(34)}%`];
+var percentaghes2 = [`${percentagOfWorld1(180)}%`, `${percentagOfWorld1(2210)}%`, `${percentagOfWorld1(370)}%`, `${percentagOfWorld1(34)}%`];
+console.log(percentaghes);
+
+
+// while loop
+
+var dice = Math.trunc(Math.random()*6+1);
+console.log(dice);
+
+while(dice !== 6){    
+    console.log(dice);
+    dice = Math.trunc(Math.random()*6+1);
+}
+
+
+// Coding Challege #4
+var bills = [125, 555, 44, 79, 222, 100, 144, 403, 256, 330, 433, 546, 235, 543];
+var total = [];
+var tips = [];
+
+for(let i = 0; i<bills.length; i++){
+    tips.push = calcTip(bills[i]);
+    total.push = tips[i]+bills[i];
+}
+
+console.log(tips);
+console.log(total);
