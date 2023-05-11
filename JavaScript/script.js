@@ -841,14 +841,16 @@ while(dice !== 6){
 
 
 // Coding Challege #4
-var bills = [125, 555, 44, 79, 222, 100, 144, 403, 256, 330, 433, 546, 235, 543];
-var total = [];
-var tips = [];
-
-for(let i = 0; i<bills.length; i++){
-    tips.push = calcTip(bills[i]);
-    total.push = tips[i]+bills[i];
+var calcTip = function (bill){
+    return bill>=50 && bill<=300 ? bill*0.15: bill*0.20;
 }
 
-console.log(tips);
-console.log(total);
+var bills = [65,43,568,453,234,67,345,124,85,345,365,26,763,235,69];
+var tips = [];
+var totals = [];
+for(var i =0; i<bills.length; i++){
+    var tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip+bills[i]);
+}
+console.log(bills, tips, totals);
