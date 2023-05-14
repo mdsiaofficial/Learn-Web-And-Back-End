@@ -24,3 +24,9 @@ CalcTempAmplitude([3,32,5,5,-65,'error']);
 CalcTempAmplitude([34,2,54,54,-65,'error']);
 
 CalcTempAmplitude([34,2,-54,54,-65,'error']);
+
+if(n & 1) {
+    console.log("ODD!");
+} else {
+    console.log("EVEN!");
+}
