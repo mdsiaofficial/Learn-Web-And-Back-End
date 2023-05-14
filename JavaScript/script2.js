@@ -25,6 +25,7 @@ CalcTempAmplitude([34,2,54,54,-65,'error']);
 
 CalcTempAmplitude([34,2,-54,54,-65,'error']);
 
+var n=3;
 if(n & 1) {
     console.log("ODD!");
 } else {
