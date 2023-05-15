@@ -21,10 +21,6 @@ function CalcTempAmplitude(temps){
 
 CalcTempAmplitude([3,32,5,5,-65,'error']);
 
-CalcTempAmplitude([34,2,54,54,-65,'error']);
-
-CalcTempAmplitude([34,2,-54,54,-65,'error']);
-
 var n=3;
 if(n & 1) {
     console.log("ODD!");
@@ -32,16 +28,3 @@ if(n & 1) {
     console.log("EVEN!");
 }
 
-var n=-25;
-if(n & 1) {
-    console.log("ODD!");
-} else {
-    console.log("EVEN!");
-}
-
-var n=3;
-if(n & 1) {
-    console.log("ODD!");
-} else {
-    console.log("EVEN!");
-}
