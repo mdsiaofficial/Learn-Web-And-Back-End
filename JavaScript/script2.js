@@ -31,3 +31,10 @@ if(n & 1) {
 } else {
     console.log("EVEN!");
 }
+
+var n=-25;
+if(n & 1) {
+    console.log("ODD!");
+} else {
+    console.log("EVEN!");
+}
