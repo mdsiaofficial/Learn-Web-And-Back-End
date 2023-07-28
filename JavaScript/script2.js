@@ -35,3 +35,6 @@ if(n & 1) {
 const x=20;
 
 if(x===20) console.log("twenty");
+const calcAge= (birthYear)=> 2034 - birthYear;
+console.log('');
+console.log();
