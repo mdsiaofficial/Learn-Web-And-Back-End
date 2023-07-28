@@ -28,3 +28,10 @@ if(n & 1) {
     console.log("EVEN!");
 }
 
+
+
+
+
+const x=20;
+
+if(x===20) console.log("twenty");
