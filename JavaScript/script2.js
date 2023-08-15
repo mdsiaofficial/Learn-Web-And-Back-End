@@ -38,3 +38,4 @@ if(x===20) console.log("twenty");
 const calcAge= (birthYear)=> 2034 - birthYear;
 console.log('');
 console.log();
+console.log("new");
