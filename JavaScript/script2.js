@@ -41,3 +41,4 @@ console.log();
 console.log("new");
 
 
+console.log('');
