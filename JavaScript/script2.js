@@ -42,3 +42,42 @@ console.log("new");
 
 
 console.log('');
+
+
+// Problem 1: 
+const calcTempAmp =  function (temps){
+    let max = temps[0];
+    let min = temps[0];
+    for(let i=0; i<temps.length; i++){
+
+        let NowTemp = temps[i];
+        if(typeof NowTemp !=='number') continue;
+
+        if (NowTemp > max) max = NowTemp;
+        if (NowTemp < min) min = NowTemp;
+    }
+    console.log("Max" , max);
+    console.log('Min' , min);
+
+    console.log('Max:', max, 'Min:', min);
+    return max-min; 
+};
+calcTempAmp([8,3,5,8,87,'error',6,5,'error',5,5,5,6]);
+calcTempAmp([8, 3, 5, 8,'error',7, 6, 5,'error', 8, 98,5, 5, 6]);
+calcTempAmp([8, 3, 5, 8,'error', 6, 5, 8, 9,'error', 5,,'error',6]);
+let temp = [8, 3, 5, 8, 'error', 6, 5, 8, 9, 'error', 5, , 'error', 6];
+let amplitude = calcTempAmp(temp);
+console.log(amplitude);
+
+
+// Problem 2: 
+const arr1 = ['a', 'b', 'c'];
+const arr2 = ['d', 'e', 'f'];
+const arr3 = arr1.concat(arr2);
+console.log('Merge', arr3);
+
+arr3.push('g');
+console.log('New Merge:', arr3);
+
+
+
