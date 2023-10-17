@@ -110,10 +110,57 @@ const measureKelvin = function(){
     const measurement = {
         type: 'temp',
         unit: 'celsius',
-        value: prompt('Degrees celsius:')
-    }
+       // value: Number(prompt('Degrees celsius:')),
+       value: 10,
+    };
+
+    // console.log(measurement.value);
+    // console.warn(measurement.value);
+    // console.error(measurement.value);
+    //console.log(measurement);
+    console.table(measurement);
     const kelvin = measurement.value + 273;
     return kelvin;
 };
 
 console.log('Celsius to Kelvin: ', measureKelvin());
+
+
+const calcTempAmpBug = function (temps1, temps2) {
+
+	let temps = temps1.concat(temps2);
+	let max = 0;
+	let min = 0;
+	for (let i = 0; i < temps.length; i++) {
+		let NowTemp = temps[i];
+		if (typeof NowTemp !== 'number') continue;
+
+		if (NowTemp > max) max = NowTemp;
+		if (NowTemp < min) min = NowTemp;
+	}
+	//console.log('Max', max);
+	//console.log('Min', min);
+
+	console.log('Max:', max, 'Min:', min);
+	return max - min;
+};
+
+let tempBug = [8, 3, 5, 8, 'error', 6, 5, 8, 9, 'error', 5, , 'error', 6];
+let amplitudeBug = calcTempAmp(tempBug, tempBug);
+console.log(amplitudeBug);
+
+
+// coding challege #1
+
+
+function printForecast(arr){
+    for(var i=1; i<tempList.length; i++){
+        //console.log(tempList[i-1]+"*C in",i,'days.'); 
+        console.log(`...${tempList[i-1]}*C in ${i} days`);       
+    }
+}
+
+var tempList = [17, 21, 23];
+printForecast(tempList);
+var tempList = [12,5,-5,0,4];
+printForecast(tempList);
