@@ -1,0 +1,35 @@
+h1 {
+    color: blueviolet;
+    font-weight: 300%;
+    font-family: Tahoma;
+}
+
+p {
+    text-align: center;
+    font-family:  courier;
+    font-size: 160%;
+    border: 2px solid olive;
+    margin: 3px;
+    text-transform: capitalize;
+
+}
+
+a:link, a:visited {
+    background-color: #36f44f;
+    color: rgb(0, 0, 0);
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: red;
+}
+
+button {
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
