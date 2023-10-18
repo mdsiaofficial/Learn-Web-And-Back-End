@@ -14,15 +14,12 @@ document.querySelector('.btncheck').addEventListener('click', function () {
     
     if(!guess){ // when guess is no input
 
-        //document.querySelector('.message').textContent = 'No Number! ⛔';
         displayMessage('No Number! ⛔');
 
     }else if(guess === SecretNumber){ // when guess is right 
 
-        //document.querySelector('.message').textContent = 'Correct Number! ✔';
         displayMessage('Correct Number! ✔');
         document.querySelector('.number').textContent = SecretNumber;
-
         document.querySelector('body').style.backgroundColor = '#60b347';
         document.querySelector('.number').style.width = '30rem';
 
@@ -32,8 +29,8 @@ document.querySelector('.btncheck').addEventListener('click', function () {
         }
 
     }else if(guess!==SecretNumber){ // when gues is wrong
+
         if(score>1) {
-            //document.querySelector('.message').textContent = (guess > SecretNumber ? 'Too High ⏫' : 'Too Low ⏬');
             displayMessage(guess > SecretNumber ? 'Too High ⏫' : 'Too Low ⏬');
             score--;
             document.querySelector('.score').textContent = score;
@@ -41,7 +38,6 @@ document.querySelector('.btncheck').addEventListener('click', function () {
             displayMessage('❌ You lost the Game!');
             document.querySelector('body').style.backgroundColor = 'red';
             document.querySelector('.number').style.width = '30rem';
-
             document.querySelector('.score').textContent = 0;
         }
     }
