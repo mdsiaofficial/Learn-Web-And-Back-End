@@ -11,7 +11,7 @@ console.log(btnShowModal);
 
 
 /*
-// ## Code Templace 1 ## 
+// ## Code Template 1 ## 
 for(let i=0; i<btnShowModal.length; i++){
 
     btnShowModal[i].addEventListener('click', function () {
@@ -34,7 +34,8 @@ overlay.addEventListener('click', function () {
 */
 
 
-// ## Code Templace 2 ## 
+/*
+// ## Code Template 2 ## 
 const closeModal = function(){
 	modal.classList.add('hidden');
 	overlay.classList.add('hidden');
@@ -51,6 +52,34 @@ const showModal = function(){
 for(let i=0; i<btnShowModal.length; i++){
     btnShowModal[i].addEventListener('click', ()=>showModal());
 }
-btnCloseModal.addEventListener('click', ()=>closeModal());
+btnCloseModal.addEventListener('click', ()=>closeModal()); // Changes here
 overlay.addEventListener('click', ()=>closeModal());
+*/
 
+
+// ## Code Template 3 ## 
+const closeModal = function(){
+	modal.classList.add('hidden');
+	overlay.classList.add('hidden');
+};
+const showModal = function(){
+    //console.log('Button Clicked');
+    // this button for clicking the modal button
+    modal.classList.remove('hidden');
+    // this will remove the 'hidden' string from 'modal hidden'
+    overlay.classList.remove('hidden'); // just for some styles background blur
+    //modal.style.display = 'block';
+};
+for(let i=0; i<btnShowModal.length; i++){
+    btnShowModal[i].addEventListener('click', showModal);
+}
+btnCloseModal.addEventListener('click', closeModal); // Changes here
+overlay.addEventListener('click', closeModal); 
+
+// using the Escape button to close modal:
+document.addEventListener('keydown', function(e){
+    // console.log(e.key); 
+    if(e.key==='Escape' && !modal.classList.contains('hidden')){
+        closeModal();
+    }
+});
