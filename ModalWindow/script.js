@@ -10,9 +10,6 @@ const btnShowModal = document.querySelectorAll('.show-modal');
 console.log(btnShowModal);
 
 
-
-
-
 /*
 // ## Code Templace 1 ## 
 for(let i=0; i<btnShowModal.length; i++){
@@ -52,8 +49,8 @@ const showModal = function(){
 };
 
 for(let i=0; i<btnShowModal.length; i++){
-    btnShowModal[i].addEventListener('click', showModal());
+    btnShowModal[i].addEventListener('click', ()=>showModal());
 }
-btnCloseModal.addEventListener('click', closeModal());
-overlay.addEventListener('click', closeModal());
+btnCloseModal.addEventListener('click', ()=>closeModal());
+overlay.addEventListener('click', ()=>closeModal());
 
