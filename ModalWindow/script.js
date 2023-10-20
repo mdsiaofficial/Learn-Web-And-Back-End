@@ -38,7 +38,7 @@ overlay.addEventListener('click', function () {
 
 
 // ## Code Templace 2 ## 
-const closeModal = function (){
+const closeModal = function(){
 	modal.classList.add('hidden');
 	overlay.classList.add('hidden');
 };
@@ -52,8 +52,8 @@ const showModal = function(){
 };
 
 for(let i=0; i<btnShowModal.length; i++){
-    btnShowModal[i].addEventListener('click', showModal ());
+    btnShowModal[i].addEventListener('click', showModal());
 }
-btnCloseModal.addEventListener('click', closeModal ());
-overlay.addEventListener('click', closeModal ());
+btnCloseModal.addEventListener('click', closeModal());
+overlay.addEventListener('click', closeModal());
 
