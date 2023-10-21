@@ -25,4 +25,10 @@ btnRoll.addEventListener('click', function(){
     // 2. Now Remove hidden and Display dice:
     diceEl.classList.remove('hidden');
     diceEl.src = `${dice}.png`;
+
+
+    // 3. check dice roll:
+    if(dice!==1){
+        
+    }
 })
