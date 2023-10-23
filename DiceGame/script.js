@@ -29,6 +29,11 @@ btnRoll.addEventListener('click', function(){
 
     // 3. check dice roll:
     if(dice!==1){
+        // add value to current score:
         
+
+    }else{
+        // switch player:
+
     }
 })
