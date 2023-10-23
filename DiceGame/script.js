@@ -13,16 +13,31 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+// Declared here so we can use all over the file.
+let scores,CurrentScore, activePlayer, playing;
 
-// Start Values:
-score_0_El.textContent = 0;
-score_1_El.textContent = 0;
-diceEl.classList.add('hidden');
+// Start Game Function
+const StartGame = function(){
+    // Start Values:
+    score_0_El.textContent = 0;
+    score_1_El.textContent = 0;
+    diceEl.classList.add('hidden');
 
-const scores = [0, 0];
-let CurrentScore =0;
-let activePlayer =0;
-let playing  = true;
+    scores = [0, 0];
+    CurrentScore =0;
+    activePlayer =0;
+    playing  = true;
+
+    current_0_El.textContent = 0;
+    current_1_El.textContent = 0;
+
+    player_0_El.classList.remove('player--winner');
+    player_1_El.classList.remove('player--winner');
+    
+    player_0_El.classList.add('player--active');
+    player_1_El.classList.remove('player--active');
+};
+
 
 // this function switch player -- uses multiple times 
 const switchPlayer = function(){
@@ -33,6 +48,10 @@ const switchPlayer = function(){
     player_1_El.classList.toggle('player--active');
 };
 
+
+
+// Starts the Game Here:
+StartGame();
 
 // Rolling the dice:
 btnRoll.addEventListener('click', function(){
@@ -92,3 +111,6 @@ btnHold.addEventListener('click', function(){
         }
     }
 });
+
+
+btnNew.addEventListener('click', StartGame);
