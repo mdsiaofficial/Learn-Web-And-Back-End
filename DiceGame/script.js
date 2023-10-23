@@ -72,7 +72,13 @@ btnHold.addEventListener('click', function(){
         // End the game here...
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
         document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
-        activePlayer===0? diceEl.src = `p1win.png`:diceEl.src = `p2win.png`;
+        
+        // My styles of winning.
+
+        //diceEl.src = `winner.png`;
+        //activePlayer===0? diceEl.src = `p1win.png`:diceEl.src = `p2win.png`;
+        activePlayer===0? diceEl.src = `winner1.png`:diceEl.src = `winner2.png`;
+        
     }else{
         // switch player:
         switchPlayer();
