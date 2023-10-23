@@ -24,18 +24,21 @@ let CurrentScore =0;
 let activePlayer =0;
 
 
+// this function switch player -- uses multiple times 
 const switchPlayer = function(){
-        document.getElementById(`current--${activePlayer}`).textContent = 0;
-        CurrentScore = 0;
-        activePlayer = (activePlayer===0? 1:0);
-        player_0_El.classList.toggle('player--active');
-        player_1_El.classList.toggle('player--active');
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    CurrentScore = 0;
+    activePlayer = (activePlayer==0 ? 1:0);
+    player_0_El.classList.toggle('player--active');
+    player_1_El.classList.toggle('player--active');
 };
+
+
 // Rolling the dice:
 btnRoll.addEventListener('click', function(){
     // 1. Generating a random dice roll here...
     const dice = Math.trunc(Math.random()*6)+1;
-    console.log(dice);
+    // console.log(dice);
     
 
     // 2. Now Remove hidden and Display dice:
@@ -52,18 +55,27 @@ btnRoll.addEventListener('click', function(){
 
     }else{
         // switch player:
-        switchPlayer;
+        switchPlayer();
     }
 });
 
 btnHold.addEventListener('click', function(){
+    // console.log("Hold");
     
     // 1. add current score = active players score
     scores[activePlayer] += CurrentScore;
-    console.log(scores[activePlayer]);
-    document.getElementById(`socre--${activePlayer}`).textContent = scores[activePlayer];
+    // console.log(scores[activePlayer]);
+    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+
     // 2. check score>=100 ? win-finish game
-    
-    // switch player:
-    switchPlayer;
+    if(scores[activePlayer]>=20){
+        // End the game here...
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+        document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+        activePlayer===0? diceEl.src = `p1win.png`:diceEl.src = `p2win.png`;
+    }else{
+        // switch player:
+        switchPlayer();
+    }
+
 });
