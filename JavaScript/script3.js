@@ -153,6 +153,8 @@ console.log(friend);
 
 */
 
+/*
+
 let st_profile_1={
     Name: 'Ashiq',
     Age: 24,
@@ -164,3 +166,44 @@ st_profile_2.Age = 22;
 
 console.log("Profile 1:",st_profile_1);
 console.log("Profile 2:",st_profile_2);
+*/
+
+// Primitive 
+let lastName='Khatun';
+let OldLastName=lastName;
+lastName='Begum';
+console.log(lastName,OldLastName);
+
+
+// Ref
+const Amena={
+
+    firstName:'Amena',
+    lastName:'Akter',
+    Age:40,
+};
+
+const marriedAmena=Amena;
+marriedAmena.lastName='Begum';
+console.log("Before Marriage: ", Amena);
+console.log("After Marriage: ", marriedAmena);
+
+// Copy Obj
+const Amm={
+    firstName:'Amena',
+    lastName:'Akter',
+    Age:40,
+    family: ['Father','Mother'],
+};
+
+const AmmCpy = Object.assign({}, Amm);
+AmmCpy.lastName = "Begum";
+
+console.log("Before Marriage: ", Amm);
+console.log("After Marriage: ", AmmCpy);
+AmmCpy.family.push('Ashiq');
+AmmCpy.family.push('Jannat');
+
+
+console.log("Before Marriage: ", Amm);
+console.log("After Marriage: ", AmmCpy);
