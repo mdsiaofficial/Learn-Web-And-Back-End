@@ -74,6 +74,9 @@ const g=ashiq.calage;
 g();
 */
 
+
+
+/*
 var firstName = "Shoriful";
 
 const ashiq = {
@@ -123,3 +126,41 @@ console.log(addExpr(3,5,7,9,3));
 
 var addArrow = (a,b) => a+b;
 console.log(addArrow(3,5));
+
+
+*/
+
+/*
+let age = 23;
+let oldAge = age;
+age = 24;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+    name: "Ashiq",
+    age: 23,
+};
+const friend = me;
+friend.age = 22;
+
+console.log(me.name, me.age);
+console.log(friend.name, friend.age);
+
+me.age=23
+console.log(me);
+console.log(friend);
+
+*/
+
+let st_profile_1={
+    Name: 'Ashiq',
+    Age: 24,
+    Class: 'BSc',
+}
+
+let st_profile_2 = st_profile_1;
+st_profile_2.Age = 22;
+
+console.log("Profile 1:",st_profile_1);
+console.log("Profile 2:",st_profile_2);
