@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 const name = "Ashiq";
 const first = function(){
     let a=1;
@@ -71,3 +72,54 @@ mal.calage();
 
 const g=ashiq.calage;
 g();
+*/
+
+var firstName = "Shoriful";
+
+const ashiq = {
+    firstName: "Ashiq",
+    year: 2000,
+    calcAge: function(){
+        console.log(this);
+        console.log(2023-this.year);
+        console.log(this.firstName);
+
+        // soln 1
+        // const isMillenial = function(){
+        //     console.log(self);
+        //     console.log(self.year >=1995 && self.year<=2005);
+        // };
+
+        // soln 2
+        const isMillenial=() => {
+            console.log(this);
+            console.log(this.year >=1995 && this.year<=2005);
+            
+        };
+
+
+        isMillenial();
+        
+    },
+    greet: function(){
+        console.log(`Hey ${this.firstName}`)
+    },
+
+}
+ashiq.greet();
+ashiq.calcAge();
+console.log(this.firstName);
+
+
+// Arguments keyword
+const addExpr = function(a,b){
+    console.log(a,b);
+    return a+b;
+};
+
+console.log(addExpr(4,8));
+
+console.log(addExpr(3,5,7,9,3));
+
+var addArrow = (a,b) => a+b;
+console.log(addArrow(3,5));
