@@ -26,7 +26,6 @@ let restaurant = {
 
     orderDelivery: function ({starterIndex=1,mainIndex=0,address,time='20:00'}) {
         console.log(`Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
-        
     },
 };
 
