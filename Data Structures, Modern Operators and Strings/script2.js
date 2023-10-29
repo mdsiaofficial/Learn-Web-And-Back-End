@@ -20,11 +20,11 @@ let restaurant = {
         },
     },
 
-    order: function (starterIndex, mainIndex) {
+    order: function (starterIndex,mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
 
-    orderDelivery: function (obj) {
+    orderDelivery: function ({starterIndex=1,mainIndex=0,address,time='20:00'}) {
         console.log(`Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
         
     },
@@ -36,7 +36,10 @@ restaurant.orderDelivery({
     mainIndex: 2,
     starterIndex: 4,
 });
-
+// After setting some of default values
+restaurant.orderDelivery({
+    address: 'City University',
+});
 
 let { name, openingHour, categories } = restaurant;
 console.log(name, openingHour, categories);
