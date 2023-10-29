@@ -12,7 +12,7 @@ const restaurant = {
     }
 };
 
-
+// Destructuring Arrays:
 // => Learning 1:
 // old way
 const food = [2,3,4,3];
