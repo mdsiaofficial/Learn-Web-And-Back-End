@@ -29,6 +29,27 @@ let restaurant = {
     },
 };
 
+// Common Operator
+const Arr = [ 7, 8, 9];
+const badNewArray = [1, 2, Arr[0], Arr[1], Arr[2]];
+console.log(badNewArray);
+
+//Spread operator
+const newArr = [5, 56, ...Arr];
+console.log(newArr);
+
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Morog Polao', 'Kacchi'];
+console.log(newMenu);
+
+// Join two arrays.
+var ab = [2, 4, 6, 7, 9];
+var bc = [4, 6, 9, 0, 5];
+var cd = [...ab, ...bc];
+console.log(cd);
+
+
 restaurant.orderDelivery({
     time: '22:30',
     address: 'City University',
