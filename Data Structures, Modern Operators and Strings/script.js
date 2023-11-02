@@ -12,6 +12,7 @@ const restaurant = {
     }
 };
 
+
 // Destructuring Arrays:
 // => Learning 1:
 // old way

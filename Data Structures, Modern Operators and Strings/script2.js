@@ -27,7 +27,16 @@ let restaurant = {
     orderDelivery: function ({starterIndex=1,mainIndex=0,address,time='20:00'}) {
         console.log(`Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
     },
+
+    orderPasta: function (ing1, ing2, ing3) {
+        console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+        
+    }
 };
+
+
+
+
 
 // Common Operator
 const Arr = [ 7, 8, 9];
@@ -48,6 +57,30 @@ var ab = [2, 4, 6, 7, 9];
 var bc = [4, 6, 9, 0, 5];
 var cd = [...ab, ...bc];
 console.log(cd);
+
+// Iterables: arrays, strings, maps, sets, NOT object
+var str = 'Ashiq';
+var letter = [...str, ' ', 'S.'];
+console.log(letter);
+console.log(...str);
+// console.log(`${...str}`); // that will not work.
+//var ingredients = [prompt('Let\' make pasta! Ingredient 1?'), prompt('Let\' make pasta! Ingredient 2?'), prompt('Let\' make pasta! Ingredient 3?')];
+//console.log(ingredients);
+
+//restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]); // old
+//restaurant.orderPasta(...ingredients); // new
+
+// Objects 
+var newRestaurant = {
+    foundedIN: 2010, ...restaurant, founder: "Ashiq"
+};
+console.log(newRestaurant);
+var restaurantCpy = { ...restaurant };
+restaurantCpy.name = 'Allar Dan Biriyani';
+newRestaurant.name='Bismillah Hotel'
+console.log(restaurant.name);
+console.log(restaurantCpy.name);
+console.log(newRestaurant.name);
 
 
 restaurant.orderDelivery({
