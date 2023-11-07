@@ -2,7 +2,7 @@ let restaurant = {
     name: 'Mayer Doa',
     location: 'Rajashon, Savar, Dhaka',
     categories: ['Bangali', 'Sokaler Nasta', 'Bikaler Nasta', 'Dupurer Khabar', 'Rater Khabar'],
-    starterMenu: ['Ruti-Porota', 'Dim Vaji', 'Dali-Vaji', 'Dal', 'Puri-Singara', 'Vaji', 'Porota-Misti'],
+    starterMenu: ['Ruti-Porota', 'Dim Vaji', 'Dal-Vaji', 'Dal', 'Puri-Singara', 'Vaji', 'Porota-Misti'],
     mainMenu: ['Vat-Dal', 'Vat-Mas Vaji', 'Vat-Alu Vorta', 'Biriyani', 'Vat-Murgi', 'Vat-Goru'],
 
     openingHour: {
@@ -64,7 +64,7 @@ var letter = [...str, ' ', 'S.'];
 console.log(letter);
 console.log(...str);
 // console.log(`${...str}`); // that will not work.
-//var ingredients = [prompt('Let\' make pasta! Ingredient 1?'), prompt('Let\' make pasta! Ingredient 2?'), prompt('Let\' make pasta! Ingredient 3?')];
+//var ingredients = [prompt('Let\'s make pasta! Ingredient 1?'), prompt('Let\'s make pasta! Ingredient 2?'), prompt('Let\'s make pasta! Ingredient 3?')];
 //console.log(ingredients);
 
 //restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]); // old
@@ -120,3 +120,27 @@ const { fri: { open:o, close:c } } = openingHour;
 console.log(o,c);
 // 11 23
 
+// spread, becauseon right size of = 
+const arrr = [1, 2, ...[3, 4]];
+const [aaa, bbb, ...others] = [1, 2, 3, 4, 5];
+console.log(arrr);
+
+console.log(a, b, others);
+
+const [Ruti, , Dal, Biriyani, ...othersFood]=[...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(Ruti, Dal);
+
+
+// function
+const addd = function (...numbers) {
+    console.log(numbers);
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++){
+        sum += numbers[i];
+    }
+    console.log(sum);
+    
+};
+addd(2, 3);
+addd(2, 4, 6);
+addd(4, 6, 8, 0, 6, 4);
