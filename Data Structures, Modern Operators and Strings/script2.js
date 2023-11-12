@@ -144,3 +144,39 @@ const addd = function (...numbers) {
 addd(2, 3);
 addd(2, 4, 6);
 addd(4, 6, 8, 0, 6, 4);
+
+
+
+// short circuiting
+// OR
+console.log(3 || 'ashiq');
+console.log('' || 'ashiq');
+console.log(' ' || 'ashiq');
+console.log(true || 0);
+console.log(undefined || null);
+// even though null is a falsy value but it will out NULL
+console.log(null || true);
+console.log(undefined || 0 || '' || 'ashiq' || 23);
+
+// AND
+
+console.log(0 && 'ashiq');
+console.log('' && 'ashiq');
+console.log(' ' && 'ashiq');
+console.log('ashiq' && 45 && null && 'dsf');
+if (restaurant.orderPizza) {
+    console.log('ye');
+    
+} else {
+    console.log('no');
+    
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spicy');
+
+
+
+
+
+
+
