@@ -176,7 +176,13 @@ restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spicy');
 
 
 
+restaurant.Guests = 0;
+const gus = restaurant.Guests || 10;
+console.log(gus);
 
+// Nullish coalescing operator...  ignores NULL or Undefined
+const gusRight = restaurant.Guests ?? 10;
+console.log(gusRight);
 
 
 
