@@ -186,3 +186,33 @@ console.log(gusRight);
 
 
 
+const rest1 = {
+    name: 'Allar Dan',
+    Guests: 20,
+};
+
+const rest2 = {
+    name: 'Dhaka Biriyani',
+    Owner: 'Abu Taher',
+};
+
+// rest1.Guests = rest1.Guests || 54;
+// rest2.Guests = rest2.Guests || 32;
+// rest2.Guests ||= 77;
+rest2.Guests ??= 44;
+
+rest2.Owner &&= 'Anon';
+console.log(rest1);
+console.log(rest2);
+
+
+
+// Coding Challenge #1
+
+// Football Betting App
+/* 
+    1. Create Player array for each team - player1 , player2
+    2. two var, gk and fieldPlayers
+    3. allPlayers = 22 player
+    4. after substitute: new player list- player1Final, player2final 
+*/
