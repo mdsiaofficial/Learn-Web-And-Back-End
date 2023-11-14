@@ -20,17 +20,17 @@ let restaurant = {
         },
     },
 
-    order: function (starterIndex,mainIndex) {
+    order: function (starterIndex, mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
 
-    orderDelivery: function ({starterIndex=1,mainIndex=0,address,time='20:00'}) {
+    orderDelivery: function ({ starterIndex = 1, mainIndex = 0, address, time = '20:00' }) {
         console.log(`Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
     },
 
     orderPasta: function (ing1, ing2, ing3) {
         console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
-        
+
     }
 };
 
@@ -39,7 +39,7 @@ let restaurant = {
 
 
 // Common Operator
-const Arr = [ 7, 8, 9];
+const Arr = [7, 8, 9];
 const badNewArray = [1, 2, Arr[0], Arr[1], Arr[2]];
 console.log(badNewArray);
 
@@ -77,7 +77,7 @@ var newRestaurant = {
 console.log(newRestaurant);
 var restaurantCpy = { ...restaurant };
 restaurantCpy.name = 'Allar Dan Biriyani';
-newRestaurant.name='Bismillah Hotel'
+newRestaurant.name = 'Bismillah Hotel'
 console.log(restaurant.name);
 console.log(restaurantCpy.name);
 console.log(newRestaurant.name);
@@ -101,23 +101,23 @@ let { name: restaurantName, openingHour: hours, categories: tags } = restaurant;
 console.log(restaurantName, hours, tags);
 
 // default values
-let {menu =[], starterMenu: starters=[]}=restaurant;
-console.log(menu,starters);
+let { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
 
 // Mutating variables
-let a=444;
-let b=666;
-let obj={a:34, b:64, c:94};
+let a = 444;
+let b = 666;
+let obj = { a: 34, b: 64, c: 94 };
 // {a,b}=obj; // this will produce an error.
 ({ a, b } = obj);
-console.log(a,b);
+console.log(a, b);
 
 // Nested objects
 const { fri } = openingHour;
 console.log(fri);
 // {open: 11, close: 23}
-const { fri: { open:o, close:c } } = openingHour;
-console.log(o,c);
+const { fri: { open: o, close: c } } = openingHour;
+console.log(o, c);
 // 11 23
 
 // spread, becauseon right size of = 
@@ -127,7 +127,7 @@ console.log(arrr);
 
 console.log(a, b, others);
 
-const [Ruti, , Dal, Biriyani, ...othersFood]=[...restaurant.mainMenu, ...restaurant.starterMenu];
+const [Ruti, , Dal, Biriyani, ...othersFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(Ruti, Dal);
 
 
@@ -135,11 +135,11 @@ console.log(Ruti, Dal);
 const addd = function (...numbers) {
     console.log(numbers);
     let sum = 0;
-    for (let i = 0; i < numbers.length; i++){
+    for (let i = 0; i < numbers.length; i++) {
         sum += numbers[i];
     }
     console.log(sum);
-    
+
 };
 addd(2, 3);
 addd(2, 4, 6);
@@ -166,10 +166,10 @@ console.log(' ' && 'ashiq');
 console.log('ashiq' && 45 && null && 'dsf');
 if (restaurant.orderPizza) {
     console.log('ye');
-    
+
 } else {
     console.log('no');
-    
+
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spicy');
@@ -216,3 +216,101 @@ console.log(rest2);
     3. allPlayers = 22 player
     4. after substitute: new player list- player1Final, player2final 
 */
+
+const game = {
+    team1: 'Bayern Munich',
+    team2: 'Real Madrid',
+    odds: {
+        team1: 2.33,
+        draw: 3.25,
+        team2: 1.22,
+    },
+    date: 'Nov 16th, 2023',
+    players: [
+        [
+            'Manuel Neuer',
+            'Dayot Upamecano',
+            'Min-jae Kim',
+            'Bouna Sarr',
+            'Noussair Mazraoui',
+            'Konrad Laimer',
+            'Aleksandar Pavlovic',
+            'Serge Gnabry',
+            'Harry Kane',
+            'Leroy Sane',
+            'Thomas Muller',
+            // 'Sven Ulreich',
+            // 'Alphonso Davies',
+            // 'Raphael Guerreiro',
+            // 'Frans Kratzig',
+        ],
+        [
+            'Andriy Lunin',
+            'Nacho',
+            'Antonio Rudiger',
+            'Ferland Mendy',
+            'Toni Kroos',
+            'Federico Valverde',
+            'Eduardo Camavinga',
+            'Brahim Diaz',
+            'Lucas Vazquez',
+            'Vinicius Junior',
+            'Rodrygo',
+            // 'David Alaba',
+            // 'Jude Bellingham',
+            // 'Dani Carvajal',
+            // 'Luka Modric'
+        ]
+    ],
+    score: '1:3',
+    scored:
+        [
+            'Harry Kane',
+            'Vinicius Junior',
+            'Rodrygo',
+            'Toni Kroos'
+        ],
+
+};
+
+// first
+const [players1, players2] = game.players;
+console.log(players1, players2);
+
+// second
+var [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+var [gk, ...fieldPlayers] = players2;
+console.log(gk, fieldPlayers);
+
+// third:
+var allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+
+// fourth
+var players1Final = [...players1, 'Sven Ulreich', 'Alphonso Davies', 'Raphael Guerreiro',];
+var players2Final = [...players2, 'David Alaba', 'Jude Bellingham', 'Dani Carvajal',];
+
+console.log(players1Final, players2Final);
+
+
+// fifth
+var { odds: { team1, draw, team2 } } = game;
+console.log(team1, draw, team2);
+
+
+// sixth
+var printGoals = function (...players) {
+    console.log(players);
+    
+    console.log(`${players.length} goals were scored.`);
+
+}
+//printGoals('Harry Kane','Vinicius Junior','Rodrygo','Toni Kroos');
+printGoals(...game.scored);
+
+// seventh
+team1<team2 && console.log(`Team 1 is more likely to win`);
+team1>team2 && console.log(`Team 2 is more likely to win`);
