@@ -42,9 +42,32 @@ let restaurant = {
 console.log(restaurant);
 
 console.log(restaurant.openH.wed.open);
-if(restaurant.openH.wed.open) console.log(restaurant.openH.wed.open);
+if (restaurant.openH.wed.open) console.log(restaurant.openH.wed.open);
+if (restaurant.openH && restaurant.openH.wed.open) console.log(restaurant.openH.wed.open);
 
 
+
+
+// with optional chaining
+console.log(restaurant.openH.mon?.open);
+console.log(restaurant.openH?.thu?.close);
+
+for (var days of weekDays) {
+    console.log(days);
+    var op = restaurant.openH[days]?.open ?? 'Closed';
+    // cl = restaurant.openH[days]?.close;
+    console.log(`On ${days}, we open at ${op}`);
+    //console.log(`On ${days}, we close at ${cl}`);
+
+}
+// optional chaining in methods
+console.log(restaurant.orderNew?.(0, 1) ?? 'Method does not exit');
+
+// optional chaining in arrays
+var users = [{ name: 'Ashiq', email: 'mdsiaofficial' }];
+var users2 = [];
+console.log(users[0]?.name??'User array is empty.');
+console.log(users2[0]?.name??'User array is empty.');
 
 
 
