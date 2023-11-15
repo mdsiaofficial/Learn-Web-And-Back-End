@@ -207,6 +207,7 @@ console.log(rest2);
 
 
 
+
 // Coding Challenge #1
 
 // Football Betting App
@@ -316,3 +317,20 @@ team1<team2 && console.log(`Team 1 is more likely to win`);
 team1>team2 && console.log(`Team 2 is more likely to win`);
 
 
+// looping arrays 
+var Menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (var item of Menu) console.log(item);
+
+for (var item of Menu.entries()) {
+    //console.log(item);
+    console.log(`${item[0] + 1}: ${item[1]}`);
+    
+}
+
+for (var [i,el] of Menu.entries()) {
+    //console.log(item);
+    console.log(`${i + 1}: ${el}`);
+    
+}
+//console.log(Menu.entries());
+//console.log([...Menu.entries()]);
