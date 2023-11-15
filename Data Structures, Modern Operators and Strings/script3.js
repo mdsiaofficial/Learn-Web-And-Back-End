@@ -1,15 +1,16 @@
 'use strict';
+let weekDays = ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'];
 
 let openH = {
-    thu: {
+    [weekDays[2]]: {
         open: 12,
         close: 22,
     },
-    fri: {
+    [weekDays[4]]: {
         open: 11,
         close: 23,
     },
-    sat: {
+    [weekDays[5]]: {
         open: 0, // 24 hours open
         close: 24,
     },
@@ -38,6 +39,12 @@ let restaurant = {
     },
 };
 
-
-
 console.log(restaurant);
+
+console.log(restaurant.openH.wed.open);
+if(restaurant.openH.wed.open) console.log(restaurant.openH.wed.open);
+
+
+
+
+
