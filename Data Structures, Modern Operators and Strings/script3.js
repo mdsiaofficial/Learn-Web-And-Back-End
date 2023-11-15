@@ -71,3 +71,24 @@ console.log(users2[0]?.name??'User array is empty.');
 
 
 
+// looping object
+var properties = Object.keys(openH);
+console.log(properties);
+console.log(`We are open on ${properties}.`);
+var OpenDays = `We are open on ${properties.length}.`;
+console.log(OpenDays);
+for (var d of properties) {
+    OpenDays += `${d},`;
+}
+console.log(OpenDays);
+
+for (var day of Object.keys(openH)) {
+    console.log(day);
+    
+}
+
+
+
+// property values
+var val = Object.values(openH);
+console.log(val);
