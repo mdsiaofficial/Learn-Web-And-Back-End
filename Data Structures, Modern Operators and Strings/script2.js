@@ -314,3 +314,5 @@ printGoals(...game.scored);
 // seventh
 team1<team2 && console.log(`Team 1 is more likely to win`);
 team1>team2 && console.log(`Team 2 is more likely to win`);
+
+
