@@ -248,7 +248,7 @@ orderSet.delete('Cha');
 console.log(orderSet);
 // in set there is no index
 console.log(orderSet[3]); // undefined
-//orderSet.clear();
+orderSet.clear();
 console.log(orderSet);
 
 for (var ord of orderSet) console.log(ord);
