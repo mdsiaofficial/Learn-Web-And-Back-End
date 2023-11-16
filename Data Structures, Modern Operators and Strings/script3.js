@@ -268,5 +268,52 @@ console.log(with_new_Staffs2.size); // for set - size
 
 
 
+// Map 
+
+var restMap = new Map();
+restMap.set('Name', 'Adorsho Hotel');
+restMap.set('Founded', 2022);
+restMap.set('Address', 'Savar, Dhaka');
+console.log(restMap);
+
+restMap
+    .set('Categories', ['Bangali', 'Sokaler Nasta', 'Bikaler Nasta', 'Dupurer Khabar', 'Rater Khabar'])
+    .set('starterMenu', ['Ruti-Porota', 'Dim Vaji', 'Dal-Vaji', 'Dal', 'Puri-Singara', 'Vaji', 'Porota-Misti'])
+    .set('mainMenu', ['Vat-Dal', 'Vat-Mas Vaji', 'Vat-Alu Vorta', 'Biriyani', 'Vat-Murgi', 'Vat-Goru'])
+    .set('open', 11)
+    .set('close', 22)
+    .set(true, 'We are open :D')
+    .set(false, 'We are closed. :(');
+
+
+console.log(restMap.get('Name'));
+console.log(restMap.get(true));
+console.log(restMap.get(false));
+
+let time = 23;
+console.log(restMap.get(time>restMap.get('open') && time<restMap.get('close')));
+console.log(restMap.has('Categories'));
+
+restMap.delete('Address');
+console.log(restMap);
+console.log(restMap.size);
+restMap.clear();
+console.log(restMap);
+
+
+restMap.set([1, 2], 'Test');
+console.log(restMap);
+console.log(restMap.get([1, 2]));
+// this will not work... 
+// cause[1, 2] before and[1, 2] in cl is not same..different memory address
+
+
+// to make it work...
+let sset = [3, 4];
+restMap.set(sset, 'Test');
+console.log(restMap);
+console.log(restMap.get(sset)); // this will work..
+restMap.set(document.querySelector('h1'), 'Heading');
+console.log(restMap);
 
 
