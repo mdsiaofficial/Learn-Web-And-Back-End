@@ -115,7 +115,7 @@ for (var [key, { open, close }] of entry){
         ex: "GOAL 1: Harry Kane"
     2. use loop to calculate the avrg odd and print
     3. print 3 odds 
-    4. 
+    4. print scores of player
 */
 
 const game = {
@@ -193,7 +193,32 @@ console.log(avrg);
 
 // 3.
 for (var [team, odd] of Object.entries(game.odds)) {
-    var TeamStr = team === 'x'?'Draw':`${game[team]}`
+    var TeamStr = team === 'draw'?'Draw':`${game[team]}`
     console.log(`Odd of victory ${TeamStr}: ${odd}`);
     
 }
+
+
+// 4. 
+var scorers = {
+};
+
+for (var player of game.scored) {
+    scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+
+// -- This is the face of the object after the score count loop:
+
+// var scorers = {
+//     'Harry Kane': 1,
+//     'Vinicius Junior': 2,
+//     'Rodrygo': 1,
+// }
+
+console.log(scorers);
+
+for (var [p, s] of Object.entries(scorers)) {
+    console.log(`${p}: ${s}`);
+    
+}
+
