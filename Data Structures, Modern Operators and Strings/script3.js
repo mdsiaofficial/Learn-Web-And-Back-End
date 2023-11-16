@@ -89,6 +89,111 @@ for (var day of Object.keys(openH)) {
 
 
 
-// property values
+// optional chaining in property values
 var val = Object.values(openH);
 console.log(val);
+
+
+// property entries
+console.log(Object.entries(openH));
+var entry = (Object.entries(openH));
+console.log(entry);
+
+for (var [key, { open, close }] of entry){
+    console.log(`On ${key} we open at ${open} and close at ${close}`);
+
+}
+
+
+
+
+// coding challenge #2
+
+// Football Betting App
+/* 
+    1. loop over game.scored array and print player name with goal number
+        ex: "GOAL 1: Harry Kane"
+    2. use loop to calculate the avrg odd and print
+    3. print 3 odds 
+    4. 
+*/
+
+const game = {
+    team1: 'Bayern Munich',
+    team2: 'Real Madrid',
+    odds: {
+        team1: 4.33,
+        draw: 3.25,
+        team2: 1.22,
+    },
+    date: 'Nov 16th, 2023',
+    players: [
+        [
+            'Manuel Neuer',
+            'Dayot Upamecano',
+            'Min-jae Kim',
+            'Bouna Sarr',
+            'Noussair Mazraoui',
+            'Konrad Laimer',
+            'Aleksandar Pavlovic',
+            'Serge Gnabry',
+            'Harry Kane',
+            'Leroy Sane',
+            'Thomas Muller',
+            // 'Sven Ulreich',
+            // 'Alphonso Davies',
+            // 'Raphael Guerreiro',
+            // 'Frans Kratzig',
+        ],
+        [
+            'Andriy Lunin',
+            'Nacho',
+            'Antonio Rudiger',
+            'Ferland Mendy',
+            'Toni Kroos',
+            'Federico Valverde',
+            'Eduardo Camavinga',
+            'Brahim Diaz',
+            'Lucas Vazquez',
+            'Vinicius Junior',
+            'Rodrygo',
+            // 'David Alaba',
+            // 'Jude Bellingham',
+            // 'Dani Carvajal',
+            // 'Luka Modric'
+        ]
+    ],
+    score: '1:3',
+    scored:
+    [
+        'Harry Kane',
+        'Vinicius Junior',
+        'Rodrygo',
+        'Vinicius Junior'
+    ],
+
+};
+
+// 1. 
+for (var [i, player] of game.scored.entries()) {
+    console.log(`GOAL ${i+1}: ${player}`);
+    
+}
+
+
+//2.
+var avrg = 0;
+var odds_ = Object.values(game.odds);
+for (var o of odds_) {
+    avrg += o;
+}
+avrg = avrg / odds_.length;
+console.log(avrg);
+
+
+// 3.
+for (var [team, odd] of Object.entries(game.odds)) {
+    var TeamStr = team === 'x'?'Draw':`${game[team]}`
+    console.log(`Odd of victory ${TeamStr}: ${odd}`);
+    
+}
