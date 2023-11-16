@@ -222,3 +222,51 @@ for (var [p, s] of Object.entries(scorers)) {
     
 }
 
+// end of challenge
+
+
+
+// Set
+const orderSet = new Set([
+    'Singara',
+    'Puri',
+    'Somosa',
+    'Singara',
+    'Cha',
+    'Chola',
+    'Puri',
+    'Cha',
+]);
+console.log(orderSet);
+console.log(new Set('Ashiq'));
+console.log(orderSet.size);
+console.log(orderSet.has('Puri'));
+console.log(orderSet.has('Ruti'));
+orderSet.add('Ruti');
+console.log(orderSet);
+orderSet.delete('Cha');
+console.log(orderSet);
+// in set there is no index
+console.log(orderSet[3]); // undefined
+//orderSet.clear();
+console.log(orderSet);
+
+for (var ord of orderSet) console.log(ord);
+
+// Example
+let staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+let staff_unique = new Set(staff);
+
+let with_new_Staffs1 = ['Store', ...new Set(staff)]; // this is an Array
+console.log(with_new_Staffs1);
+
+let with_new_Staffs2 = new Set(['Store', ...new Set(staff)]); // this is new set
+console.log(with_new_Staffs2);
+
+console.log(with_new_Staffs1.length); // for array - length
+console.log(with_new_Staffs2.size); // for set - size
+
+
+
+
+
