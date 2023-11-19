@@ -331,4 +331,31 @@ var ques = new Map([
 ]);
 
 console.log(ques);
+
+// convert obj into map
 console.log(Object.entries(openH));
+var hoursMap = new Map(Object.entries(openH));
+console.log(hoursMap);
+
+console.log(ques.get('Question'));
+for (var [k, v] of ques) { 
+    if(typeof k==='number') console.log(`Answer ${k}: ${v}`);
+    
+}
+
+// var ans = Number(prompt('Your answer: '));
+// console.log(ans);
+// var rightAns = ques.get('Correct');
+// console.log(rightAns);
+// //ans === rightAns ? console.log(ques.get(true)) : console.log(ques.get(false));
+// console.log(ques.get(ans===rightAns));
+
+
+// convert map to array
+console.log(...ques);
+console.log(ques.entries());
+console.log(...ques.keys());
+console.log(...ques.values());
+
+
+
