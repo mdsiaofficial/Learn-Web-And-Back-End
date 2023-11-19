@@ -317,3 +317,18 @@ restMap.set(document.querySelector('h1'), 'Heading');
 console.log(restMap);
 
 
+// new way to map entry:
+
+var ques = new Map([
+    ['Question', 'What is the best programming language?'],
+    [1, 'C'],
+    [2, 'Java'],
+    [3, 'Python'],
+    [4, 'Javascript'],
+    ['Correct', 3],
+    [true, 'Correct ✅'],
+    [false, 'Try Again ❌'],
+]);
+
+console.log(ques);
+console.log(Object.entries(openH));
