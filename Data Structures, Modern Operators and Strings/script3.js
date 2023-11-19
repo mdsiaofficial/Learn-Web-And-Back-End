@@ -359,3 +359,38 @@ console.log(...ques.values());
 
 
 
+// Coding challege #3
+// 1. create an array evnt of different game event no duplicates
+// 2.  64 min yellow card unfair, remove it
+// 3. print : 'An event happened, on average, every 9 minutes'
+// 4. loop over the event and log . Mark 1st or 2nd half.
+
+var Game_Event = new Map([
+    [17, 'Goal'],
+    [36, 'Sub'],
+    [48, 'Goal'],
+    [61, 'Sub'],
+    [64, 'Yellow Card'],
+    [69, 'Red Card'],
+    [70, 'Sub'],
+    [72, 'Sub'],
+    [76, 'Goal'],
+    [80, 'Goal'],
+    [90, 'Yello Card'],
+]);
+console.log(Game_Event);
+
+// 1. // set for no duplicate
+var Game_Event_Set = new Set(Game_Event.values());
+console.log(Game_Event_Set);
+
+// 2. // delete one element
+Game_Event.delete(64);
+console.log(Game_Event);
+
+// 4. // print in 
+for (var [k, v] of Game_Event) {
+    if(k<45) console.log(`[1st Half] ${k}: ${v}`);
+    else console.log(`[2nd Half] ${k}: ${v}`);
+    
+}
