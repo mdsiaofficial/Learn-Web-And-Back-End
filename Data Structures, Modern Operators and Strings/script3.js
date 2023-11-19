@@ -388,6 +388,10 @@ console.log(Game_Event_Set);
 Game_Event.delete(64);
 console.log(Game_Event);
 
+// 3. 
+console.log(`An event happened, on average, every ${90/Game_Event.size} minutes.`);
+console.log(Game_Event.keys());
+
 // 4. // print in 
 for (var [k, v] of Game_Event) {
     if(k<45) console.log(`[1st Half] ${k}: ${v}`);
