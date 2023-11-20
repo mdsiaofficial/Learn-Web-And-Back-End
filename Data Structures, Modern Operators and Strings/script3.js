@@ -357,6 +357,12 @@ console.log(ques.entries());
 console.log(...ques.keys());
 console.log(...ques.values());
 
+var diss = new Map([
+    ['Name', 'Ashiq'],
+    ['Age', '23'],
+    ['Job', 'Student'],
+]);
+console.log(diss);
 
 
 // Coding challege #3
@@ -453,3 +459,14 @@ em2 = em2.toLowerCase();
 console.log(em===em2);
 
 // Replacing
+var priceUS = '234.45 $';
+console.log(priceUS);
+
+var priceBD = priceUS.replace('$', '\u09F3');
+console.log(priceBD);
+
+var Announcement = 'All passangers come to boarding door 23. Boarding door 23!';
+console.log(Announcement);
+Announcement.replace('door', 'gate');
+console.log((Announcement));
+
