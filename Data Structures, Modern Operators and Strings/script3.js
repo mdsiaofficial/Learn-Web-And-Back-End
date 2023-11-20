@@ -398,3 +398,56 @@ for (var [k, v] of Game_Event) {
     else console.log(`[2nd Half] ${k}: ${v}`);
     
 }
+
+
+
+// Work with strings
+
+var Airline = 'Biman Bangladesh';
+var plane = 'B750';
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B750'[0]);
+console.log(Airline.length);
+console.log('BimanBD'.length);
+console.log(Airline.indexOf('g'));
+
+console.log(Airline.indexOf('Bangladesh'));
+console.log(Airline.slice(4));   //n Bangladesh
+console.log(Airline.slice(4, 8));   // n Ba
+console.log(Airline.slice(-1));   // h
+console.log(Airline.slice(3, -3));  // an Banglad
+
+console.log(6, Airline.indexOf('d'));
+console.log(Airline.indexOf('d'), 5);
+
+
+var checkSeat = function (seat) {
+    // B and E are Middle 
+    var s = (seat.slice(-1) === 'B') || (seat.slice(-1) === 'E') ? (`You are lucky :)`) : (`Sorry :(`);
+    console.log(s);
+    
+};
+checkSeat('23B');
+checkSeat('23A');
+checkSeat('23D');
+checkSeat('23E');
+
+console.log(new String('Ashiq'));
+
+var NewS = 'My name IS Ashiq';
+console.log(NewS.toLowerCase());
+console.log(NewS.toUpperCase());
+var nameEE = 'ashiq'
+console.log(nameEE[0]+nameEE.slice(1).toUpperCase());
+
+// comparing email
+var em = 'ashiq@ashiq.io';
+var em2 = 'AsHiq@ashiQ.io';
+console.log(em===em2);
+
+em = em.toLowerCase();
+em2 = em2.toLowerCase();
+
+console.log(em===em2);
