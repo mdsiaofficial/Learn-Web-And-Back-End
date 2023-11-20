@@ -451,3 +451,5 @@ em = em.toLowerCase();
 em2 = em2.toLowerCase();
 
 console.log(em===em2);
+
+// Replacing
