@@ -467,6 +467,62 @@ console.log(priceBD);
 
 var Announcement = 'All passangers come to boarding door 23. Boarding door 23!';
 console.log(Announcement);
-Announcement.replace('door', 'gate');
-console.log((Announcement));
+console.log(Announcement.replace('door', 'gate'));
 
+console.log(Announcement.replaceAll('door', 'gate'));
+
+console.log(Announcement.replace(/door/g, 'gate'));
+
+
+var pp = 'B54 Air Kar';
+console.log(pp.includes('B54'));
+console.log(pp.includes('Naj'));
+console.log(pp.startsWith('B'));
+
+if (pp.startsWith('B') && pp.endsWith('Kar')) {
+    console.log('New');
+    
+} else {
+    console.log('Puran');
+    
+}
+
+// practice
+
+var checkBags = function (items) {
+    var i = items.toLowerCase();
+    if (i.includes('knife') || i.includes('gun') || i.includes('bomb')) {
+        console.log('Not Allowed');
+    } else {
+        console.log('Allowed');
+        
+    }
+};
+
+checkBags('Laptops, Phone, Charger');
+checkBags('Laptops, Phone, Knife');
+checkBags('Laptops, Phone, Gun');
+checkBags('Laptops, Stove');
+
+console.log('I+am+very+good'.split('+'));
+console.log('Md Shoriful Islam Ashiq'.split(' '));
+
+var [firstName, lastName] = 'SI Ashiq'.split(' ');
+console.log(firstName,lastName);
+var newName = ['MD', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+var capName = function (name) {
+    var Names = name.split(' ');
+    var NamesUpper = [];
+
+    for (var x of Names) {
+        NamesUpper.push(x[0].toUpperCase() + name.slice(1));
+    }
+    console.log(NamesUpper.join(' '));
+    
+}
+
+capName('md shoriful islam ashiq');
+capName('md abu taher saikat');
+capName('asif alom rony');
