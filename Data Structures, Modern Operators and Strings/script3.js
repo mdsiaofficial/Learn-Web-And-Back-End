@@ -517,13 +517,15 @@ console.log('___________________________________________');
 
 var capName = function (n) {
     var Names = n.split(' ');
+    console.log(Names);
     var NamesUpper = [];
 
     for (var x of Names) {
-        NamesUpper.push( x[0].toUpperCase() + x.slice(1) );
+        NamesUpper.push(x[0].toUpperCase() + x.slice(1));
+        //NamesUpper.push(n.replace(n[0], n[0].toUpperCase()));
     }
     console.log(NamesUpper.join(' '));
-}
+};
 
 // However, there's a mistake in this line.
 // It should be x[0].toUpperCase() + x.slice(1)
@@ -531,13 +533,36 @@ var capName = function (n) {
 // The intention is to capitalize the first letter of each word,
 // not the entire input name each time.
 
-
-
 capName('md shoriful islam ashiq');
-
 // Names= ['md', 'shoriful', 'islam', 'ashiq'];
 // -> After for loop -> NamesUpper =  ['Md', 'Shoriful', 'Islam', 'Ashiq'];
 // -> After Join -> NamesUpper =  'Md Shoriful Islam Ashiq';
 
 capName('md abu taher saikat');
 capName('asif alom rony');
+
+
+// Padding
+var message = 'GO to gate 44';
+console.log(message.padStart(25, '+'));
+console.log('Ashiq'.padStart(20,'_'));
+console.log('Ashiq'.padStart(20,'_').padEnd(34,'-'));
+
+var AshiqCreditCard = function (number) {
+    var Str = number + '';
+    return Str.slice(-4).padStart(Str.length,'*');
+};
+console.log(AshiqCreditCard(232423534534556));
+console.log(AshiqCreditCard(253454556));
+
+// Repeat
+var msg2 = 'Bad Weather... All departures delayed. ';
+console.log(msg2.repeat(5));
+var planesInQueue = function (n) {
+    console.log(`There are ${n} planes in the queue ${'✈'.repeat(n)}`);
+    
+};
+
+planesInQueue(9);
+planesInQueue(4);
+planesInQueue(5);
