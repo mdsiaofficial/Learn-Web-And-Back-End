@@ -512,17 +512,32 @@ console.log(firstName,lastName);
 var newName = ['MD', firstName, lastName.toUpperCase()].join(' ');
 console.log(newName);
 
-var capName = function (name) {
-    var Names = name.split(' ');
+// new 
+console.log('___________________________________________');
+
+var capName = function (n) {
+    var Names = n.split(' ');
     var NamesUpper = [];
 
     for (var x of Names) {
-        NamesUpper.push(x[0].toUpperCase() + name.slice(1));
+        NamesUpper.push( x[0].toUpperCase() + x.slice(1) );
     }
     console.log(NamesUpper.join(' '));
-    
 }
 
+// However, there's a mistake in this line.
+// It should be x[0].toUpperCase() + x.slice(1)
+// instead of x[0].toUpperCase() + name.slice(1)
+// The intention is to capitalize the first letter of each word,
+// not the entire input name each time.
+
+
+
 capName('md shoriful islam ashiq');
+
+// Names= ['md', 'shoriful', 'islam', 'ashiq'];
+// -> After for loop -> NamesUpper =  ['Md', 'Shoriful', 'Islam', 'Ashiq'];
+// -> After Join -> NamesUpper =  'Md Shoriful Islam Ashiq';
+
 capName('md abu taher saikat');
 capName('asif alom rony');
