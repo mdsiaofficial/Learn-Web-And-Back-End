@@ -1,19 +1,24 @@
-var nameOfVariables = [];
-var box = document.getElementById('text-box-id');
-console.log(box);
+// challege 4
 
-// var nameOfVariables[0] = document.querySelector('inp').val
+// 1. recieve a list of variable name in the 'TEXT BOX'
+// 2. when button pressed, it will convert the names
+//      from 'uderscore_case' to 'camleCase'.
+//  
 
-document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
 
-document.body.append(document.createElement('button'));
+
 document.querySelector('button').addEventListener('click', function () {
-    var text = document.querySelector('textarea').value;
-    var rows = text.split('\n');
-
-    for (var [i, row] of rows.entries()) {
-        var [first, second] = row.toLowerCase().trim().split('_');
-        var output = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
+    var txt = document.querySelector('textarea').value;
+    console.log(txt);
+    var rows = txt.split('\n');
+    console.log(rows);
+    
+    for (var x of rows) {
+        var [n1, n2] = x.toLowerCase().trim().split('_');
+        n2 = n2[0].toUpperCase() + n2.slice(1);
+        fullName = n1 + n2;
+        console.log(fullName);
     }
-
-})
+});
