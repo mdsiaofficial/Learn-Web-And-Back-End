@@ -46,3 +46,13 @@ console.log(flight);
 checkIn(flight, Ashiq);
 console.log(Ashiq);
 console.log(flight);
+
+
+
+var newPassport = function (person) {
+    person.passport = Math.trunc(Math.random() * 10000000000);
+};
+
+newPassport(Ashiq);
+console.log(Ashiq);
+checkIn(flight,Ashiq);
