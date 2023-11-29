@@ -56,3 +56,6 @@ var newPassport = function (person) {
 newPassport(Ashiq);
 console.log(Ashiq);
 checkIn(flight,Ashiq);
+
+
+// New In cursor
