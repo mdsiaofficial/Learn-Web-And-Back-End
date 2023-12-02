@@ -100,6 +100,44 @@ transform("i think ruth's dog is cuter dog than your dog!", oneWord);
 var high5 = function () {
     console.log("😜");
 
-}
-document.body.addEventListener("click", high5);
-["Ashiq", "Jannat", "Ammu"].forEach(high5);
+};
+var Ashiq, Jannat, Ammu;
+//document.body.addEventListener("click", high5);
+//["Ashiq", "Jannat", "Ammu"].forEach(high5);
+['Ashiq', 'Jannat', 'Ammu'].forEach(high5);
+
+console.log();
+console.log();
+
+
+var greet = function (greeting) {
+    return function (name) {
+        console.log(`${greeting} ${name}`);
+        
+    };
+};
+
+var gre = greet('Hey');
+
+gre("Ashiq");
+
+greet("Hello")("Ashiq");
+
+// challenge
+var greetArr = greetings => names => console.log(`${greetings} ${names}`);
+
+greetArr("Hi")("Ashiq");
+
+
+
+var bb = {
+    airline: "Biman Bangladesh",
+    code: "BB",
+    bookings: [],
+    book(flightNum, name) {
+        console.log(`${name} booked a seat on ${this.airline} flight ${this.code}${flightNum}`);
+    },
+};
+
+bb.book(834, "Chester Ashiq");
+bb.book(324, "Rony");
