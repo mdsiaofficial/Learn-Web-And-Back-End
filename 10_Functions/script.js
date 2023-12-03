@@ -136,8 +136,49 @@ var bb = {
     bookings: [],
     book(flightNum, name) {
         console.log(`${name} booked a seat on ${this.airline} flight ${this.code}${flightNum}`);
+        this.bookings.push({ flight: `${this.code}${flightNum}`, name });
     },
+
 };
 
 bb.book(834, "Chester Ashiq");
 bb.book(324, "Rony");
+console.log(bb);
+
+var AsiaWings = {
+    name: "AsiaWings",
+    code: "AW",
+    bookings: [],
+
+};
+
+var book = bb.book;
+
+// does not work
+// book(23, "Ashiq");
+
+
+book.call(AsiaWings, 234, "Ashiq");
+console.log(AsiaWings);
+
+book.call(bb, 432, "Shoriful");
+console.log(bb);
+
+var SwissAir = {
+    name: "Swiss Air Lines",
+    code: "SA",
+    bookings: [],
+};
+
+book.call(SwissAir, 654, "Anika");
+console.log(SwissAir);
+
+
+// Apply method
+var flightData = [345, "Asif Rony"];
+book.apply(SwissAir, flightData);
+// apply method is not using in modern way..
+// theres another way
+
+book.call(SwissAir, ...flightData);
+book.call(SwissAir, ...flightData);
