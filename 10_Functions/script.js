@@ -146,7 +146,7 @@ bb.book(324, "Rony");
 console.log(bb);
 
 var AsiaWings = {
-    name: "AsiaWings",
+    airline: "AsiaWings",
     code: "AW",
     bookings: [],
 
@@ -165,7 +165,7 @@ book.call(bb, 432, "Shoriful");
 console.log(bb);
 
 var SwissAir = {
-    name: "Swiss Air Lines",
+    airline: "Swiss Air Lines",
     code: "SA",
     bookings: [],
 };
@@ -182,3 +182,92 @@ book.apply(SwissAir, flightData);
 
 book.call(SwissAir, ...flightData);
 book.call(SwissAir, ...flightData);
+
+
+// Bind Method
+
+// book.call(AsiaWings, 234, "Ashiq");
+
+var bookBind = book.bind(AsiaWings);
+bookBind(876, "Taher");
+
+var bookDC = book.bind(bb);
+bookDC(546, "Kabir");
+var bookSwiss = book.bind(SwissAir);
+bookSwiss(345, "ABU");
+
+
+// Bind with event listeners
+bb.planes = 300;
+bb.buyPlane = function () {
+    console.log(this);
+    
+    this.planes++;
+    console.log(this.planes);
+    
+};
+// bb.buyPlane();
+
+document.querySelector(".buy").addEventListener("click", bb.buyPlane.bind(bb));
+
+// partial applicatoin
+var addTax = (rate, value) => value * value * rate;
+console.log(Math.trunc(addTax(1.2, 233)));
+var addVat = addTax.bind(null, 0.23);
+console.log(Math.trunc(addVat(23)));
+
+
+// challenge
+var Tax = function (rate, value) {
+    return function(Vat){
+        return (value * value * rate)+Vat;
+    }
+};
+console.log(Tax(1.4,188)(150000));
+
+// my blog thiings //
+
+//way 1
+
+// Define a callback function that takes two arguments
+function tryMe(param1, param2) {
+    console.log(param1 + " and " + param2);
+};
+// Define a function that takes a callback as an argument
+function callbackTester(callback) {
+    // Do some task
+    console.log("Testing callback");
+    // Invoke the callback function
+    callback();
+};
+// Call the tester function and pass an anonymous function as a callback
+callbackTester(function() {
+// Pass the arguments to the callback function inside the anonymous function
+    tryMe("hello", "goodbye");
+});
+// The output will be:
+// Testing callback
+// hello and goodbye
+
+
+//WAY 2
+// Define a callback function that takes two arguments
+function tryMe(param1, param2) {
+    console.log(param1 + " and " + param2);
+};
+// Define a function that takes a callback as an argument
+function callbackTester(callback) {
+    // Do some task
+    console.log("Testing callback");
+    // Invoke the callback function
+    callback();
+};
+// Call the tester function and pass a bound function as a callback
+callbackTester(tryMe.bind(null, "hello", "goodbye"));
+// The output will be:
+// Testing callback
+// hello and goodbye
+
+
+
+//
