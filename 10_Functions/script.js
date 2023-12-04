@@ -270,4 +270,31 @@ callbackTester(tryMe.bind(null, "hello", "goodbye"));
 
 
 
-//
+//  coding challenge #1
+
+var poll = {
+    ques: "What is your favourite programming language?",
+    opt: ["0: JavaScript", "1:: Python", "2: Rust", "3: C++"],
+    ans: new Array(4).fill(0),
+    regAns: function () {
+        var msg = `${poll.ques}\n${poll.opt}\n(Write option number)`;
+        var inp = prompt(msg);
+        poll.ans[inp]++;
+        console.log(poll.ans);
+    },
+};
+console.log(poll);
+document.querySelector(".poll").addEventListener("click", poll.regAns)
+
+
+//  coding challenge #1_2
+var poll2 = {
+    qu: "What is your fav programming language?",
+    op: ["0: JavaScript", "1:: Python", "2: Rust", "3: C++"],
+    ans: new Array(4).fill(0),
+    reg() {
+        var a = prompt(`${this.qu}\\n${this.op.join("\\n")}\\n(Write option number)`);
+        console.log(a);
+        typeof a === "number" && a < 4 && a >= 0 && this.ans[a]++;
+    },
+}
