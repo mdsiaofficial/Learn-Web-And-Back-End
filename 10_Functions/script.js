@@ -279,7 +279,10 @@ var poll = {
     regAns: function () {
         var msg = `${poll.ques}${poll.opt}(Write option number)`;
         var inp = prompt(msg);
-        poll.ans[inp]++;
+        if (inp < this.ans.length) {
+            poll.ans[inp]++;
+            
+        }
         //console.log(poll.ans);
         //this.displayResult();
         this.displayResult("array");
