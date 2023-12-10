@@ -280,10 +280,23 @@ var poll = {
         var msg = `${poll.ques}${poll.opt}(Write option number)`;
         var inp = prompt(msg);
         poll.ans[inp]++;
-        console.log(poll.ans);
+        //console.log(poll.ans);
+        //this.displayResult();
+        this.displayResult("array");
+        this.displayResult("string");
+    },
+    displayResult(varType) {
+        if (varType === "array") {
+            console.log(this.ans);
+            
+        } else if (varType === "string") {
+            console.log(`Poll results are ${this.ans.join(", ")}`);
+            
+        }
+        
     },
 };
 console.log(poll);
-document.querySelector(".poll").addEventListener("click", poll.regAns)
+document.querySelector(".poll").addEventListener("click", poll.regAns.bind(poll))
 
 
