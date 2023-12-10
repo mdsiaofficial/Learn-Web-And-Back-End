@@ -339,3 +339,6 @@ var booker = secureBook();
 booker();
 booker();
 booker();
+
+console.dir(booker);
+
