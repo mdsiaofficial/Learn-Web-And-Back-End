@@ -303,3 +303,39 @@ console.log(poll);
 document.querySelector(".poll").addEventListener("click", poll.regAns.bind(poll))
 
 
+poll.displayResult.call({ ans: [0, 0, 0, 0] }, "string");
+poll.displayResult.call({ ans: [0, 0, 0, 0] }, "array");
+
+// RunOnce
+
+var RunOnce = function () {
+    console.log("This is someething");
+    
+};
+RunOnce();
+
+// immediately invoked function
+(function() {
+    console.log("This is instant");
+    
+})();
+
+(()=>console.log("instant"))();
+
+
+
+// closures
+
+var secureBook = function () {
+    var passCount = 0;
+    return function () {
+        passCount++;
+        console.log(passCount);
+        
+    };
+};
+var booker = secureBook();
+
+booker();
+booker();
+booker();
