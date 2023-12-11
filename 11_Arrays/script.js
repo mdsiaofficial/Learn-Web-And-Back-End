@@ -110,3 +110,73 @@ movement.forEach(function (x, i, arr) {
         
     }
 });
+
+
+
+
+var currencies = new Map([
+
+    ["BDT", "Bangladesh Taka"],
+    ["EUR", "Euro"],
+    ["GBP", "Pound Sterling"],
+    ["USD", "United States Dollar"],
+]);
+
+currencies.forEach(function (value, key, Map) {
+   console.log(`${key}: ${value}`);
+    
+});
+
+
+var currenciesUnique = new Set(["BDT", "EUR", "GBP", "USD"]);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value) {
+    console.log(`${value}`);
+    
+});
+
+
+
+let acc01 = {
+    owner: "Ashiq Chester",
+    mov: [94, 43, 12, -23, 35, 49, -25, -11],
+    interestRate: 1.2, // 1.2%
+    pin: 1111,
+};
+let acc02 = {
+    owner: "Asif Rony",
+    mov: [20, -15, 12, -23, 42, -25, -25, -11],
+    interestRate: 1.2, // 1.2%
+    pin: 2222,
+};
+let acc03 = {
+    owner: "Taher Saikat",
+    mov: [30, 43, 48, -23, 42, 49, -25, -11],
+    interestRate: 1.2, // 1.2%
+    pin: 3333,
+};
+let acc04 = {
+    owner: "Anika Jannat",
+    mov: [5, 43, 12, -23, 42, -17, -25, -11],
+    interestRate: 1.2, // 1.2%
+    pin: 4444,
+};
+let acc05 = {
+    owner: "Ammu",
+    mov: [45, 43, -12, -23, 65, 49, -25, -11],
+    interestRate: 1.2, // 1.2%
+    pin: 5555,
+};
+let acc06 = {
+    owner: "Abbu",
+    mov: [55, 43, 12, -23, 42, 88, -25, -11],
+    interestRate: 1.2, // 1.2%
+    pin: 6666,
+};
+
+// accounts //
+var accounts = [acc01, acc02, acc03, acc04, acc05, acc06];
+
+
+// elements //
+
