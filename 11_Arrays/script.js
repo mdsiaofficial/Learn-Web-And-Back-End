@@ -48,3 +48,65 @@ console.log(newArr[0]);
 console.log(newArr.at(0)); // new
 
 console.log(newArr[newArr.length-1]);
+console.log("Ashiq".at(0));
+
+
+
+// looping
+var movement = [34, -45, 40, -60, 30, 65, -13, 70, 23];
+for (var x of movement) {
+    if (x > 0) {
+        console.log(`you deposit ${x}`);
+        
+    } else {
+        console.log(`you withdraw ${Math.abs(x)} `);
+        
+    }
+    
+    
+}
+
+console.log("------------other-------------");
+
+var movement = [34, -45, 40, -60, 30, 65, -13, 70, 23];
+for (var [i, x] of movement.entries()) {
+    if (x > 0) {
+        console.log(`${i+1} you deposit ${x}`);
+        
+    } else {
+        console.log(`${i+1} you withdraw ${Math.abs(x)} `);
+        
+    }
+}
+
+
+// using forEach method
+console.log("------------forEach-------------");
+
+
+var movement = [34, -45, 40, -60, 30, 65, -13, 70, 23];
+movement.forEach(function (movement) {
+    if (movement > 0) {
+        console.log(`you deposit ${movement}`);
+        
+    } else {
+        console.log(`you withdraw ${Math.abs(movement)} `);
+        
+    }
+});
+
+
+// using forEach method
+console.log("------------other forEach-------------");
+
+
+var movement = [34, -45, 40, -60, 30, 65, -13, 70, 23];
+movement.forEach(function (x, i, arr) {
+    if (movement > 0) {
+        console.log(`${i+1} you deposit ${x} - ${arr}`);
+        
+    } else {
+        console.log(`${i+1} you withdraw ${Math.abs(x)} - ${arr}`);
+        
+    }
+});
