@@ -342,3 +342,57 @@ booker();
 
 console.dir(booker);
 
+// more example on closure
+
+var f;
+var g = function () {
+    var a = 24;
+    f = function () {
+        console.log(a * 2);
+        
+    };
+};
+
+var h = function () {
+    var b = 443;
+    f = function () {
+        console.log(b*24);
+        
+    };
+};
+
+g();
+f();
+
+// this f() and next f() is not same...
+
+h();
+f();
+console.dir(f);
+//
+
+var boardPass = function (n, wait) {
+    var perGroup = n / 3;
+    setTimeout( function () {
+        console.log(`We are now boarding all ${n} passengers.`);
+        console.log(`There are 3 groups, each with ${perGroup} passengers.`);
+        
+    }, wait * 1000);
+    console.log(`Will start boarding in ${wait}`);
+   
+};
+
+
+boardPass(58, 3);
+
+
+
+// Challenge 2
+
+(function () {
+    var header = document.querySelector(".sh1");
+    header.style.color = "Blue";
+    document.querySelector("body").addEventListener("click", function () {
+        header.style.color = "Red";
+    });
+})();
