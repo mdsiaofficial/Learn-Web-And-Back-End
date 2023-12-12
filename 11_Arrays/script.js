@@ -188,7 +188,7 @@ var label_Sum_Interest = document.querySelector(".summary_value_interest");
 var label_Timer = document.querySelector(".timer");
 
 var containerApp = document.querySelector(".app");
-var containerMove = document.querySelector(".move");
+var containerMove = document.querySelector(".movements");
 var btn_log_in = document.querySelector(".login_btn");
 var btn_Transfer = document.querySelector(".form_btm_tranfer");
 var btn_Loan = document.querySelector(".form_btn_loan");
@@ -203,11 +203,23 @@ var input_Loan_Amount = document.querySelector(".form_input_loan_amount");
 var input_Close_Username = document.querySelector(".form_input_user");
 var input_Close_pin = document.querySelector(".form_input_pin");
 
+// tk symble in html : &#2547 in javascript : \u09F3
 
 var displayMove = function (move) {
+    containerMove.innerHTML = "";
+    // .textContent = 0
     move.forEach(function (x, i) {
-        
-    })
+        var type = x > 0 ? "deposit" : "withdrawal";
+        var html = `
+        <div class="movements">
+        <div class="movements__row">
+          <div class="movements__type movements__type--${type}">">${i+1} ${type}</div>
+          <div class="movements__value">${x}\u09F3</div>
+        </div>
+        `;
+        containerMove.insertAdjacentHTML("afterbegin", html);
+    });
 };
 
 displayMove(acc01.mov);
+// console.log(containerMove.innerHTML);
