@@ -179,4 +179,35 @@ var accounts = [acc01, acc02, acc03, acc04, acc05, acc06];
 
 
 // elements //
+var label_Welcome = document.querySelector(".welcome");
+var label_Date = document.querySelector(".date");
+var label_Balance = document.querySelector(".balance_value");
+var label_Sum_In = document.querySelector(".summary_value_in");
+var label_Sum_Out = document.querySelector(".summary_value_out");
+var label_Sum_Interest = document.querySelector(".summary_value_interest");
+var label_Timer = document.querySelector(".timer");
 
+var containerApp = document.querySelector(".app");
+var containerMove = document.querySelector(".move");
+var btn_log_in = document.querySelector(".login_btn");
+var btn_Transfer = document.querySelector(".form_btm_tranfer");
+var btn_Loan = document.querySelector(".form_btn_loan");
+var btn_Close = document.querySelector(".form_btn_close");
+var btn_Sort = document.querySelector(".form_btn_sort");
+
+var input_login_username = document.querySelector(".login_input_user");
+var input_login_pin = document.querySelector(".login_input_pin");
+var input_Transfer_to = document.querySelector(".form_input_to");
+var input_Transfer_Amount = document.querySelector(".form_input_amount");
+var input_Loan_Amount = document.querySelector(".form_input_loan_amount");
+var input_Close_Username = document.querySelector(".form_input_user");
+var input_Close_pin = document.querySelector(".form_input_pin");
+
+
+var displayMove = function (move) {
+    move.forEach(function (x, i) {
+        
+    })
+};
+
+displayMove(acc01.mov);
