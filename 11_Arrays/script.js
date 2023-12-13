@@ -213,7 +213,7 @@ var displayMove = function (move) {
         var html = `
         <div class="movements">
         <div class="movements__row">
-          <div class="movements__type movements__type--${type}">">${i+1} ${type}</div>
+          <div class="movements__type movements__type--${type}">${i+1} ${type}</div>
           <div class="movements__value">${x}\u09F3</div>
         </div>
         `;
@@ -223,3 +223,18 @@ var displayMove = function (move) {
 
 displayMove(acc01.mov);
 // console.log(containerMove.innerHTML);
+
+
+
+// challenge array 1 //
+
+var checkDogs = function (ageArrayJulia, ageArrayKate) {
+    var copyJulia = ageArrayJulia.slice(1, -2);
+    console.log(copyJulia);
+    
+}
+
+var JuliyaReport = [5, 3, 2, 6, 1, 4, 3, 6, 2];
+var KateReport = [2, 6, 3, 1, 4, 4, 1, 3, 5, 2, 4, 5, 7, 3, 2];
+
+checkDogs(JuliyaReport, KateReport);
