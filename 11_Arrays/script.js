@@ -137,8 +137,14 @@ currenciesUnique.forEach(function (value) {
 
 
 
+
+// username counter 
+var count = 0;
+
+// users
+var usernames = [];
 let acc01 = {
-    owner: "Ashiq Chester",
+    owner: "Chester Ashiq",
     mov: [94, 43, 12, -23, 35, 49, -25, -11],
     interestRate: 1.2, // 1.2%
     pin: 1111,
@@ -227,14 +233,79 @@ displayMove(acc01.mov);
 
 
 // challenge array 1 //
-
 var checkDogs = function (ageArrayJulia, ageArrayKate) {
     var copyJulia = ageArrayJulia.slice(1, -2);
-    console.log(copyJulia);
-    
-}
+    // console.log(copyJulia);
+    var copyKate = ageArrayKate;
 
+    copyJulia.forEach(function (x, i, arr) {
+        var dog = (x > 3) ? `an Adult` : `a Pupppy`;
+        console.log(`Julia: Dog ${i+1} is ${dog}, and is ${x} years old.`);
+        
+    });
+    copyKate.forEach(function (x, i, arr) {
+        var dog = (x > 3) ? `an Adult` : `a Pupppy`;
+        console.log(`Kate: Dog ${i+1} is ${dog}, and is ${x} years old.`);
+        
+    });
+};
 var JuliyaReport = [5, 3, 2, 6, 1, 4, 3, 6, 2];
 var KateReport = [2, 6, 3, 1, 4, 4, 1, 3, 5, 2, 4, 5, 7, 3, 2];
-
 checkDogs(JuliyaReport, KateReport);
+// challenge end //
+
+
+// practice map //
+/*
+var mov = [90, 43, 12, -23, 42, 88, -25, -11];
+var euro_to_usd = 1.27;
+
+var usd = mov.map( x => x * euro_to_usd);
+   
+// var usd = mov.map(function (x) {
+//     return x * euro_to_usd;
+//     // return 100;
+// });
+console.log(mov , usd);
+
+
+var gbp = [];
+for (var x of usd) {
+    gbp.push(x * 0.92);
+};
+console.log(gbp);
+
+var mov_des = mov.map((x, i, arr) => {
+    if (mov > 0) {
+        return `Move ${i + 1}: You deposited ${Math.abs(x)}`;
+    } else {
+        return `Move ${i + 1}: You withdrew ${Math.abs(x)}`;
+    }
+});
+
+console.log(mov_des);
+*/
+
+
+// Making username for bankist //
+/*
+var user = "Chester Ashiq";
+var create_Username = function (user) {
+    var username = user.toLowerCase().split(" ").map(function (str) {
+        return str[0];
+    }).join("") + count++;
+    return username;
+};
+*/
+
+    1
+console.log(create_Username(user));
+
+var createUsernames = function (accs) {
+    accs.forEach(function (acc,i) {
+        acc.username = acc.owner.toLowerCase().split(" ").map(u => u[0]).join("");
+        if (usernames == acc.username) acc.username + count++;
+    });
+};
+createUsernames(accounts);
+console.log(accounts);
