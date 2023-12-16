@@ -368,3 +368,18 @@ console.log(b);
 var bal = 0;
 for (var x of movement) bal += x;
 console.log(bal);
+
+
+// Find maximum:
+var max = movement.reduce((accu, mov) => {
+    if (accu > mov) {
+        return accu;
+    } else {
+        return mov;
+    }
+}, movement[0]);
+console.log(max);
+
+
+
+
