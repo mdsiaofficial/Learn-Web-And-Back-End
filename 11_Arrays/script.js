@@ -187,35 +187,36 @@ let acc06 = {
 var accounts = [acc01, acc02, acc03, acc04, acc05, acc06];
 
 
-// elements //
-var label_Welcome = document.querySelector(".welcome");
-var label_Date = document.querySelector(".date");
-var label_Balance = document.querySelector(".balance_value");
-var label_Sum_In = document.querySelector(".summary_value_in");
-var label_Sum_Out = document.querySelector(".summary_value_out");
-var label_Sum_Interest = document.querySelector(".summary_value_interest");
-var label_Timer = document.querySelector(".timer");
+// Elements
+const labelWelcome = document.querySelector('.welcome');
+const labelDate = document.querySelector('.date');
+const labelBalance = document.querySelector('.balance__value');
+const labelSumIn = document.querySelector('.summary__value--in');
+const labelSumOut = document.querySelector('.summary__value--out');
+const labelSumInterest = document.querySelector('.summary__value--interest');
+const labelTimer = document.querySelector('.timer');
 
-var containerApp = document.querySelector(".app");
-var containerMove = document.querySelector(".movements");
-var btn_log_in = document.querySelector(".login_btn");
-var btn_Transfer = document.querySelector(".form_btm_tranfer");
-var btn_Loan = document.querySelector(".form_btn_loan");
-var btn_Close = document.querySelector(".form_btn_close");
-var btn_Sort = document.querySelector(".form_btn_sort");
+const containerApp = document.querySelector('.app');
+const containerMovements = document.querySelector('.movements');
 
-var input_login_username = document.querySelector(".login_input_user");
-var input_login_pin = document.querySelector(".login_input_pin");
-var input_Transfer_to = document.querySelector(".form_input_to");
-var input_Transfer_Amount = document.querySelector(".form_input_amount");
-var input_Loan_Amount = document.querySelector(".form_input_loan_amount");
-var input_Close_Username = document.querySelector(".form_input_user");
-var input_Close_pin = document.querySelector(".form_input_pin");
+const btnLogin = document.querySelector('.login__btn');
+const btnTransfer = document.querySelector('.form__btn--transfer');
+const btnLoan = document.querySelector('.form__btn--loan');
+const btnClose = document.querySelector('.form__btn--close');
+const btnSort = document.querySelector('.btn--sort');
+
+const inputLoginUsername = document.querySelector('.login__input--user');
+const inputLoginPin = document.querySelector('.login__input--pin');
+const inputTransferTo = document.querySelector('.form__input--to');
+const inputTransferAmount = document.querySelector('.form__input--amount');
+const inputLoanAmount = document.querySelector('.form__input--loan-amount');
+const inputCloseUsername = document.querySelector('.form__input--user');
+const inputClosePin = document.querySelector('.form__input--pin');
 
 // tk symble in html : &#2547 in javascript : \u09F3
 
 var displayMove = function (move) {
-    containerMove.innerHTML = "";
+    containerMovements.innerHTML = "";
     // .textContent = 0
     move.forEach(function (x, i) {
         var type = x > 0 ? "deposit" : "withdrawal";
@@ -226,7 +227,7 @@ var displayMove = function (move) {
           <div class="movements__value">${x}\u09F3</div>
         </div>
         `;
-        containerMove.insertAdjacentHTML("afterbegin", html);
+        containerMovements.insertAdjacentHTML("afterbegin", html);
     });
 };
 
@@ -320,10 +321,12 @@ console.log(accounts);
 console.log(usernames);
 
 
-var calcPrintBalance = function (movement) {
+var calcDisplayBalance = function (movement) {
     var balance = movement.reduce((accu, cur) => (accu + cur), 0);
-    label_Balance.textContent = `${balance}`;
-}
+    labelBalance.textContent = `${balance}`;
+};
+
+calcDisplayBalance(acc01.mov);
 
 
 // Filter movement array
