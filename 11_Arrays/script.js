@@ -142,7 +142,10 @@ currenciesUnique.forEach(function (value) {
 var count = 0;
 
 // users
-var usernames = [];
+let usernames = new Set();
+// Insert a single value in the set
+// usernames.add('newUsername');
+
 let acc01 = {
     owner: "Chester Ashiq",
     mov: [94, 43, 12, -23, 35, 49, -25, -11],
@@ -296,16 +299,20 @@ var create_Username = function (user) {
     }).join("") + count++;
     return username;
 };
-*/
-
-    1
 console.log(create_Username(user));
+*/
 
 var createUsernames = function (accs) {
     accs.forEach(function (acc,i) {
         acc.username = acc.owner.toLowerCase().split(" ").map(u => u[0]).join("");
-        if (usernames == acc.username) acc.username + count++;
+        if (usernames.has(acc.username)) {
+            acc.username = acc.username + count++;
+            usernames.add(acc.username);
+        } else {
+            usernames.add(acc.username);
+        }
     });
 };
 createUsernames(accounts);
 console.log(accounts);
+console.log(usernames);
