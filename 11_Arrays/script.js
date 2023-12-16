@@ -254,7 +254,7 @@ var checkDogs = function (ageArrayJulia, ageArrayKate) {
     });
 };
 var JuliyaReport = [5, 3, 2, 6, 1, 4, 3, 6, 2];
-var KateReport = [2, 6, 3, 1, 4, 4, 1, 3, 5, 2, 4, 5, 7, 3, 2];
+var KateReport = [2, 6, 3, 1, 4, 4, 1, 3, 5];
 checkDogs(JuliyaReport, KateReport);
 // challenge end //
 
@@ -383,3 +383,30 @@ console.log(max);
 
 
 
+// Challenge 4 //
+calcAvrgHumanAge = function (ages) {
+    var HumanAges = [];
+    // converting dog ages into human ages with calculation
+    JuliyaReport.forEach(function (d_age, i) {
+        if (d_age <= 2) HumanAges[i] = d_age * 2;
+        else HumanAges[i] = 16 + d_age * 4;
+    });
+
+    console.log(HumanAges);
+    
+
+    // excluding all ages less than 18 years old
+    var ExcludedAge = HumanAges.filter(age => (age >= 18));
+    console.log(ExcludedAge);
+
+    // Average human age
+    var total = HumanAges.reduce((accu, curr) => (accu + curr));
+    var AvrgAge = Math.trunc(total / HumanAges.length);
+    console.log(AvrgAge);
+    
+};
+
+calcAvrgHumanAge(JuliyaReport);
+console.log("__________");
+
+calcAvrgHumanAge(KateReport);
