@@ -410,3 +410,7 @@ calcAvrgHumanAge(JuliyaReport);
 console.log("__________");
 
 calcAvrgHumanAge(KateReport);
+
+// end //
+
+
