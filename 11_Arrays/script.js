@@ -302,8 +302,10 @@ var create_Username = function (user) {
 console.log(create_Username(user));
 */
 
-var createUsernames = function (accs) {
-    accs.forEach(function (acc,i) {
+
+// Making unique username for bankist //
+var createUsernames = function (accounts) {
+    accounts.forEach(function (acc,i) {
         acc.username = acc.owner.toLowerCase().split(" ").map(u => u[0]).join("");
         if (usernames.has(acc.username)) {
             acc.username = acc.username + count++;
@@ -316,3 +318,50 @@ var createUsernames = function (accs) {
 createUsernames(accounts);
 console.log(accounts);
 console.log(usernames);
+
+
+var calcPrintBalance = function (movement) {
+    var balance = movement.reduce((accu, cur) => (accu + cur), 0);
+    label_Balance.textContent = `${balance}`;
+}
+
+
+// Filter movement array
+var depo = movement.filter(function (m) {
+    return m > 0;
+});
+console.log(movement);
+console.log(depo);
+
+var depo_2 = [];
+for (var m of movement) {
+    if (m > 0) depo_2.push(m);
+}
+console.log(movement);
+console.log(depo_2);
+
+var wdraw = movement.filter(function (m) {
+    return m < 0;
+});
+console.log(movement);
+console.log(wdraw);
+
+
+// Reduce with accumulator
+var b = movement.reduce(function (accu, cur, i, arr) {
+    console.log(`Iteration ${i}: ${accu}`);
+    
+    return accu + cur;
+}, 0);
+console.log(b);
+
+
+// code decreased
+var b = movement.reduce((accu, cur)=>(accu + cur), 0);
+
+console.log(b);
+
+// another way with for loop
+var bal = 0;
+for (var x of movement) bal += x;
+console.log(bal);
