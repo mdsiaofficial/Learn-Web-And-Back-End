@@ -497,6 +497,6 @@ var displayAccount = function (acc) {
     calcDisplaySummary(acc.mov);
 };
 
-var account_input = prompt("Tell me your name: ");
+// var account_input = prompt("Tell me your name: ");
 // displayAccount(acc11);
-displayAccount(account_input);
+displayAccount(acc11);
