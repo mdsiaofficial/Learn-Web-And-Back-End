@@ -147,6 +147,7 @@ let usernames = new Set();
 // usernames.add('newUsername');
 
 // Accounts Obj // ✅✅✅✅✅✅✅✅✅✅✅✅
+
 let acc01 = {
     owner: "Chester Ashiq",
     mov: [94, 43, 12, -23, 35, 49, -25, -11],
@@ -208,7 +209,7 @@ let acc10 = {
     pin: 7777,
 };
 let acc11 = {
-    owner: "Sazzad Shimul",
+    owner: "Sazzadul Shimul",
     mov: [51, -53, 22, 86, 91, 44, -23, -6, 32],
     interestRate: 1.2, // 1.2%
     pin: 7777,
@@ -497,6 +498,4 @@ var displayAccount = function (acc) {
     calcDisplaySummary(acc.mov);
 };
 
-// var account_input = prompt("Tell me your name: ");
-// displayAccount(acc11);
 displayAccount(acc11);
