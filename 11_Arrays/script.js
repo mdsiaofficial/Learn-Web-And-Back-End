@@ -149,66 +149,77 @@ let usernames = new Set();
 // Accounts Obj // ✅✅✅✅✅✅✅✅✅✅✅✅
 
 let acc01 = {
+    acc: "acc01",
     owner: "Chester Ashiq",
     mov: [94, 43, 12, -23, 35, 49, -25, -11],
     interestRate: 1.2, // 1.2%
     pin: 1111,
 };
 let acc02 = {
+    acc: "acc02",
     owner: "Asif Rony",
     mov: [20, -15, 12, -23, 42, -25, -25, -11],
     interestRate: 1.2, // 1.2%
     pin: 2222,
 };
 let acc03 = {
+    acc: "acc03",
     owner: "Taher Saikat",
     mov: [30, 43, 48, -23, 42, 49, -25, -11],
     interestRate: 1.2, // 1.2%
     pin: 3333,
 };
 let acc04 = {
+    acc: "acc04",
     owner: "Anika Jannat",
     mov: [5, 43, 12, -23, 42, -17, -25, -11],
     interestRate: 1.2, // 1.2%
     pin: 4444,
 };
 let acc05 = {
+    acc: "acc05",
     owner: "Ammu",
     mov: [45, 43, -12, -23, 65, 49, -25, -11],
     interestRate: 1.2, // 1.2%
     pin: 5555,
 };
 let acc06 = {
+    acc: "acc06",
     owner: "Abbu",
     mov: [55, 43, 12, -23, 42, 88, -25, -11],
     interestRate: 1.2, // 1.2%
     pin: 6666,
 };
 let acc07 = {
+    acc: "acc07",
     owner: "Shama Fariha",
     mov: [67, 25, 59, -90, 74, 55, -15, -19],
     interestRate: 1.2, // 1.2%
     pin: 7777,
 };
 let acc08 = {
+    acc: "acc08",
     owner: "Tapos Biswas",
     mov: [-45, 40, -90, 74, 55, -15, -19],
     interestRate: 1.2, // 1.2%
     pin: 7777,
 };
 let acc09 = {
+    acc: "acc09",
     owner: "Arafat Ovi",
     mov: [67, 25, 59, -60, 30, 65, -13, 70, 23],
     interestRate: 1.2, // 1.2%
     pin: 7777,
 };
 let acc10 = {
+    acc: "acc10",
     owner: "Fahad Chor",
     mov: [36, 28, 4, 40, 2, 32, 28, 40, 4],
     interestRate: 1.2, // 1.2%
     pin: 7777,
 };
 let acc11 = {
+    acc: "acc11",
     owner: "Sazzadul Shimul",
     mov: [51, -53, 22, 86, 91, 44, -23, -6, 32],
     interestRate: 1.2, // 1.2%
@@ -494,10 +505,11 @@ var calcAvrgHumanAge = function (ages) {
     var HumanAges = ages
         .map((d_age) => (d_age <= 2 ? d_age * 2 : 16 + d_age * 4))
         .filter(age => (age >= 18))
-        .reduce((accu, curr) => (accu + curr), 0);
+        // .reduce((accu, curr) => (accu + curr), 0);
+        .reduce((accu, curr, i, arr) => (accu + curr/arr.length), 0);
     
-    var avrg = (HumanAges / len).toFixed(2);
-    console.log(avrg);
+    // var avrg = (HumanAges / len).toFixed(2);
+    console.log(HumanAges);
     
     // var HumanAges = [];
     // converting dog ages into human ages with calculation
@@ -509,11 +521,14 @@ var bb = [5, 2, 4, 1, 15, 8, 3];
 
 calcAvrgHumanAge(JuliyaReport);
 console.log("__________");
-
 calcAvrgHumanAge(KateReport);
 calcAvrgHumanAge(bb);
 // end //
 
+
+// using find method
+
+// var acc = accounts.find(acc => acc.owner == "Chester Ashiq");
 
 // Display all things // ✅✅✅✅✅✅✅✅✅✅✅✅
 
@@ -524,4 +539,6 @@ var displayAccount = function (acc) {
     calcDisplaySummary(acc.mov);
 };
 
-displayAccount(acc11);
+var inp = prompt("account: ");
+var acc = accounts.find(acc => acc.acc == inp);
+displayAccount(acc);
