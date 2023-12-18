@@ -202,28 +202,28 @@ let acc08 = {
     owner: "Tapos Biswas",
     mov: [-45, 40, -30, 74, 95, -15, -19],
     interestRate: 1.2, // 1.2%
-    pin: 7777,
+    pin: 8888,
 };
 let acc09 = {
     acc: "acc09",
     owner: "Arafat Ovi",
     mov: [67, 25, 59, -60, 30, 65, -13, 70, 23],
     interestRate: 1.2, // 1.2%
-    pin: 7777,
+    pin: 9999,
 };
 let acc10 = {
     acc: "acc10",
     owner: "Fahad Chor",
-    mov: [36, 28, 4, 40, 2, 32, 28, 40, 4],
+    mov: [36, -28, 43, -40, 27, 32, -28, 40, 49],
     interestRate: 1.2, // 1.2%
-    pin: 7777,
+    pin: 0000,
 };
 let acc11 = {
     acc: "acc11",
     owner: "Sazzadul Shimul",
     mov: [51, -53, 22, 86, 91, 44, -23, -6, 32],
     interestRate: 1.2, // 1.2%
-    pin: 7777,
+    pin: 1111,
 };
 
 
@@ -527,18 +527,40 @@ calcAvrgHumanAge(bb);
 
 
 // using find method
+var ghh = accounts.find(acc => acc.owner == "Chester Ashiq");
+console.log(ghh.mov);
 
-// var acc = accounts.find(acc => acc.owner == "Chester Ashiq");
 
 // Display all things // ✅✅✅✅✅✅✅✅✅✅✅✅
-
 var displayAccount = function (acc) {
+    //labelWelcome.textContent = `Welcome back, ${acc.owner.split(" ")[0]}`;
+    
     labelName.textContent = `${acc.owner}`;
     displayMove(acc.mov);
     calcDisplayBalance(acc.mov);
     calcDisplaySummary(acc.mov);
 };
 
-var inp = prompt("account: ");
-var acc = accounts.find(acc => acc.acc == inp);
-displayAccount(acc);
+// taking input from promt //
+// var inp = prompt("account: ");
+// var acc = accounts.find(acc => acc.acc == inp);
+// displayAccount(acc01);
+
+
+
+
+// verify the log in credential
+// Event handler : button
+var current_account;
+btnLogin.addEventListener("click", function (ev) {
+    // prevent form from submitting
+    ev.preventDefault();
+    current_account = accounts.find(acc => acc.username === inputLoginUsername.value);
+    if (current_account?.pin === Number(inputLoginPin.value)) {
+        
+        displayAccount(current_account);
+        console.log(current_account.mov);
+    }
+    
+});
+
