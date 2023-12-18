@@ -442,10 +442,10 @@ console.log(max);
 
 
 // Challenge 2 // 🆘🆘🆘🆘🆘🆘🆘🆘
-calcAvrgHumanAge = function (ages) {
+var calcAvrgHumanAge = function (ages) {
     var HumanAges = [];
     // converting dog ages into human ages with calculation
-    JuliyaReport.forEach(function (d_age, i) {
+    ages.forEach(function (d_age, i) {
         if (d_age <= 2) HumanAges[i] = d_age * 2;
         else HumanAges[i] = 16 + d_age * 4;
     });
@@ -487,6 +487,32 @@ console.log(totalDepoUSD);
 // Chaining method end //
 
 
+// Challenge 3 // 🆘🆘🆘🆘🆘🆘🆘🆘
+var calcAvrgHumanAge = function (ages) {
+    // applying chaining method
+    var len = ages.length;
+    var HumanAges = ages
+        .map((d_age) => (d_age <= 2 ? d_age * 2 : 16 + d_age * 4))
+        .filter(age => (age >= 18))
+        .reduce((accu, curr) => (accu + curr), 0);
+    
+    var avrg = (HumanAges / len).toFixed(2);
+    console.log(avrg);
+    
+    // var HumanAges = [];
+    // converting dog ages into human ages with calculation
+    // excluding all ages less than 18 years old
+    // Average human age
+};
+
+var bb = [5, 2, 4, 1, 15, 8, 3];
+
+calcAvrgHumanAge(JuliyaReport);
+console.log("__________");
+
+calcAvrgHumanAge(KateReport);
+calcAvrgHumanAge(bb);
+// end //
 
 
 // Display all things // ✅✅✅✅✅✅✅✅✅✅✅✅
