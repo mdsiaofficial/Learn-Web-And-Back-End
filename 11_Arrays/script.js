@@ -200,7 +200,7 @@ let acc07 = {
 let acc08 = {
     acc: "acc08",
     owner: "Tapos Biswas",
-    mov: [-45, 40, -90, 74, 55, -15, -19],
+    mov: [-45, 40, -30, 74, 95, -15, -19],
     interestRate: 1.2, // 1.2%
     pin: 7777,
 };
