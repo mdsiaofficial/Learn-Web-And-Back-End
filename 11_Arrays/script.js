@@ -159,70 +159,70 @@ let acc02 = {
     acc: "acc02",
     owner: "Asif Rony",
     mov: [20, -15, 12, 23, 42, 25, -25, -11],
-    interestRate: 1.2, // 1.2%
+    interestRate: 1.8, // 1.2%
     pin: 2222,
 };
 let acc03 = {
     acc: "acc03",
     owner: "Taher Saikat",
     mov: [30, 43, 48, -23, 42, 49, -25, -11],
-    interestRate: 1.2, // 1.2%
+    interestRate: 2.2, // 1.2%
     pin: 3333,
 };
 let acc04 = {
     acc: "acc04",
     owner: "Anika Jannat",
     mov: [5, 43, 12, -23, 42, -17, -25, -11],
-    interestRate: 1.2, // 1.2%
+    interestRate: 1.4, // 1.2%
     pin: 4444,
 };
 let acc05 = {
     acc: "acc05",
     owner: "Ammu",
     mov: [45, 43, -12, -23, 65, 49, -25, -11],
-    interestRate: 1.2, // 1.2%
+    interestRate: 1.9, // 1.2%
     pin: 5555,
 };
 let acc06 = {
     acc: "acc06",
     owner: "Abbu",
     mov: [55, 43, 12, -23, 42, 88, -25, -11],
-    interestRate: 1.2, // 1.2%
+    interestRate: 1.5, // 1.2%
     pin: 6666,
 };
 let acc07 = {
     acc: "acc07",
     owner: "Shama Fariha",
     mov: [67, 25, 59, -90, 74, 55, -15, -19],
-    interestRate: 1.2, // 1.2%
+    interestRate: 2.8, // 1.2%
     pin: 7777,
 };
 let acc08 = {
     acc: "acc08",
     owner: "Tapos Biswas",
     mov: [-45, 40, -30, 74, 95, -15, -19],
-    interestRate: 1.2, // 1.2%
+    interestRate: 3.5, // 1.2%
     pin: 8888,
 };
 let acc09 = {
     acc: "acc09",
     owner: "Arafat Ovi",
     mov: [67, 25, 59, -60, 30, 65, -13, 70, 23],
-    interestRate: 1.2, // 1.2%
+    interestRate: 1.7, // 1.2%
     pin: 9999,
 };
 let acc10 = {
     acc: "acc10",
     owner: "Fahad Chor",
     mov: [36, -28, 43, -40, 27, 32, -28, 40, 49],
-    interestRate: 1.2, // 1.2%
+    interestRate: 4.2, // 1.2%
     pin: 0000,
 };
 let acc11 = {
     acc: "acc11",
     owner: "Sazzadul Shimul",
     mov: [51, -53, 22, 86, 91, 44, -23, -6, 32],
-    interestRate: 1.2, // 1.2%
+    interestRate: 4.5, // 1.2%
     pin: 1111,
 };
 
@@ -526,7 +526,7 @@ calcAvrgHumanAge(bb);
 // end //
 
 
-// using find method
+// using find method // 🆘🆘🆘🆘🆘🆘🆘🆘
 var ghh = accounts.find(acc => acc.owner == "Chester Ashiq");
 console.log(ghh.mov);
 
@@ -534,9 +534,20 @@ console.log(ghh.mov);
 // Display all things // ✅✅✅✅✅✅✅✅✅✅✅✅
 var displayAccount = function (acc) {
     // labelName.textContent = `${acc.owner}`;
+    // display UI and welcome msg...
+    labelWelcome.innerHTML = `Welcome back, <span class="account_holder_name">${acc.owner}</span>`;
+    // labelWelcome.textContent = `Welcome back, ${current_account.owner.split(" ")[0]}`;
+    containerApp.style.opacity = 100;
     displayMove(acc.mov);
     calcDisplayBalance(acc.mov);
     calcDisplaySummary(acc.mov);
+    
+    // CLEAR INPUT FIELDS
+    inputLoginPin.value = inputLoginUsername.value = "";
+    inputLoginPin.blur();
+    inputLoginUsername.blur();
+
+
 };
 
 // taking input from promt //
@@ -546,7 +557,7 @@ var displayAccount = function (acc) {
 
 
 
-
+// Displaying things after Login // ✅✅✅✅✅✅✅✅✅✅✅✅
 // verify the log in credential
 // Event handler : button
 var current_account;
@@ -555,12 +566,7 @@ btnLogin.addEventListener("click", function (ev) {
     ev.preventDefault();
     current_account = accounts.find(acc => acc.username === inputLoginUsername.value);
     if (current_account?.pin === Number(inputLoginPin.value)) {
-        
-        // display UI and welcome msg...
-        labelWelcome.innerHTML = `Welcome back, <span class="account_holder_name">${current_account.owner}</span>`;
-
-        // labelWelcome.textContent = `Welcome back, ${current_account.owner.split(" ")[0]}`;
-        containerApp.style.opacity = 100;
+        // previously created this funtion for displaying all things
         displayAccount(current_account);
         console.log(current_account.mov);
     }
