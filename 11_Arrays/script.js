@@ -158,7 +158,7 @@ let acc01 = {
 let acc02 = {
     acc: "acc02",
     owner: "Asif Rony",
-    mov: [20, -15, 12, -23, 42, -25, -25, -11],
+    mov: [20, -15, 12, 23, 42, 25, -25, -11],
     interestRate: 1.2, // 1.2%
     pin: 2222,
 };
@@ -533,9 +533,7 @@ console.log(ghh.mov);
 
 // Display all things // ✅✅✅✅✅✅✅✅✅✅✅✅
 var displayAccount = function (acc) {
-    //labelWelcome.textContent = `Welcome back, ${acc.owner.split(" ")[0]}`;
-    
-    labelName.textContent = `${acc.owner}`;
+    // labelName.textContent = `${acc.owner}`;
     displayMove(acc.mov);
     calcDisplayBalance(acc.mov);
     calcDisplaySummary(acc.mov);
@@ -558,6 +556,11 @@ btnLogin.addEventListener("click", function (ev) {
     current_account = accounts.find(acc => acc.username === inputLoginUsername.value);
     if (current_account?.pin === Number(inputLoginPin.value)) {
         
+        // display UI and welcome msg...
+        labelWelcome.innerHTML = `Welcome back, <span class="account_holder_name">${current_account.owner}</span>`;
+
+        // labelWelcome.textContent = `Welcome back, ${current_account.owner.split(" ")[0]}`;
+        containerApp.style.opacity = 100;
         displayAccount(current_account);
         console.log(current_account.mov);
     }
