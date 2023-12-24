@@ -158,14 +158,14 @@ let acc01 = {
 let acc02 = {
     acc: "acc02",
     owner: "Asif Rony",
-    mov: [20, -15, 12, 23, 42, 25, -25, -11],
+    mov: [20, -15, 12, 23,  25, -25, -11, 42],
     interestRate: 1.8, // 1.2%
     pin: 2222,
 };
 let acc03 = {
     acc: "acc03",
     owner: "Taher Saikat",
-    mov: [30, 43, 48, -23, 42, 49, -25, -11],
+    mov: [30, 43, 48, -25, -11, -23, 42, 49],
     interestRate: 2.2, // 1.2%
     pin: 3333,
 };
@@ -179,14 +179,14 @@ let acc04 = {
 let acc05 = {
     acc: "acc05",
     owner: "Ammu",
-    mov: [45, 43, -12, -23, 65, 49, -25, -11],
+    mov: [45, 43, -12, -23, 49, -25, -11, 65],
     interestRate: 1.9, // 1.2%
     pin: 5555,
 };
 let acc06 = {
     acc: "acc06",
     owner: "Abbu",
-    mov: [55, 43, 12, -23, 42, 88, -25, -11],
+    mov: [55, 43, -23, 42, 88, -25, -11, 12],
     interestRate: 1.5, // 1.2%
     pin: 6666,
 };
@@ -200,7 +200,7 @@ let acc07 = {
 let acc08 = {
     acc: "acc08",
     owner: "Tapos Biswas",
-    mov: [-45, 40, -30, 74, 95, -15, -19],
+    mov: [-45, 40, -30, 74, -15, -19, 95],
     interestRate: 3.5, // 1.2%
     pin: 8888,
 };
@@ -622,5 +622,8 @@ btnTransfer.addEventListener("click", function (e) {
         receiverAcc.mov.push(ammount);
         displayAccount(current_account);
         // updateUI(current_account);
+        inputTransferAmount.value = inputTransferTo.value = "";
+        inputTransferAmount.blur();
+        inputTransferTo.blur(); 
     }
 });
