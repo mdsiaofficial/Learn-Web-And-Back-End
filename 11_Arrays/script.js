@@ -138,149 +138,6 @@ currenciesUnique.forEach(function (value) {
 
 
 
-// username counter 
-var count = 0;
-
-// users
-let usernames = new Set();
-// Insert a single value in the set
-// usernames.add('newUsername');
-
-// Accounts Obj // ✅✅✅✅✅✅✅✅✅✅✅✅
-
-let acc01 = {
-    acc: "acc01",
-    owner: "Chester Ashiq",
-    mov: [94, 43, 12, -23, 35, 49, -25, -11],
-    interestRate: 1.2, // 1.2%
-    pin: 1111,
-};
-let acc02 = {
-    acc: "acc02",
-    owner: "Asif Rony",
-    mov: [20, -15, 12, 23,  25, -25, -11, 42],
-    interestRate: 1.8, // 1.2%
-    pin: 2222,
-};
-let acc03 = {
-    acc: "acc03",
-    owner: "Taher Saikat",
-    mov: [30, 43, 48, -25, -11, -23, 42, 49],
-    interestRate: 2.2, // 1.2%
-    pin: 3333,
-};
-let acc04 = {
-    acc: "acc04",
-    owner: "Anika Jannat",
-    mov: [5, 43, 12, -23, 42, -17, -25, -11],
-    interestRate: 1.4, // 1.2%
-    pin: 4444,
-};
-let acc05 = {
-    acc: "acc05",
-    owner: "Ammu",
-    mov: [45, 43, -12, -23, 49, -25, -11, 65],
-    interestRate: 1.9, // 1.2%
-    pin: 5555,
-};
-let acc06 = {
-    acc: "acc06",
-    owner: "Abbu",
-    mov: [55, 43, -23, 42, 88, -25, -11, 12],
-    interestRate: 1.5, // 1.2%
-    pin: 6666,
-};
-let acc07 = {
-    acc: "acc07",
-    owner: "Shama Fariha",
-    mov: [67, 25, 59, -90, 74, 55, -15, -19],
-    interestRate: 2.8, // 1.2%
-    pin: 7777,
-};
-let acc08 = {
-    acc: "acc08",
-    owner: "Tapos Biswas",
-    mov: [-45, 40, -30, 74, -15, -19, 95],
-    interestRate: 3.5, // 1.2%
-    pin: 8888,
-};
-let acc09 = {
-    acc: "acc09",
-    owner: "Arafat Ovi",
-    mov: [67, 25, 59, -60, 30, 65, -13, 70, 23],
-    interestRate: 1.7, // 1.2%
-    pin: 9999,
-};
-let acc10 = {
-    acc: "acc10",
-    owner: "Fahad Chor",
-    mov: [36, -28, 43, -40, 27, 32, -28, 40, 49],
-    interestRate: 4.2, // 1.2%
-    pin: 1010,
-};
-let acc11 = {
-    acc: "acc11",
-    owner: "Sazzadul Shimul",
-    mov: [51, -53, 22, 86, 91, 44, -23, -6, 32],
-    interestRate: 4.5, // 1.2%
-    pin: 1111,
-};
-
-
-// accounts // ✅✅✅✅✅✅✅✅✅✅✅✅
-var accounts = [acc01, acc02, acc03, acc04, acc05, acc06, acc07, acc08, acc09, acc10, acc11];
-
-// Elements ✅✅✅✅✅✅✅✅✅✅✅✅
-
-const labelName = document.querySelector(".account_holder_name");
-const labelWelcome = document.querySelector('.welcome');
-const labelDate = document.querySelector('.date');
-const labelBalance = document.querySelector('.balance__value');
-const labelSumIn = document.querySelector('.summary__value--in');
-const labelSumOut = document.querySelector('.summary__value--out');
-const labelSumInterest = document.querySelector('.summary__value--interest');
-const labelTimer = document.querySelector('.timer');
-
-const containerApp = document.querySelector('.app');
-const containerMovements = document.querySelector('.movements');
-
-const btnLogin = document.querySelector('.login__btn');
-const btnTransfer = document.querySelector('.form__btn--transfer');
-const btnLoan = document.querySelector('.form__btn--loan');
-const btnClose = document.querySelector('.form__btn--close');
-const btnSort = document.querySelector('.btn--sort');
-
-const inputLoginUsername = document.querySelector('.login__input--user');
-const inputLoginPin = document.querySelector('.login__input--pin');
-const inputTransferTo = document.querySelector('.form__input--to');
-const inputTransferAmount = document.querySelector('.form__input--amount');
-const inputLoanAmount = document.querySelector('.form__input--loan-amount');
-const inputCloseUsername = document.querySelector('.form__input--user');
-const inputClosePin = document.querySelector('.form__input--pin');
-
-// tk symble in html : &#2547 in javascript : \u09F3
-
-
-// Display Every Movement of Wallet  // ✅✅✅✅✅✅✅✅✅✅✅✅
-var displayMove = function (move) {
-    containerMovements.innerHTML = "";
-    // .textContent = 0
-    move.forEach(function (x, i) {
-        var type = x > 0 ? "deposit" : "withdrawal";
-        var html = `
-        <div class="movements">
-        <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-          <div class="movements__value">${x} \u09F3</div>
-        </div>
-        `;
-        containerMovements.insertAdjacentHTML("afterbegin", html);
-    });
-};
-// console.log(containerMove.innerHTML);
-
-
-
 // challenge array 1 // 🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘🆘
 var checkDogs = function (ageArrayJulia, ageArrayKate) {
     var copyJulia = ageArrayJulia.slice(1, -2);
@@ -337,68 +194,9 @@ console.log(mov_des);
 
 
 
-// Making username for bankist //
-/*
-var user = "Chester Ashiq";
-var create_Username = function (user) {
-    var username = user.toLowerCase().split(" ").map(function (str) {
-        return str[0];
-    }).join("") + count++;
-    return username;
-};
-console.log(create_Username(user));
-*/
 
 
-// Making unique username for bankist // ✅✅✅✅✅✅✅✅✅✅✅✅
-var createUsernames = function (accounts) {
-    accounts.forEach(function (acc, i) {
-        acc.username = acc.owner.toLowerCase().split(" ").map(u => u[0]).join("");
-        if (usernames.has(acc.username)) {
-            acc.username = acc.username + count++;
-            usernames.add(acc.username);
-        } else {
-            usernames.add(acc.username);
-        }
-    });
-};
-createUsernames(accounts);
-console.log(accounts);
-console.log(usernames);
 
-
-// Display The Balance // ✅✅✅✅✅✅✅✅✅✅✅✅
-var calcDisplayBalance = function (acc) {
-    var balance = acc.mov.reduce((accu, cur) => (accu + cur), 0).toFixed(2);
-    acc.balance = balance;
-    labelBalance.textContent = `${acc.balance} \u09F3`;
-};
-
-// Display The Summary // ✅✅✅✅✅✅✅✅✅✅✅✅
-var calcDisplaySummary = function (acc) {
-    // Incoming Summary
-    var incomes =(acc.mov)
-        .filter(mov => mov > 0)
-        .reduce((accu, mov) => (accu + mov), 0)
-        .toFixed(2);
-    labelSumIn.textContent = `${incomes} \u09F3`;
-
-    // Outgoing Summary
-    var out = (acc.mov)
-        .filter(mov => mov < 0)
-        .reduce((accu, mov) => (accu + mov), 0);
-    out = Math.abs(out).toFixed(2);
-    labelSumOut.textContent = `${out} \u09F3`;
-
-    // Interest Summary
-    var interest = (acc.mov)
-        .filter(mov => mov > 0)
-        .map(depo => depo * acc.interestRate / 100)
-        .filter((int, i, arr) => int >= 1) // this outs the value behind 1
-        .reduce((accu, intrst) => (accu + intrst), 0)
-        .toFixed(2);
-    labelSumInterest.textContent = `${interest} \u09F3`;
-};
 
 
 
@@ -528,8 +326,214 @@ calcAvrgHumanAge(bb);
 
 
 // using find method // 🆘🆘🆘🆘🆘🆘🆘🆘
-var ghh = accounts.find(acc => acc.owner == "Chester Ashiq");
-console.log(ghh.mov);
+// var ghh = accounts.find(acc => acc.owner == "Chester Ashiq");
+// console.log(ghh.mov);
+
+
+// ⏬⏬ Project ⏬⏬ //
+
+// username counter 
+var count = 0;
+
+// users
+let usernames = new Set();
+// Insert a single value in the set
+// usernames.add('newUsername');
+
+// Accounts Obj // ✅✅✅✅✅✅✅✅✅✅✅✅
+
+let acc01 = {
+    acc: "acc01",
+    owner: "Chester Ashiq",
+    mov: [94, 43, 12, -23, 35, 49, -25, -11],
+    interestRate: 1.2, // 1.2%
+    pin: 1111,
+};
+let acc02 = {
+    acc: "acc02",
+    owner: "Asif Rony",
+    mov: [20, -15, 12, 23,  25, -25, -11, 42],
+    interestRate: 1.8, // 1.2%
+    pin: 2222,
+};
+let acc03 = {
+    acc: "acc03",
+    owner: "Taher Saikat",
+    mov: [30, 43, 48, -25, -11, -23, 42, 49],
+    interestRate: 2.2, // 1.2%
+    pin: 3333,
+};
+let acc04 = {
+    acc: "acc04",
+    owner: "Anika Jannat",
+    mov: [5, 43, 12, -23, 42, -17, -25, -11],
+    interestRate: 1.4, // 1.2%
+    pin: 4444,
+};
+let acc05 = {
+    acc: "acc05",
+    owner: "Ammu",
+    mov: [45, 43, -12, -23, 49, -25, -11, 65],
+    interestRate: 1.9, // 1.2%
+    pin: 5555,
+};
+let acc06 = {
+    acc: "acc06",
+    owner: "Abbu",
+    mov: [55, 43, -23, 42, 88, -25, -11, 12],
+    interestRate: 1.5, // 1.2%
+    pin: 6666,
+};
+let acc07 = {
+    acc: "acc07",
+    owner: "Shama Fariha",
+    mov: [67, 25, 59, -90, 74, 55, -15, -19],
+    interestRate: 2.8, // 1.2%
+    pin: 7777,
+};
+let acc08 = {
+    acc: "acc08",
+    owner: "Tapos Biswas",
+    mov: [-45, 40, -30, 74, -15, -19, 95],
+    interestRate: 3.5, // 1.2%
+    pin: 8888,
+};
+let acc09 = {
+    acc: "acc09",
+    owner: "Arafat Ovi",
+    mov: [67, 25, 59, -60, 30, 65, -13, 70, 23],
+    interestRate: 1.7, // 1.2%
+    pin: 9999,
+};
+let acc10 = {
+    acc: "acc10",
+    owner: "Fahad Chor",
+    mov: [36, -28, 43, -40, 27, 32, -28, 40, 49],
+    interestRate: 4.2, // 1.2%
+    pin: 1010,
+};
+let acc11 = {
+    acc: "acc11",
+    owner: "Sazzadul Shimul",
+    mov: [51, -53, 22, 86, 91, 44, -23, -6, 32],
+    interestRate: 4.5, // 1.2%
+    pin: 1111,
+};
+
+
+// accounts // ✅✅✅✅✅✅✅✅✅✅✅✅
+var accounts = [acc01, acc02, acc03, acc04, acc05, acc06, acc07, acc08, acc09, acc10, acc11];
+
+// Elements ✅✅✅✅✅✅✅✅✅✅✅✅
+
+const labelName = document.querySelector(".account_holder_name");
+const labelWelcome = document.querySelector('.welcome');
+const labelDate = document.querySelector('.date');
+const labelBalance = document.querySelector('.balance__value');
+const labelSumIn = document.querySelector('.summary__value--in');
+const labelSumOut = document.querySelector('.summary__value--out');
+const labelSumInterest = document.querySelector('.summary__value--interest');
+const labelTimer = document.querySelector('.timer');
+
+const containerApp = document.querySelector('.app');
+const containerMovements = document.querySelector('.movements');
+
+const btnLogin = document.querySelector('.login__btn');
+const btnTransfer = document.querySelector('.form__btn--transfer');
+const btnLoan = document.querySelector('.form__btn--loan');
+const btnClose = document.querySelector('.form__btn--close');
+const btnSort = document.querySelector('.btn--sort');
+
+const inputLoginUsername = document.querySelector('.login__input--user');
+const inputLoginPin = document.querySelector('.login__input--pin');
+const inputTransferTo = document.querySelector('.form__input--to');
+const inputTransferAmount = document.querySelector('.form__input--amount');
+const inputLoanAmount = document.querySelector('.form__input--loan-amount');
+const inputCloseUsername = document.querySelector('.form__input--user');
+const inputClosePin = document.querySelector('.form__input--pin');
+
+// tk symble in html : &#2547 in javascript : \u09F3
+
+// Display Every Movement of Wallet  // ✅✅✅✅✅✅✅✅✅✅✅✅
+var displayMove = function (move) {
+    containerMovements.innerHTML = "";
+    // .textContent = 0
+    move.forEach(function (x, i) {
+        var type = x > 0 ? "deposit" : "withdrawal";
+        var html = `
+        <div class="movements">
+        <div class="movements__row">
+          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+          <div class="movements__value">${x} \u09F3</div>
+        </div>
+        `;
+        containerMovements.insertAdjacentHTML("afterbegin", html);
+    });
+};
+// console.log(containerMove.innerHTML);
+
+// Making username for bankist //
+/*
+var user = "Chester Ashiq";
+var create_Username = function (user) {
+    var username = user.toLowerCase().split(" ").map(function (str) {
+        return str[0];
+    }).join("") + count++;
+    return username;
+};
+console.log(create_Username(user));
+*/
+
+
+// Making unique username for bankist // ✅✅✅✅✅✅✅✅✅✅✅✅
+var createUsernames = function (accounts) {
+    accounts.forEach(function (acc, i) {
+        acc.username = acc.owner.toLowerCase().split(" ").map(u => u[0]).join("");
+        if (usernames.has(acc.username)) {
+            acc.username = acc.username + count++;
+            usernames.add(acc.username);
+        } else {
+            usernames.add(acc.username);
+        }
+    });
+};
+createUsernames(accounts);
+console.log(accounts);
+console.log(usernames);
+
+// Display The Balance // ✅✅✅✅✅✅✅✅✅✅✅✅
+var calcDisplayBalance = function (acc) {
+    var balance = acc.mov.reduce((accu, cur) => (accu + cur), 0).toFixed(2);
+    acc.balance = balance;
+    labelBalance.textContent = `${acc.balance} \u09F3`;
+};
+
+// Display The Summary // ✅✅✅✅✅✅✅✅✅✅✅✅
+var calcDisplaySummary = function (acc) {
+    // Incoming Summary
+    var incomes =(acc.mov)
+        .filter(mov => mov > 0)
+        .reduce((accu, mov) => (accu + mov), 0)
+        .toFixed(2);
+    labelSumIn.textContent = `${incomes} \u09F3`;
+
+    // Outgoing Summary
+    var out = (acc.mov)
+        .filter(mov => mov < 0)
+        .reduce((accu, mov) => (accu + mov), 0);
+    out = Math.abs(out).toFixed(2);
+    labelSumOut.textContent = `${out} \u09F3`;
+
+    // Interest Summary
+    var interest = (acc.mov)
+        .filter(mov => mov > 0)
+        .map(depo => depo * acc.interestRate / 100)
+        .filter((int, i, arr) => int >= 1) // this outs the value behind 1
+        .reduce((accu, intrst) => (accu + intrst), 0)
+        .toFixed(2);
+    labelSumInterest.textContent = `${interest} \u09F3`;
+};
+
 
 
 // Clear Input Fields after login / logout / failed login ✅✅✅✅✅✅✅✅✅✅✅✅
@@ -627,3 +631,6 @@ btnTransfer.addEventListener("click", function (e) {
         inputTransferTo.blur(); 
     }
 });
+
+
+// ✅✅✅ Project End ✅✅✅ //
