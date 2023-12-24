@@ -216,7 +216,7 @@ let acc10 = {
     owner: "Fahad Chor",
     mov: [36, -28, 43, -40, 27, 32, -28, 40, 49],
     interestRate: 4.2, // 1.2%
-    pin: 0000,
+    pin: 1010,
 };
 let acc11 = {
     acc: "acc11",
@@ -368,31 +368,32 @@ console.log(usernames);
 
 
 // Display The Balance // ✅✅✅✅✅✅✅✅✅✅✅✅
-var calcDisplayBalance = function (movement) {
-    var balance = movement.reduce((accu, cur) => (accu + cur), 0).toFixed(2);
-    labelBalance.textContent = `${balance} \u09F3`;
+var calcDisplayBalance = function (acc) {
+    var balance = acc.mov.reduce((accu, cur) => (accu + cur), 0).toFixed(2);
+    acc.balance = balance;
+    labelBalance.textContent = `${acc.balance} \u09F3`;
 };
 
 // Display The Summary // ✅✅✅✅✅✅✅✅✅✅✅✅
-var calcDisplaySummary = function (mov) {
+var calcDisplaySummary = function (acc) {
     // Incoming Summary
-    var incomes = mov
+    var incomes =(acc.mov)
         .filter(mov => mov > 0)
         .reduce((accu, mov) => (accu + mov), 0)
         .toFixed(2);
     labelSumIn.textContent = `${incomes} \u09F3`;
 
     // Outgoing Summary
-    var out = mov
+    var out = (acc.mov)
         .filter(mov => mov < 0)
         .reduce((accu, mov) => (accu + mov), 0);
     out = Math.abs(out).toFixed(2);
     labelSumOut.textContent = `${out} \u09F3`;
 
     // Interest Summary
-    var interest = mov
+    var interest = (acc.mov)
         .filter(mov => mov > 0)
-        .map(depo => depo * 1.2 / 100)
+        .map(depo => depo * acc.interestRate / 100)
         .filter((int, i, arr) => int >= 1) // this outs the value behind 1
         .reduce((accu, intrst) => (accu + intrst), 0)
         .toFixed(2);
@@ -531,6 +532,14 @@ var ghh = accounts.find(acc => acc.owner == "Chester Ashiq");
 console.log(ghh.mov);
 
 
+// Clear Input Fields after login / logout / failed login ✅✅✅✅✅✅✅✅✅✅✅✅
+var clearFields = function () {
+    inputLoginPin.value = inputLoginUsername.value = "";
+    inputLoginPin.blur();
+    inputLoginUsername.blur();
+};
+
+
 // Display all things // ✅✅✅✅✅✅✅✅✅✅✅✅
 var displayAccount = function (acc) {
     // labelName.textContent = `${acc.owner}`;
@@ -539,22 +548,24 @@ var displayAccount = function (acc) {
     // labelWelcome.textContent = `Welcome back, ${current_account.owner.split(" ")[0]}`;
     containerApp.style.opacity = 100;
     displayMove(acc.mov);
-    calcDisplayBalance(acc.mov);
-    calcDisplaySummary(acc.mov);
+    calcDisplayBalance(acc);
+    calcDisplaySummary(acc);
     
     // CLEAR INPUT FIELDS
-    inputLoginPin.value = inputLoginUsername.value = "";
-    inputLoginPin.blur();
-    inputLoginUsername.blur();
+    clearFields();
 
 
 };
 
+var updateUI = function (acc) {
+    displayMove(acc.mov);
+    calcDisplayBalance(acc);
+    calcDisplaySummary(acc);
+}
 // taking input from promt //
 // var inp = prompt("account: ");
 // var acc = accounts.find(acc => acc.acc == inp);
 // displayAccount(acc01);
-
 
 
 // Displaying things after Login // ✅✅✅✅✅✅✅✅✅✅✅✅
@@ -569,7 +580,47 @@ btnLogin.addEventListener("click", function (ev) {
         // previously created this funtion for displaying all things
         displayAccount(current_account);
         console.log(current_account.mov);
+    } else {
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+    
+        // Show the modal
+        modal.style.display = "block";
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // clearing fields
+        inputLoginPin.value = "";
+        inputLoginPin.blur();
+        
     }
     
 });
 
+
+btnTransfer.addEventListener("click", function (e) {
+    e.preventDefault();
+    var ammount = Number(inputTransferAmount.value);
+    var receiverAcc = accounts.find(acc => acc.username === (inputTransferTo.value));
+
+    console.log(ammount, receiverAcc);
+    
+    // check that amount be in the account or not //
+    if (ammount > 0 && receiverAcc && current_account.balance>=ammount && receiverAcc?.username!==current_account.username) {
+        // console.log("Transer valid.");
+        current_account.mov.push(-ammount);
+        receiverAcc.mov.push(ammount);
+        displayAccount(current_account);
+        // updateUI(current_account);
+    }
+});
