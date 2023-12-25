@@ -329,8 +329,44 @@ calcAvrgHumanAge(bb);
 // var ghh = accounts.find(acc => acc.owner == "Chester Ashiq");
 // console.log(ghh.mov);
 
+// some array methods : includes() 🆘🆘🆘🆘🆘
+console.log(movement);
+console.log(movement.includes(-13));
 
-// ⏬⏬ Project ⏬⏬ //
+
+// Some() method
+var x = movement.some(mov => mov > 70);
+console.log(x);
+
+// Every() method
+var y = movement.every(mov => mov >= 20);
+console.log(y);
+
+
+// Separe callback🆘🆘🆘
+var de = mov => mov > 0;
+console.log(movement.some(de));
+console.log(movement.every(de));
+console.log(movement.filter(de));
+
+// flat method flatMap()    🆘🆘🆘🆘🆘
+
+var newArr = [[1, 2, 3], [3, 4, 5], [5, 6, 7]];
+console.log(newArr.flat());
+var newArr = [[[1, 2], 3], [3, [4, 5]], [5, 6, 7]];
+console.log(newArr);
+console.log(newArr.flat(1));
+
+var x = movement.map(m => m);
+console.log(x);
+
+var overall = movement.map(m => m).flat().reduce((acc, m) => acc + m, 0);
+console.log(overall);
+
+
+
+
+// ✅✅✅ Project ✅✅✅ //
 
 // username counter 
 var count = 0;
@@ -340,7 +376,7 @@ let usernames = new Set();
 // Insert a single value in the set
 // usernames.add('newUsername');
 
-// Accounts Obj // ✅✅✅✅✅✅✅✅✅✅✅✅
+// Accounts Obj // ✅✅✅✅✅
 
 let acc01 = {
     acc: "acc01",
@@ -421,10 +457,10 @@ let acc11 = {
 };
 
 
-// accounts // ✅✅✅✅✅✅✅✅✅✅✅✅
+// accounts // ✅✅✅✅✅✅
 var accounts = [acc01, acc02, acc03, acc04, acc05, acc06, acc07, acc08, acc09, acc10, acc11];
 
-// Elements ✅✅✅✅✅✅✅✅✅✅✅✅
+// Elements ✅✅✅✅✅
 
 const labelName = document.querySelector(".account_holder_name");
 const labelWelcome = document.querySelector('.welcome');
@@ -454,7 +490,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 // tk symble in html : &#2547 in javascript : \u09F3
 
-// Display Every Movement of Wallet  // ✅✅✅✅✅✅✅✅✅✅✅✅
+// Display Every Movement of Wallet  // ✅✅✅✅✅
 var displayMove = function (move) {
     containerMovements.innerHTML = "";
     // .textContent = 0
@@ -485,7 +521,7 @@ console.log(create_Username(user));
 */
 
 
-// Making unique username for bankist // ✅✅✅✅✅✅✅✅✅✅✅✅
+// Making unique username for bankist // ✅✅✅✅✅✅
 var createUsernames = function (accounts) {
     accounts.forEach(function (acc, i) {
         acc.username = acc.owner.toLowerCase().split(" ").map(u => u[0]).join("");
@@ -498,8 +534,8 @@ var createUsernames = function (accounts) {
     });
 };
 createUsernames(accounts);
-console.log(accounts);
-console.log(usernames);
+// console.log(accounts);
+// console.log(usernames);
 
 // Display The Balance // ✅✅✅✅✅✅✅✅✅✅✅✅
 var calcDisplayBalance = function (acc) {
@@ -536,7 +572,7 @@ var calcDisplaySummary = function (acc) {
 
 
 
-// Clear Input Fields after login / logout / failed login ✅✅✅✅✅✅✅✅✅✅✅✅
+// Clear Input Fields after login / logout / failed login ✅✅✅✅
 var clearFields = function () {
     inputLoginPin.value = inputLoginUsername.value = "";
     inputLoginPin.blur();
@@ -544,7 +580,7 @@ var clearFields = function () {
 };
 
 
-// Display all things // ✅✅✅✅✅✅✅✅✅✅✅✅
+// Display all things // ✅✅✅✅✅
 var displayAccount = function (acc) {
     // labelName.textContent = `${acc.owner}`;
     // display UI and welcome msg...
@@ -561,6 +597,7 @@ var displayAccount = function (acc) {
 
 };
 
+// Update the ui after some calculation // ✅✅✅✅✅
 var updateUI = function (acc) {
     displayMove(acc.mov);
     calcDisplayBalance(acc);
@@ -572,7 +609,7 @@ var updateUI = function (acc) {
 // displayAccount(acc01);
 
 
-// Displaying things after Login // ✅✅✅✅✅✅✅✅✅✅✅✅
+// Displaying things after Login // ✅✅✅✅
 // verify the log in credential
 // Event handler : button
 var current_account;
@@ -611,7 +648,7 @@ btnLogin.addEventListener("click", function (ev) {
     
 });
 
-
+// Transfer ammount to other profile // ✅✅✅✅
 btnTransfer.addEventListener("click", function (e) {
     e.preventDefault();
     var ammount = Number(inputTransferAmount.value);
@@ -631,6 +668,42 @@ btnTransfer.addEventListener("click", function (e) {
         inputTransferTo.blur(); 
     }
 });
+
+
+// Close account // ✅✅✅✅
+btnClose.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    if (inputCloseUsername.value === current_account.username && Number(inputClosePin.value) === current_account.pin) {
+        var index = accounts.findIndex(acc => acc.username === current_account.username);
+        accounts.splice(index, 1);
+        console.log(accounts);
+        // console.log(index);
+        
+        containerApp.style.opacity = 0;
+    }
+
+    inputCloseUsername.value = inputClosePin.value = "";
+    inputCloseUsername.blur();
+    inputClosePin.blur(); 
+
+});
+
+
+// Take loan ✅✅✅✅
+btnLoan.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    var amount = Number(inputLoanAmount.value);
+    // only when 10% of single deposit 
+    if (amount > 0 && current_account.mov.some(mo => mo >= amount * 0.1)) {
+        // add movements
+        current_account.mov.push(amount);
+
+        // update ui
+        updateUI(current_account);
+    }
+})
 
 
 // ✅✅✅ Project End ✅✅✅ //
