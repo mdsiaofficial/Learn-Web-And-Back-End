@@ -365,6 +365,39 @@ console.log(overall);
 
 
 
+// Sorting array // 🆘🆘🆘🆘🆘
+var ow = ["Shimul", "Taher", "Rony", "Janna", "Ashiq", "Amena", "Kabir"];
+console.log(ow);
+console.log(ow.sort());
+console.log(ow);
+console.log(ow.reverse());
+console.log(ow);
+
+console.log(ow.sort((a,b) => b-a));
+
+console.log(movement);
+
+// Ascending Sorting
+movement.sort((a, b) => {
+    if (a > b) return 1;
+    if (a < b) return -1;
+});
+console.log(movement);
+
+// Descending Sorting
+movement.sort((a, b) => {
+    if (a > b) return -1;
+    if (a < b) return 1;
+    
+});
+console.log(movement);
+
+// Descending Sorting
+movement.sort((a, b) => a - b);
+console.log(movement);
+
+
+
 
 // ✅✅✅ Project ✅✅✅ //
 
@@ -381,77 +414,77 @@ let usernames = new Set();
 let acc01 = {
     acc: "acc01",
     owner: "Chester Ashiq",
-    mov: [94, 43, 12, -23, 35, 49, -25, -11],
+    mov: [94, 43, 12, -23, 35, 49, -25, -11, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 1.2, // 1.2%
     pin: 1111,
 };
 let acc02 = {
     acc: "acc02",
     owner: "Asif Rony",
-    mov: [20, -15, 12, 23,  25, -25, -11, 42],
+    mov: [20, -15, 12, 23,  25, -25, -11, 42, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 1.8, // 1.2%
     pin: 2222,
 };
 let acc03 = {
     acc: "acc03",
     owner: "Taher Saikat",
-    mov: [30, 43, 48, -25, -11, -23, 42, 49],
+    mov: [30, 43, 48, -25, -11, -23, 42, 49, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 2.2, // 1.2%
     pin: 3333,
 };
 let acc04 = {
     acc: "acc04",
     owner: "Anika Jannat",
-    mov: [5, 43, 12, -23, 42, -17, -25, -11],
+    mov: [5, 43, 12, -23, 42, -17, -25, -11, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 1.4, // 1.2%
     pin: 4444,
 };
 let acc05 = {
     acc: "acc05",
     owner: "Ammu",
-    mov: [45, 43, -12, -23, 49, -25, -11, 65],
+    mov: [45, 43, -12, -23, 49, -25, -11, 65, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 1.9, // 1.2%
     pin: 5555,
 };
 let acc06 = {
     acc: "acc06",
     owner: "Abbu",
-    mov: [55, 43, -23, 42, 88, -25, -11, 12],
+    mov: [55, 43, -23, 42, 88, -25, -11, 12, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 1.5, // 1.2%
     pin: 6666,
 };
 let acc07 = {
     acc: "acc07",
     owner: "Shama Fariha",
-    mov: [67, 25, 59, -90, 74, 55, -15, -19],
+    mov: [67, 25, 59, -90, 74, 55, -15, -19, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 2.8, // 1.2%
     pin: 7777,
 };
 let acc08 = {
     acc: "acc08",
     owner: "Tapos Biswas",
-    mov: [-45, 40, -30, 74, -15, -19, 95],
+    mov: [-45, 40, -30, 74, -15, -19, 95, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 3.5, // 1.2%
     pin: 8888,
 };
 let acc09 = {
     acc: "acc09",
     owner: "Arafat Ovi",
-    mov: [67, 25, 59, -60, 30, 65, -13, 70, 23],
+    mov: [67, 25, 59, -60, 30, 65, -13, 70, 23, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 1.7, // 1.2%
     pin: 9999,
 };
 let acc10 = {
     acc: "acc10",
     owner: "Fahad Chor",
-    mov: [36, -28, 43, -40, 27, 32, -28, 40, 49],
+    mov: [36, -28, 43, -40, 27, 32, -28, 40, 49, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 4.2, // 1.2%
     pin: 1010,
 };
 let acc11 = {
     acc: "acc11",
     owner: "Sazzadul Shimul",
-    mov: [51, -53, 22, 86, 91, 44, -23, -6, 32],
+    mov: [51, -53, 22, 86, 91, 44, -23, -6, 32, 34, -45, 40, -60, 30, 65, -13, 70, 23],
     interestRate: 4.5, // 1.2%
     pin: 1111,
 };
@@ -491,10 +524,12 @@ const inputClosePin = document.querySelector('.form__input--pin');
 // tk symble in html : &#2547 in javascript : \u09F3
 
 // Display Every Movement of Wallet  // ✅✅✅✅✅
-var displayMove = function (move) {
+var displayMove = function (move, sort=false) {
     containerMovements.innerHTML = "";
     // .textContent = 0
-    move.forEach(function (x, i) {
+
+    var mov = sort ? move.slice().sort((a, b) => (a - b)) : move;
+    mov.forEach(function (x, i) {
         var type = x > 0 ? "deposit" : "withdrawal";
         var html = `
         <div class="movements">
@@ -687,6 +722,14 @@ btnClose.addEventListener("click", function (e) {
     inputCloseUsername.blur();
     inputClosePin.blur(); 
 
+});
+
+let sorted = false;
+// Sorting Movements of money // ✅✅✅✅✅✅✅
+btnSort.addEventListener("click", function (e) {
+    e.preventDefault();
+    displayMove(current_account.mov, !sorted);
+    sorted = !sorted;
 });
 
 
