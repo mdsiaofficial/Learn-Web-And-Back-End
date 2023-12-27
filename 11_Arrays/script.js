@@ -869,6 +869,40 @@ const dogs = [
   { weight: 32, curFood: 340, owners: ['Michael'] },
 ];
 
-var x=dogs.forEach(dog => dog.recFood = Math.trunc(dog.weight ** 0.75 * 28));
+// var x=dogs.forEach(dog => dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28));
 
-console.log();
+// 1.
+dogs.forEach(dog => dog.recFood = Math.trunc(dog.weight ** 0.75 * 28));
+console.log(dogs);
+
+// 2.
+var findName = "Sarah";
+var dogsFood = dogs.find(dog => dog.owners.includes(findName));
+console.log(dogsFood);
+console.log(`Sarah's dog is eating ${dogsFood.curFood>dogsFood.recFood?"Much":"Little"}`);
+
+
+
+// 3.
+
+var ownersEatTooLittle=dogs
+    .filter(dog => dog.curFood < dog.recFood)
+    .map(dog => dog.owners)
+    .flat();
+console.log(ownersEatTooLittle);
+
+var ownersEatTooMuch = dogs
+    .filter(dog => dog.curFood > dog.recFood)
+    .map(dog => dog.owners)
+    .flat();
+console.log(ownersEatTooMuch);
+
+// 4.
+console.log(`${ownersEatTooMuch.join(", ")}'s dogs eat too much`);
+console.log(`${ownersEatTooLittle.join(", ")}'s dogs eat too much`);
+
+
+// 5.
+console.log(dogs.some(dog=>dog.curFood===dog.recFood));
+
+
