@@ -397,8 +397,32 @@ movement.sort((a, b) => a - b);
 console.log(movement);
 
 
+// Array,  Empty Array, Fill method
+console.log([1,2,2,2,2,2,2,2,]);
+console.log(new Array(1,2,2,2,2,2,2,2));
+var x = new Array(7);
+console.log(x.map(()=>5));
+x.fill(1)
+console.log(x);
+var x = new Array((7, 3, 5),(32,3,3));
+console.log(x);
+x.fill(2);
+console.log(x);
+
+// Array.from
+var y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+var z = Array.from({ length: 7 }, ( _ , i) => i + 1);
+console.log(z);
 
 
+
+
+
+
+
+// ✅✅✅ Project ✅✅✅ //
+// ✅✅✅ Project ✅✅✅ //
 // ✅✅✅ Project ✅✅✅ //
 
 // username counter 
@@ -520,6 +544,10 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+const movementUI = Array.from(document.querySelector(".movements__value"));
+
+// console.log(movementUI);
+
 
 // tk symble in html : &#2547 in javascript : \u09F3
 
@@ -556,7 +584,7 @@ console.log(create_Username(user));
 */
 
 
-// Making unique username for bankist // ✅✅✅✅✅✅
+// Making unique username for bankist // ✅✅✅
 var createUsernames = function (accounts) {
     accounts.forEach(function (acc, i) {
         acc.username = acc.owner.toLowerCase().split(" ").map(u => u[0]).join("");
@@ -572,14 +600,14 @@ createUsernames(accounts);
 // console.log(accounts);
 // console.log(usernames);
 
-// Display The Balance // ✅✅✅✅✅✅✅✅✅✅✅✅
+// Display The Balance // ✅✅✅
 var calcDisplayBalance = function (acc) {
     var balance = acc.mov.reduce((accu, cur) => (accu + cur), 0).toFixed(2);
     acc.balance = balance;
     labelBalance.textContent = `${acc.balance} \u09F3`;
 };
 
-// Display The Summary // ✅✅✅✅✅✅✅✅✅✅✅✅
+// Display The Summary // ✅✅✅
 var calcDisplaySummary = function (acc) {
     // Incoming Summary
     var incomes =(acc.mov)
@@ -750,3 +778,97 @@ btnLoan.addEventListener("click", function (e) {
 
 
 // ✅✅✅ Project End ✅✅✅ //
+// ✅✅✅ Project End ✅✅✅ //
+// ✅✅✅ Project End ✅✅✅ //
+
+
+    
+
+
+
+
+// accounts.Map() is not a function in JavaScript, it will throw an error.
+// accounts.map() is a correct function in JavaScript, it creates a new array with the results of calling a provided function on every element in the calling array.
+
+var BankDepoSum = accounts
+    .flatMap(acc => acc.mov)
+    .filter(mov => mov > 0)
+    .reduce((sum, curr) => (sum + curr), 0);
+
+console.log(BankDepoSum);
+
+var number_Depo_50 = accounts.flatMap(acc => acc.mov).filter(mov => mov > 50).length;
+console.log(number_Depo_50);
+
+var numDepo50 = accounts.flatMap(acc => acc.mov).reduce((count, curr) => (curr >= 50 ? ++count : count), 0);
+console.log(numDepo50);
+
+// 3.
+var { depo, withdraw } = accounts
+    .flatMap(acc => acc.mov)
+    .reduce((accu, curr) => {
+        // curr > 0 ? (accu.depo += curr) : (accu.withdraw += curr);
+        accu[curr > 0 ? "depo" : "withdraw"] += curr;
+        return accu;
+    }, { depo: 0, withdraw: 0 });
+    
+console.log(depo, withdraw);
+
+// 4.
+var convertTitleCase = function (title) {
+    var capitalize = str => str[0].toUpperCase() + str.slice(1);
+    var excepetions = ["a", "an", "the", "but", "and", "or", "on", "in", "with"];
+    var titleCase = title
+        .toLowerCase()
+        .split(" ")
+        .map(word => excepetions.includes(word) ? word : word[0].toUpperCase() + word.slice(1))
+        .join(" ");
+    return capitalize(titleCase)
+};
+
+console.log(convertTitleCase("this is a nice title."));
+console.log(convertTitleCase("this is a Long TITLE."));
+
+// Challenge 4 // 🆘🆘🆘
+///////////////////////////////////////
+// Coding Challenge #4
+
+/* 
+Julia and Kate are still studying dogs, and this time they are studying if dogs are eating too much or too little.
+Eating too much means the dog's current food portion is larger than the recommended portion, and eating too little is the opposite.
+Eating an okay amount means the dog's current food portion is within a range 10% above and 10% below the recommended portion (see hint).
+
+1. Loop over the array containing dog objects, and for each dog, calculate the recommended food portion and add it to the object as a new property. Do NOT create a new array, simply loop over the array. Forumla: recommendedFood = weight ** 0.75 * 28. (The result is in grams of food, and the weight needs to be in kg)
+2. Find Sarah's dog and log to the console whether it's eating too much or too little. HINT: Some dogs have multiple owners, so you first need to find Sarah in the owners array, and so this one is a bit tricky (on purpose) 🤓
+3. Create an array containing all owners of dogs who eat too much ('ownersEatTooMuch') and an array with all owners of dogs who eat too little ('ownersEatTooLittle').
+4. Log a string to the console for each array created in 3., like this: "Matilda and Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat too little!"
+5. Log to the console whether there is any dog eating EXACTLY the amount of food that is recommended (just true or false)
+6. Log to the console whether there is any dog eating an OKAY amount of food (just true or false)
+7. Create an array containing the dogs that are eating an OKAY amount of food (try to reuse the condition used in 6.)
+8. Create a shallow copy of the dogs array and sort it by recommended food portion in an ascending order (keep in mind that the portions are inside the array's objects)
+
+HINT 1: Use many different tools to solve these challenges, you can use the summary lecture to choose between them 😉
+HINT 2: Being within a range 10% above and below the recommended portion means: current > (recommended * 0.90) && current < (recommended * 1.10). Basically, the current portion should be between 90% and 110% of the recommended portion.
+
+TEST DATA:
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] }
+];
+
+GOOD LUCK 😀
+*/
+
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+var x=dogs.forEach(dog => dog.recFood = Math.trunc(dog.weight ** 0.75 * 28));
+
+console.log();
