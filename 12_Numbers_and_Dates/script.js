@@ -371,6 +371,7 @@ var displayAccount = function (acc) {
     labelWelcome.innerHTML = `Welcome back, <span class="account_holder_name">${acc.owner}</span>`;
     // labelWelcome.textContent = `Welcome back, ${current_account.owner.split(" ")[0]}`;
     containerApp.style.opacity = 100;
+    document.querySelector(".account_holder_name").style.fontsize=40;
     displayMove(acc.mov);
     calcDisplayBalance(acc);
     calcDisplaySummary(acc);
@@ -499,6 +500,12 @@ btnLoan.addEventListener("click", function (e) {
 })
 
 
+labelBalance.addEventListener("click", function () {
+    [...document.querySelectorAll(".movements__row")].forEach(function (row, i) {
+        if (i % 2 === 0) row.style.backgroundColor = "lightgreen";
+        if (i % 2 !== 0) row.style.backgroundColor = "orange";
+    });
+})
 // ✅✅✅ Project End ✅✅✅ //
 // ✅✅✅ Project End ✅✅✅ //
 // ✅✅✅ Project End ✅✅✅ //
@@ -570,6 +577,72 @@ console. log (Math.floor(-23.3));
 
 console.log(134/3);
 console.log(134%3);
+
+
+//
+var isEven = n => n % 2 === 0;
+console.log(isEven(6));
+
+
+// Numeric separator
+var diameter = 287_460_000_00;
+// 287,560,000,000
+console.log(diameter);
+
+var pricePoisa = 254_44;
+console.log(pricePoisa);
+
+var tranferFee = 234_00;
+console.log(tranferFee);
+
+
+// bigInt
+console.log(2**53-1);
+console.log(2**53+1);
+console.log(2**53+7);
+console.log(90071992547410009007199254741000n);
+console.log(BigInt(90071992547410009007199254741000));
+console.log(10000n + 10000n);
+console.log(90071992547410009007199254741000n * 90071992547410009007199254741000n);
+
+var huge = 90071992547410009007199254741000n;
+var num = 34;
+console.log(huge * BigInt(num));
+console.log(BigInt(num));
+console.log(typeof huge);
+console.log(20n === 20);
+console.log(20n=="20");
+console.log(11n/3n);
+console.log(11/3);
+
+
+// Dates and times
+var now = new Date();
+console.log(now);
+console.log(new Date("aug 02, 2019"));
+console.log(new Date("dec 31, 2023"));
+
+console.log(new Date(2032, 9, 18, 13,43,23));
+
+// working with dates
+var future = new Date(2025, 9, 7, 15, 22, 34);
+
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getMonth());
+console.log(future.getTime());
+
+
+
+
+
+
+
+
 
 
 

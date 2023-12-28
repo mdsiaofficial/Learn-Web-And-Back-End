@@ -31,13 +31,15 @@
   }
   
   .welcome {
-    font-size: 1.9rem;
+    /* font-size: 1.9rem; */
+    font-size: 4rem;
     font-weight: 500;
   }
 
   /* my style  */
   .account_holder_name{
-    font-size: 1.9rem;
+    /* font-size: 1.9rem; */
+    font-size:20px;
     font-weight: 500;
     color: #ff9900;
     font-size: x-large;
