@@ -901,8 +901,19 @@ console.log(ownersEatTooMuch);
 console.log(`${ownersEatTooMuch.join(", ")}'s dogs eat too much`);
 console.log(`${ownersEatTooLittle.join(", ")}'s dogs eat too much`);
 
-
 // 5.
 console.log(dogs.some(dog=>dog.curFood===dog.recFood));
 
+// 6.
+var checkOkFoods = dog => (dog.curFood > dog.recFood * 0.90 && dog.curFood < dog.recFood * 1.10);
+console.log(dogs.some(checkOkFoods));
+
+// 7.
+console.log(dogs.filter(checkOkFoods));
+
+
+// 8. 
+// sort it by recFood portion in an ascending order 1,2,3
+var DogsCopySorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+console.log(DogsCopySorted);
 
