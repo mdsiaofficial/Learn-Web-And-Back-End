@@ -225,9 +225,21 @@ const inputClosePin = document.querySelector('.form__input--pin');
 const movementUI = Array.from(document.querySelector(".movements__value"));
 
 // console.log(movementUI);
-
-
 // tk symble in html : &#2547 in javascript : \u09F3
+
+var formatMovement = function (date) {
+
+    var daysPassed = (date1, date2) => Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+    
+    // giving timestamp to movements
+    var day = `${date.getDate()}`.padStart(2,0);
+    var month = `${date.getMonth() + 1}`.padStart(2,0); // Months are 0-based in JS
+    var year = date.getFullYear();
+    var hour = `${date.getHours()}`.padStart(2,0);
+    var min = `${date.getMinutes()}`.padStart(2,0);
+    var displayDate = `Time: ${hour}:${min}, Date: ${day}/${month}/${year}`;
+    return displayDate;
+}
 
 // Display Every Movement of Wallet  // ✅✅✅✅✅
 var displayMove = function (acc, sort=false) {
@@ -238,15 +250,8 @@ var displayMove = function (acc, sort=false) {
     move.forEach(function (x, i) {
         var type = x > 0 ? "deposit" : "withdrawal";
 
-        // giving timestamp to movements
         var date = new Date(acc.movDates[i]);
-        var day = `${date.getDate()}`.padStart(2,0);
-        var month = `${date.getMonth() + 1}`.padStart(2,0); // Months are 0-based in JS
-        var year = date.getFullYear();
-        var hour = `${date.getHours()}`.padStart(2,0);
-        var min = `${date.getMinutes()}`.padStart(2,0);
-        var displayDate = `Time: ${hour}:${min}, Date: ${day}/${month}/${year}`;        
-
+        var displayDate = formatMovement(date);
 
         var html = `
         <div class="movements">
@@ -655,6 +660,7 @@ console.log(future.getMonth());
 console.log(future.getTime());
 console.log(future.toISOString());
 console.log(future.setDate(20));
+console.log(future);
 
 
 
@@ -664,6 +670,13 @@ console.log(future.setDate(20));
 i want to show only "Log in to get started" and user and pin textarea, log in button when its not logged into any account. if logged in, then it will show all things. what should be the change in code.
 
  */
+
+
+console.log(+future);
+var daysPassed = (date1, date2) => Math.abs(date2 - date1)/(1000*60*60*24);
+
+var pass = daysPassed(new Date(2034, 3, 14), new Date(2036, 4, 24));
+console.log(pass);
 
 
 
