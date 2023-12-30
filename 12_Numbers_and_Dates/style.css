@@ -352,4 +352,9 @@
   .timer {
     font-weight: 600;
   }
+
+/* added  */
+  .hidden {
+    display: none;
+  }
   

@@ -16,14 +16,10 @@ let usernames = new Set();
 let acc01 = {
     acc: "acc01",
     owner: "Chester Ashiq",
-    mov: [94, 43, 12, -23, 35, 49, -25, -11, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [94, 43, 12, -23, 35,],
     interestRate: 1.2, // 1.2%
     pin: 1111,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -36,14 +32,10 @@ let acc01 = {
 let acc02 = {
     acc: "acc02",
     owner: "Asif Rony",
-    mov: [20, -15, 12, 23,  25, -25, -11, 42, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [20, -15, 12, 23,  25,],
     interestRate: 1.8, // 1.2%
     pin: 2222,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -56,14 +48,10 @@ let acc02 = {
 let acc03 = {
     acc: "acc03",
     owner: "Taher Saikat",
-    mov: [30, 43, 48, -25, -11, -23, 42, 49, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [30, 43, 48, -25, -11,],
     interestRate: 2.2, // 1.2%
     pin: 3333,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -76,14 +64,10 @@ let acc03 = {
 let acc04 = {
     acc: "acc04",
     owner: "Anika Jannat",
-    mov: [5, 43, 12, -23, 42, -17, -25, -11, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [5, 43, 12, -23, 42,],
     interestRate: 1.4, // 1.2%
     pin: 4444,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -96,14 +80,10 @@ let acc04 = {
 let acc05 = {
     acc: "acc05",
     owner: "Ammu",
-    mov: [45, 43, -12, -23, 49, -25, -11, 65, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [45, 43, -12, -23, 49,],
     interestRate: 1.9, // 1.2%
     pin: 5555,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -116,13 +96,10 @@ let acc05 = {
 let acc06 = {
     acc: "acc06",
     owner: "Abbu",
-    mov: [55, 43, -23, 42, 88, -25, -11, 12, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [55, 43, -23, 42, 88,],
     interestRate: 1.5, // 1.2%
     pin: 6666,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -136,14 +113,10 @@ let acc06 = {
 let acc07 = {
     acc: "acc07",
     owner: "Shama Fariha",
-    mov: [67, 25, 59, -90, 74, 55, -15, -19, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [67, 25, 59, -90, 74,],
     interestRate: 2.8, // 1.2%
     pin: 7777,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -156,14 +129,10 @@ let acc07 = {
 let acc08 = {
     acc: "acc08",
     owner: "Tapos Biswas",
-    mov: [-45, 40, -30, 74, -15, -19, 95, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [-45, 40, -30, 74, -15,],
     interestRate: 3.5, // 1.2%
     pin: 8888,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -176,14 +145,10 @@ let acc08 = {
 let acc09 = {
     acc: "acc09",
     owner: "Arafat Ovi",
-    mov: [67, 25, 59, -60, 30, 65, -13, 70, 23, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [67, 25, 59, -60, 30,],
     interestRate: 1.7, // 1.2%
     pin: 9999,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -196,14 +161,10 @@ let acc09 = {
 let acc10 = {
     acc: "acc10",
     owner: "Fahad Chor",
-    mov: [36, -28, 43, -40, 27, 32, -28, 40, 49, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [36, -28, 43, -40, 27,],
     interestRate: 4.2, // 1.2%
     pin: 1010,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -216,14 +177,10 @@ let acc10 = {
 let acc11 = {
     acc: "acc11",
     owner: "Sazzadul Shimul",
-    mov: [51, -53, 22, 86, 91, 44, -23, -6, 32, 34, -45, 40, -60, 30, 65, -13, 70, 23],
+    mov: [51, -53, 22, 86, 91,],
     interestRate: 4.5, // 1.2%
     pin: 1111,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
         "2023-11-18T21:31:17.178Z",
@@ -273,23 +230,36 @@ const movementUI = Array.from(document.querySelector(".movements__value"));
 // tk symble in html : &#2547 in javascript : \u09F3
 
 // Display Every Movement of Wallet  // ✅✅✅✅✅
-var displayMove = function (move, sort=false) {
+var displayMove = function (acc, sort=false) {
     containerMovements.innerHTML = "";
     // .textContent = 0
 
-    var mov = sort ? move.slice().sort((a, b) => (a - b)) : move;
-    mov.forEach(function (x, i) {
+    var move = sort ? acc.mov.slice().sort((a, b) => (a - b)) : acc.mov;
+    move.forEach(function (x, i) {
         var type = x > 0 ? "deposit" : "withdrawal";
+
+        // giving timestamp to movements
+        var date = new Date(acc.movDates[i]);
+        var day = `${date.getDate()}`.padStart(2,0);
+        var month = `${date.getMonth() + 1}`.padStart(2,0); // Months are 0-based in JS
+        var year = date.getFullYear();
+        var hour = `${date.getHours()}`.padStart(2,0);
+        var min = `${date.getMinutes()}`.padStart(2,0);
+        var displayDate = `Time: ${hour}:${min}, Date: ${day}/${month}/${year}`;        
+
+
         var html = `
         <div class="movements">
         <div class="movements__row">
           <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+          <div class="movements__date">${displayDate}</div>
           <div class="movements__value">${x} \u09F3</div>
         </div>
         `;
         containerMovements.insertAdjacentHTML("afterbegin", html);
     });
 };
+
 // console.log(containerMove.innerHTML);
 
 // Making username for bankist //
@@ -372,7 +342,7 @@ var displayAccount = function (acc) {
     // labelWelcome.textContent = `Welcome back, ${current_account.owner.split(" ")[0]}`;
     containerApp.style.opacity = 100;
     document.querySelector(".account_holder_name").style.fontsize=40;
-    displayMove(acc.mov);
+    displayMove(acc);
     calcDisplayBalance(acc);
     calcDisplaySummary(acc);
     
@@ -398,6 +368,22 @@ var updateUI = function (acc) {
 // verify the log in credential
 // Event handler : button
 var current_account;
+
+
+/* 
+// fake always loged in:::
+current_account = acc11;
+document.querySelector('.app').classList.remove('hidden');
+containerApp.style.opacity = 100;
+displayAccount(current_account);
+// fake always loged in:::
+ */
+
+
+
+
+
+
 btnLogin.addEventListener("click", function (ev) {
     // prevent form from submitting
     ev.preventDefault();
@@ -406,7 +392,27 @@ btnLogin.addEventListener("click", function (ev) {
         // previously created this funtion for displaying all things
         displayAccount(current_account);
         console.log(current_account.mov);
+
+        // Show all the sections that should be visible when logged in
+        document.querySelector('.app').classList.remove('hidden');
+        // Add any other selectors for elements that should be visible when logged in
+
+        // Current date //
+        // this part of code output the current timestamp in the up //
+        var now = new Date();
+        var day = `${now.getDate()}`.padStart(2,0);
+        var month = `${now.getMonth()}`.padStart(2,0);
+        var year = now.getFullYear();
+        var hour = `${now.getHours()}`.padStart(2,0);
+        var min = `${now.getMinutes()}`.padStart(2,0);
+        labelDate.textContent = `Time: ${hour}:${min}, Date: ${day}/${month}/${year}`;
+
+
     } else {
+        // Hide all the sections that should be hidden when not logged in
+        document.querySelector('.app').classList.add('hidden');
+        // Add any other selectors for elements that should be hidden when not logged in
+
         var modal = document.getElementById("myModal");
         var span = document.getElementsByClassName("close")[0];
     
@@ -446,6 +452,11 @@ btnTransfer.addEventListener("click", function (e) {
         // console.log("Transer valid.");
         current_account.mov.push(-ammount);
         receiverAcc.mov.push(ammount);
+
+        // add transfer date
+        current_account.movDates.push(new Date());
+        receiverAcc.movDates.push(new Date());
+
         displayAccount(current_account);
         // updateUI(current_account);
         inputTransferAmount.value = inputTransferTo.value = "";
@@ -494,8 +505,15 @@ btnLoan.addEventListener("click", function (e) {
         // add movements
         current_account.mov.push(amount);
 
-        // update ui
-        updateUI(current_account);
+        // add loan date 
+        current_account.movDates.push(new Date());
+
+
+        displayAccount(current_account);
+        // updateUI(current_account);
+        inputTransferAmount.value = inputTransferTo.value = "";
+        inputTransferAmount.blur();
+        inputTransferTo.blur(); 
     }
 })
 
@@ -635,13 +653,17 @@ console.log(future.getHours());
 console.log(future.getMinutes());
 console.log(future.getMonth());
 console.log(future.getTime());
+console.log(future.toISOString());
+console.log(future.setDate(20));
 
 
 
+/* 
 
+@12_Numbers_and_Dates in this code, it outputs in the browser: when not loged in into any account, it shows "Log in to get Started" and "user" , "pin" input textarea and also the table of movements of balance in the middle of the screen, and transfer block, loan block and also the close account block.
+i want to show only "Log in to get started" and user and pin textarea, log in button when its not logged into any account. if logged in, then it will show all things. what should be the change in code.
 
-
-
+ */
 
 
 
