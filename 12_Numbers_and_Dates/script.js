@@ -249,6 +249,10 @@ var formatMovement = function (date) {
     return displayDate;
 }
 
+
+// Experimenting APT
+var nowDate = new Date();
+labelDate.textContent = new Intl.DateTimeFormat()
 // Display Every Movement of Wallet  // ✅✅✅✅✅
 var displayMove = function (acc, sort=false) {
     containerMovements.innerHTML = "";
@@ -414,7 +418,7 @@ btnLogin.addEventListener("click", function (ev) {
         // this part of code output the current timestamp in the up //
         var now = new Date();
         var day = `${now.getDate()}`.padStart(2,0);
-        var month = `${now.getMonth()}`.padStart(2,0);
+        var month = `${now.getMonth()+1}`.padStart(2,0);
         var year = now.getFullYear();
         var hour = `${now.getHours()}`.padStart(2,0);
         var min = `${now.getMinutes()}`.padStart(2,0);
