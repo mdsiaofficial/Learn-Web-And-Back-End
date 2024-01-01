@@ -20,11 +20,11 @@ let acc01 = {
     interestRate: 1.2, // 1.2%
     pin: 1111,
     movDates: [
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
-        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.17Z",
+        "2023-11-18T21:31:17.17Z",
+        "2023-11-18T21:31:17.17Z",
+        "2023-12-29T21:18:17.17Z",
+        "2023-12-30T21:18:17.17Z",
     ],
     currency: "BDT",
     locale: "bn-BD",
@@ -229,7 +229,15 @@ const movementUI = Array.from(document.querySelector(".movements__value"));
 
 var formatMovement = function (date) {
 
-    var daysPassed = (date1, date2) => Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+    // calculate days passed since now
+    var CalcDaysPassed = (date1, date2) => Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+    
+    var daysPassed = CalcDaysPassed(new Date(), date);
+    console.log(daysPassed);
+
+    if (daysPassed === 0) return "Today";
+    if (daysPassed === 1) return "Yesterday";
+    if (daysPassed <= 7) return `${daysPassed} days ago`;
     
     // giving timestamp to movements
     var day = `${date.getDate()}`.padStart(2,0);
@@ -459,8 +467,8 @@ btnTransfer.addEventListener("click", function (e) {
         receiverAcc.mov.push(ammount);
 
         // add transfer date
-        current_account.movDates.push(new Date());
-        receiverAcc.movDates.push(new Date());
+        current_account.movDates.push(new Date().toISOString());
+        receiverAcc.movDates.push(new Date().toISOString());
 
         displayAccount(current_account);
         // updateUI(current_account);
@@ -511,7 +519,7 @@ btnLoan.addEventListener("click", function (e) {
         current_account.mov.push(amount);
 
         // add loan date 
-        current_account.movDates.push(new Date());
+        current_account.movDates.push(new Date().toISOString());
 
 
         displayAccount(current_account);
