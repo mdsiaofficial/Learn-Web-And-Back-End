@@ -190,10 +190,41 @@ let acc11 = {
     currency: "BDT",
     locale: "bn-BD",
 };
-
+let acc12 = {
+    acc: "acc12",
+    owner: "Jonas Schemdman",
+    mov: [51, -53, 22, 86, 91,],
+    interestRate: 4.5, // 1.2%
+    pin: 1212,
+    movDates: [
+        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.178Z",
+    ],
+    currency: "EUR",
+    locale: "en_DE",
+};
+let acc13 = {
+    acc: "acc13",
+    owner: "Chester Bennington",
+    mov: [51, -53, 22, 86, 91,],
+    interestRate: 4.5, // 1.2%
+    pin: 1313,
+    movDates: [
+        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.178Z",
+        "2023-11-18T21:31:17.178Z",
+    ],
+    currency: "USD",
+    locale: "en_USA",
+};
 
 // accounts // ✅✅✅✅✅✅
-var accounts = [acc01, acc02, acc03, acc04, acc05, acc06, acc07, acc08, acc09, acc10, acc11];
+var accounts = [acc01, acc02, acc03, acc04, acc05, acc06, acc07, acc08, acc09, acc10, acc11, acc12, acc13];
 
 // Elements ✅✅✅✅✅
 
@@ -224,6 +255,9 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 const movementUI = Array.from(document.querySelector(".movements__value"));
 
+
+
+
 // console.log(movementUI);
 // tk symble in html : &#2547 in javascript : \u09F3
 
@@ -239,20 +273,44 @@ var formatMovement = function (date) {
     if (daysPassed === 1) return "Yesterday";
     if (daysPassed <= 7) return `${daysPassed} days ago`;
     
-    // giving timestamp to movements
-    var day = `${date.getDate()}`.padStart(2,0);
-    var month = `${date.getMonth() + 1}`.padStart(2,0); // Months are 0-based in JS
-    var year = date.getFullYear();
-    var hour = `${date.getHours()}`.padStart(2,0);
-    var min = `${date.getMinutes()}`.padStart(2,0);
-    var displayDate = `Time: ${hour}:${min}, Date: ${day}/${month}/${year}`;
-    return displayDate;
+    // // giving timestamp to movements
+    // var day = `${date.getDate()}`.padStart(2,0);
+    // var month = `${date.getMonth() + 1}`.padStart(2,0); // Months are 0-based in JS
+    // var year = date.getFullYear();
+    // var hour = `${date.getHours()}`.padStart(2,0);
+    // var min = `${date.getMinutes()}`.padStart(2,0);
+    // var displayDate = `Time: ${hour}:${min}, Date: ${day}/${month}/${year}`;
+    
+    return Intl.DateTimeFormat(current_account.locale).format(date);
 }
 
 
 // Experimenting APT
+// getting locale from browser
+var lcl = navigator.language;
+console.log(lcl);
+
+// how you want to display
+var options = {
+    hour: "numeric",
+    minuite: "numeric",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    weekdays: "long",
+};
+
 var nowDate = new Date();
-labelDate.textContent = new Intl.DateTimeFormat()
+// labelDate.textContent = new Intl.DateTimeFormat(current_account.locale).format(nowDate);
+
+
+var formateCurrency = function (value, locale, currency) {
+    return new Intl.NumberFormat(locale, {
+        style: "currency",
+        currency: currency,
+    }).format(value);
+};
+
 // Display Every Movement of Wallet  // ✅✅✅✅✅
 var displayMove = function (acc, sort=false) {
     containerMovements.innerHTML = "";
@@ -265,12 +323,20 @@ var displayMove = function (acc, sort=false) {
         var date = new Date(acc.movDates[i]);
         var displayDate = formatMovement(date);
 
+        var formatedMov = new Intl.NumberFormat(acc.locale, {
+            style: "currency",
+            currency: "BDT",
+        }).format(x);
+
+        // var formatedMov = formateCurrency(move, acc.locale, acc.currency);
+
         var html = `
         <div class="movements">
         <div class="movements__row">
           <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
           <div class="movements__date">${displayDate}</div>
-          <div class="movements__value">${x} \u09F3</div>
+          <!--<div class="movements__value">${x} \u09F3</div>-->
+          <div class="movements__value">${formatedMov} </div>
         </div>
         `;
         containerMovements.insertAdjacentHTML("afterbegin", html);
@@ -290,6 +356,7 @@ var create_Username = function (user) {
 };
 console.log(create_Username(user));
 */
+
 
 
 // Making unique username for bankist // ✅✅✅
@@ -312,7 +379,8 @@ createUsernames(accounts);
 var calcDisplayBalance = function (acc) {
     var balance = acc.mov.reduce((accu, cur) => (accu + cur), 0).toFixed(2);
     acc.balance = balance;
-    labelBalance.textContent = `${acc.balance} \u09F3`;
+    // labelBalance.textContent = `${acc.balance} \u09F3`;
+    labelBalance.textContent = `${new Intl.NumberFormat(acc.locale).format(acc.balance)}`;
 };
 
 // Display The Summary // ✅✅✅
@@ -322,14 +390,17 @@ var calcDisplaySummary = function (acc) {
         .filter(mov => mov > 0)
         .reduce((accu, mov) => (accu + mov), 0)
         .toFixed(2);
-    labelSumIn.textContent = `${incomes} \u09F3`;
+    // labelSumIn.textContent = `${incomes} \u09F3`;
+    labelSumIn.textContent = formateCurrency(incomes, acc.locale, acc.currency);
+
 
     // Outgoing Summary
     var out = (acc.mov)
         .filter(mov => mov < 0)
         .reduce((accu, mov) => (accu + mov), 0);
     out = Math.abs(out).toFixed(2);
-    labelSumOut.textContent = `${out} \u09F3`;
+    // labelSumOut.textContent = `${out} \u09F3`;
+    labelSumOut.textContent = formateCurrency(out, acc.locale, acc.currency);
 
     // Interest Summary
     var interest = (acc.mov)
@@ -338,7 +409,8 @@ var calcDisplaySummary = function (acc) {
         .filter((int, i, arr) => int >= 1) // this outs the value behind 1
         .reduce((accu, intrst) => (accu + intrst), 0)
         .toFixed(2);
-    labelSumInterest.textContent = `${interest} \u09F3`;
+    // labelSumInterest.textContent = `${interest} \u09F3`;
+    labelSumInterest.textContent = formateCurrency(interest, acc.locale, acc.currency);
 };
 
 
@@ -381,10 +453,13 @@ var updateUI = function (acc) {
 // displayAccount(acc01);
 
 
+
+
+var current_account;
 // Displaying things after Login // ✅✅✅✅
 // verify the log in credential
 // Event handler : button
-var current_account;
+
 
 
 /* 
@@ -395,10 +470,6 @@ containerApp.style.opacity = 100;
 displayAccount(current_account);
 // fake always loged in:::
  */
-
-
-
-
 
 
 btnLogin.addEventListener("click", function (ev) {
@@ -422,7 +493,17 @@ btnLogin.addEventListener("click", function (ev) {
         var year = now.getFullYear();
         var hour = `${now.getHours()}`.padStart(2,0);
         var min = `${now.getMinutes()}`.padStart(2,0);
-        labelDate.textContent = `Time: ${hour}:${min}, Date: ${day}/${month}/${year}`;
+        // labelDate.textContent = `Time: ${hour}:${min}, Date: ${day}/${month}/${year}`;
+        labelDate.textContent = new Intl.DateTimeFormat(current_account.locale, {
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            weekdays: "long",
+        }).format(now);
+
 
 
     } else {
@@ -684,6 +765,7 @@ i want to show only "Log in to get started" and user and pin textarea, log in bu
  */
 
 
+// date formating
 console.log(+future);
 var daysPassed = (date1, date2) => Math.abs(date2 - date1)/(1000*60*60*24);
 
@@ -692,5 +774,21 @@ console.log(pass);
 
 
 
+// number formating
 
 
+var num = 456547657.34;
+console.log("US: ", new Intl.NumberFormat("en-US").format(num));
+console.log("BD: ", new Intl.NumberFormat("bn-BD").format(num));
+
+var options = {
+    style: "unit",
+    unit: "mile-per-hour",
+};
+
+console.log("BD: ", new Intl.NumberFormat("bn-BD", options).format(num));
+
+
+// time limit
+setTimeout(() => console.log("Here is your Cha..."), 3000);
+console.log("waiting");
