@@ -542,7 +542,6 @@ btnLogin.addEventListener("click", function (ev) {
         inputLoginPin.blur();
 
         if (timer) clearInterval(timer);
-
         timer = LogOutTimer();
 
 
@@ -599,10 +598,16 @@ btnTransfer.addEventListener("click", function (e) {
         receiverAcc.movDates.push(new Date().toISOString());
 
         displayAccount(current_account);
+        
+        
         // updateUI(current_account);
         inputTransferAmount.value = inputTransferTo.value = "";
         inputTransferAmount.blur();
         inputTransferTo.blur(); 
+
+        // reset timer
+        if (timer) clearInterval(timer);
+        timer = LogOutTimer();
     }
 });
 
@@ -644,17 +649,19 @@ btnLoan.addEventListener("click", function (e) {
     // only when 10% of single deposit 
     if (amount > 0 && current_account.mov.some(mo => mo >= amount * 0.1)) {
 
-        setTimeout(function () {
-            // add movements
-            current_account.mov.push(amount);
-            // add loan date 
-            current_account.movDates.push(new Date().toISOString());
-            displayAccount(current_account);
-            // updateUI(current_account);
-            inputTransferAmount.value = inputTransferTo.value = "";
-            inputTransferAmount.blur();
-            inputTransferTo.blur();
-        }, 2000);
+        current_account.mov.push(amount);
+        // add loan date 
+        current_account.movDates.push(new Date().toISOString());
+        displayAccount(current_account);
+        // updateUI(current_account);
+        inputTransferAmount.value = inputTransferTo.value = "";
+        inputTransferAmount.blur();
+        inputTransferTo.blur();
+        
+        // reset timer
+        if (timer) clearInterval(timer);
+        timer = LogOutTimer();
+        // add movements
         
     }
 });
