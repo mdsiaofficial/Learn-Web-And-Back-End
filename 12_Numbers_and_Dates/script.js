@@ -455,7 +455,7 @@ var updateUI = function (acc) {
 
 
 
-var current_account;
+var current_account, timer;
 // Displaying things after Login // ✅✅✅✅
 // verify the log in credential
 // Event handler : button
@@ -471,6 +471,38 @@ displayAccount(current_account);
 // fake always loged in:::
  */
 
+var LogOutTimer = function () {
+
+    var ticktick = function () {
+
+        var min = String(Math.trunc(remain / 60)).padStart(2, 0);
+        var sec = String(Math.trunc(remain % 60)).padStart(2, 0);
+        // in each call, print the remaining time to ui
+        // labelTimer.textContent = remain;
+        labelTimer.textContent = `${min}:${sec}`;
+
+        // decrease time
+        remain--;
+
+        // when remaining 0 sec, stop timer and log out...
+        if (remain === 0) {
+            clearInterval(timer);
+
+            // display UI and welcome msg...
+            labelWelcome.textContent = `You need to log in again`;
+            containerApp.style.opacity = 0;
+        }
+
+    };
+    
+    // set timer for 5 minutes
+    let remain = 120;
+    // call the timer every second
+    var timer = setInterval(ticktick, 1000);
+    return timer;
+};
+
+
 
 btnLogin.addEventListener("click", function (ev) {
     // prevent form from submitting
@@ -484,6 +516,7 @@ btnLogin.addEventListener("click", function (ev) {
         // Show all the sections that should be visible when logged in
         document.querySelector('.app').classList.remove('hidden');
         // Add any other selectors for elements that should be visible when logged in
+
 
         // Current date //
         // this part of code output the current timestamp in the up //
@@ -504,6 +537,13 @@ btnLogin.addEventListener("click", function (ev) {
             weekdays: "long",
         }).format(now);
 
+        // clearing fields
+        inputLoginPin.value = "";
+        inputLoginPin.blur();
+
+        if (timer) clearInterval(timer);
+
+        timer = LogOutTimer();
 
 
     } else {
@@ -536,6 +576,9 @@ btnLogin.addEventListener("click", function (ev) {
     }
     
 });
+
+
+
 
 // Transfer ammount to other profile // ✅✅✅✅
 btnTransfer.addEventListener("click", function (e) {
@@ -600,20 +643,21 @@ btnLoan.addEventListener("click", function (e) {
     var amount = Math.floor(inputLoanAmount.value);
     // only when 10% of single deposit 
     if (amount > 0 && current_account.mov.some(mo => mo >= amount * 0.1)) {
-        // add movements
-        current_account.mov.push(amount);
 
-        // add loan date 
-        current_account.movDates.push(new Date().toISOString());
-
-
-        displayAccount(current_account);
-        // updateUI(current_account);
-        inputTransferAmount.value = inputTransferTo.value = "";
-        inputTransferAmount.blur();
-        inputTransferTo.blur(); 
+        setTimeout(function () {
+            // add movements
+            current_account.mov.push(amount);
+            // add loan date 
+            current_account.movDates.push(new Date().toISOString());
+            displayAccount(current_account);
+            // updateUI(current_account);
+            inputTransferAmount.value = inputTransferTo.value = "";
+            inputTransferAmount.blur();
+            inputTransferTo.blur();
+        }, 2000);
+        
     }
-})
+});
 
 
 labelBalance.addEventListener("click", function () {
@@ -621,7 +665,9 @@ labelBalance.addEventListener("click", function () {
         if (i % 2 === 0) row.style.backgroundColor = "lightgreen";
         if (i % 2 !== 0) row.style.backgroundColor = "orange";
     });
-})
+});
+
+
 // ✅✅✅ Project End ✅✅✅ //
 // ✅✅✅ Project End ✅✅✅ //
 // ✅✅✅ Project End ✅✅✅ //
@@ -775,8 +821,6 @@ console.log(pass);
 
 
 // number formating
-
-
 var num = 456547657.34;
 console.log("US: ", new Intl.NumberFormat("en-US").format(num));
 console.log("BD: ", new Intl.NumberFormat("bn-BD").format(num));
@@ -789,6 +833,20 @@ var options = {
 console.log("BD: ", new Intl.NumberFormat("bn-BD", options).format(num));
 
 
-// time limit
-setTimeout(() => console.log("Here is your Cha..."), 3000);
+// time limit setTimeout
+ingreds = ["Sugar", "Chocolates", "Mosla"];
+// setTimeout((img1, img2, img3) => console.log(`Here is your Cha...${img1} and ${img2} and ${img3}`), 3000, ...ingreds);
 console.log("waiting");
+
+// var ChaTimeOut = setTimeout((img1, img2, img3) => console.log(`Here is your Cha...${img1} and ${img2} and ${img3}`), 3000, ...ingreds);
+
+// if (ingreds.includes("Sugar")) clearTimeout(ChaTimeOut);   
+
+
+
+// // setInterval
+// setInterval(function () {
+//     var now = new Date();
+//     console.log(now);
+    
+// }, 3000);
