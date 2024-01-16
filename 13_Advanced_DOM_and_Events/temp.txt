@@ -1,0 +1,3 @@
+It takes in relative path from the program to the text File. 
+If both file and program are in the same folder.
+Then simply give the file name of the text file.

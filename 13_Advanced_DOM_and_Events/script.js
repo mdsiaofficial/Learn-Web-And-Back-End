@@ -85,16 +85,21 @@ console.log(randomColor());
 document.querySelector(".nav__link").addEventListener("click", function (e) {
 	// console.log("links");
 	this.style.backgroundColor = randomColor();
+	console.log("link", e.target, e.currentTarget);
 	
 });
 document.querySelector(".nav__links").addEventListener("click", function (e) {
 	// console.log("links");
-	// this.style.backgroundColor = randomColor();
+	this.style.backgroundColor = randomColor();
+	console.log("link", e.target, e.currentTarget);
 	
+	// stop propagation
+	e.stopPropagation();
 });
 document.querySelector(".nav").addEventListener("click", function (e) {
 	// console.log("links");
 	this.style.backgroundColor = randomColor();
+	console.log("link", e.target, e.currentTarget);
 	
 });
 
@@ -145,7 +150,7 @@ header.prepend(message);
 
 document.querySelector(".btn--close-cookie").addEventListener("click", function () {
 	message.remove(); // new way
-	message.parentElement.removeChild(message); // old way
+	//message.parentElement.removeChild(message); // old way
 })
 
 
@@ -197,5 +202,23 @@ logo.classList.remove("c", "j");
 // logo.classList.toggle("c");
 logo.classList.contains("c");
 
+//
+// // not working 
+//
+// const fs = require("fs");
+// fs.readFile("./temp.txt", "utf8", (err, data) => {
+// 	if (err) throw err;
+
+// 	console.log(data);
+	
+// });
+//
 
 
+let taskList = fetch("temp.txt")
+	.then((data) => data.text())
+	.then((text) => {
+		console.log(text);
+		
+	})
+	.catch((e) => console.log(e));
