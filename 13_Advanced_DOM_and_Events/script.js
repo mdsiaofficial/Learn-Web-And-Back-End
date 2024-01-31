@@ -38,15 +38,18 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-// making scrolling smooth
+// button to directory
+
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
 
+///////////////////////
+// button scrolling
 btnScrollTo.addEventListener("click", function (e) {
 	const s1Cords = section1.getBoundingClientRect();
 	console.log(s1Cords);
 	console.log(e.target.getBoundingClientRect());
-	
+
 	console.log("Current scroll X/Y", window.pageXOffset, window.pageYOffset);
 	
 	console.log("height/width viewport", document.documentElement.clientHeight, document.documentElement.clientWidth);
@@ -56,6 +59,42 @@ btnScrollTo.addEventListener("click", function (e) {
 	// window.scrollTo(s1Cords.left + window.scrollX, s1Cords.top + window.scrollY); // new way
 	section1.scrollIntoView({ behavior: "smooth" }); // another modern way
 
+});
+
+
+//////////////////////
+// page navigatioin //
+/* 
+document.querySelectorAll(".nav__link").forEach(function (el) {
+	el.addEventListener("click", function (e) {
+		e.preventDefault();
+		console.log("Link Link");
+		const id = this.getAttribute("href");
+		console.log(id);
+		
+		document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+	});
+});
+//
+
+*/
+
+// 1. Add event listener to common parent element 
+// 2. Determine what elemetn the event 
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+	
+	e.preventDefault();
+	// console.log(e.target);
+	// matching srategy 
+	if (e.target.classList.contains("nav__link")) {
+		
+		console.log("Link Link");
+		const id = e.target.getAttribute("href");
+		console.log(id);
+		
+		document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+		
+	}
 });
 
 
@@ -75,6 +114,7 @@ setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
 
 
 // RGB (255,255,255)
+// random coloring the nav bar
 
 const randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -91,7 +131,7 @@ document.querySelector(".nav__link").addEventListener("click", function (e) {
 document.querySelector(".nav__links").addEventListener("click", function (e) {
 	// console.log("links");
 	this.style.backgroundColor = randomColor();
-	console.log("link", e.target, e.currentTarget);
+	console.log("navlinks", e.target, e.currentTarget);
 	
 	// stop propagation
 	e.stopPropagation();
@@ -99,11 +139,29 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 document.querySelector(".nav").addEventListener("click", function (e) {
 	// console.log("links");
 	this.style.backgroundColor = randomColor();
-	console.log("link", e.target, e.currentTarget);
+	console.log("Nav", e.target, e.currentTarget);
 	
-});
+}, true);
 
+// going downwards: child
+console.log(h1.querySelectorAll(".highlight"));
+console.log(h1.childNodes);
+console.log(h1.children);
 
+h1.firstElementChild.style.color = "white";
+h1.lastElementChild.style.color = "red";
+
+// Going upwards: parents
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+
+h1.closest(".header").style.background = "var(--gradient-secondary)";
+h1.closest("h1").style.background = "var(--gradient-primary)";
+
+// Going sideways : siblings
+
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
 
 
 
@@ -222,3 +280,17 @@ let taskList = fetch("temp.txt")
 		
 	})
 	.catch((e) => console.log(e));
+
+
+
+// let rand = Math.floor(Math.random()*10); // random number 1-9
+let rand = Math.floor(Math.random()*10)+1; // random number 1-10
+// let rand = (Math.random()*10); // random number 1-9 with floating point number
+// let rand = (Math.random()*10)+1; // Random number 1-10 with floating point number
+console.log(rand);
+
+
+
+
+
+
