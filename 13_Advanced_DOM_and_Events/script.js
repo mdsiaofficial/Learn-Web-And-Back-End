@@ -13,7 +13,10 @@ const openModal = function (e) {
 	modal.classList.remove('hidden');
 	overlay.classList.remove('hidden');
 };
+
 // lorem
+// code added from another place
+
 const closeModal = function () {
 	modal.classList.add('hidden');
 	overlay.classList.add('hidden');
