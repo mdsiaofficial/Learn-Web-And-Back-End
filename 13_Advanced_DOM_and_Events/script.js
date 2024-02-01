@@ -16,6 +16,7 @@ const openModal = function (e) {
 
 // lorem
 // code added from another place
+// pull korlam. abr new kore code leklam
 
 const closeModal = function () {
 	modal.classList.add('hidden');
