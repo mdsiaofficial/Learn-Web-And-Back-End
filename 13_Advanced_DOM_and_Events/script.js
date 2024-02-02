@@ -126,6 +126,13 @@ tabsContainer.addEventListener("click", function (e) {
 });
 
 
+
+// Slider:
+const slides = document.querySelectorAll(".slide");
+
+slides.forEach((s, i) => s.style.transform = `transletX(${100 % i})`);
+// 0%, 100%, 200%, 300%
+
 const alertH1 = function (e) {
 	alert("addEventListner: Great! You are reading the heading 😁");
 
