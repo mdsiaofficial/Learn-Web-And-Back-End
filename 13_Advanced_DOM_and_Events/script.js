@@ -102,6 +102,30 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 });
 
 
+// Tabbed component
+const tabs = document.querySelectorAll(".operations__tab"); // Changed to select all elements with class operations__tab
+const tabsContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content"); // Changed to select all elements with class operations__content
+
+tabsContainer.addEventListener("click", function (e) {
+	const clicked = e.target.closest('.operations__tab'); // Changed to use closest to find the closest parent with class operations__tab
+	console.log(clicked);
+	
+	// guard clause
+	if (!clicked) return;
+
+	// Remove active classes
+	tabs.forEach(tab => tab.classList.remove("operations__tab--active"));
+	tabsContent.forEach(content => content.classList.remove("operations__content--active"));
+
+	// Activate tab
+	clicked.classList.add("operations__tab--active");
+
+	// Activate content area
+	document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
+});
+
+
 const alertH1 = function (e) {
 	alert("addEventListner: Great! You are reading the heading 😁");
 
@@ -167,6 +191,13 @@ h1.closest("h1").style.background = "var(--gradient-primary)";
 console.log(h1.previousElementSibling);
 console.log(h1.nextElementSibling);
 
+console.log(h1.previousSibling);
+console.log(h1.nextSibling);
+
+console.log(h1.parentElement.children);
+[...h1.parentElement.children].forEach(function (e) {
+	if (e !== h1) e.style.transform = "scale(0.5)";
+});
 
 
 
