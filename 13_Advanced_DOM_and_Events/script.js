@@ -181,13 +181,15 @@ console.log(randomColor());
 
 document.querySelector(".nav__link").addEventListener("click", function (e) {
 	// console.log("links");
-	this.style.backgroundColor = randomColor();
+	// this.style.backgroundColor = randomColor();
+	this.style.backgroundColor = "#ff9a9f";
 	console.log("link", e.target, e.currentTarget);
 	
 });
 document.querySelector(".nav__links").addEventListener("click", function (e) {
 	// console.log("links");
-	this.style.backgroundColor = randomColor();
+	// this.style.backgroundColor = randomColor();
+	this.style.backgroundColor = "#ff9a9f";
 	console.log("navlinks", e.target, e.currentTarget);
 	
 	// stop propagation
@@ -195,7 +197,8 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 });
 document.querySelector(".nav").addEventListener("click", function (e) {
 	// console.log("links");
-	this.style.backgroundColor = randomColor();
+	// this.style.backgroundColor = randomColor();
+	this.style.backgroundColor = "#ff9a9f";
 	console.log("Nav", e.target, e.currentTarget);
 	
 }, true);
