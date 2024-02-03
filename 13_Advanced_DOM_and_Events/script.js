@@ -7,6 +7,7 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const nav = document.querySelector(".nav");
 
 const openModal = function (e) {
 	// e.preventDefault();
@@ -125,13 +126,34 @@ tabsContainer.addEventListener("click", function (e) {
 	document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
 });
 
+// Menu fade animation
+nav.addEventListener("mouseover", function (el) {
+	if (el.target.classList.contains("nav__link")) {
+		const link = el.target;
+		const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+		const logo = link.closest(".nav").querySelector("img");
+		siblings.forEach(nl => {
+			if (nl !== link) nl.style.opacity = 0.5;
+		});
+		logo.style.opacity = 1;
+	}
+})
 
+nav.addEventListener("mouseout", function (el) {
+})
+	
+	
 
 // Slider:
 const slides = document.querySelectorAll(".slide");
 
 slides.forEach((s, i) => s.style.transform = `transletX(${100 % i})`);
 // 0%, 100%, 200%, 300%
+
+
+
+
+
 
 const alertH1 = function (e) {
 	alert("addEventListner: Great! You are reading the heading 😁");
@@ -183,15 +205,15 @@ console.log(h1.querySelectorAll(".highlight"));
 console.log(h1.childNodes);
 console.log(h1.children);
 
-h1.firstElementChild.style.color = "white";
+h1.firstElementChild.style.color = "#be6c00";
 h1.lastElementChild.style.color = "red";
 
 // Going upwards: parents
 console.log(h1.parentNode);
 console.log(h1.parentElement);
 
-h1.closest(".header").style.background = "var(--gradient-secondary)";
-h1.closest("h1").style.background = "var(--gradient-primary)";
+// h1.closest(".header").style.background = "var(--gradient-secondary)";
+// h1.closest("h1").style.background = "var(--gradient-primary)";
 
 // Going sideways : siblings
 
@@ -206,7 +228,7 @@ console.log(h1.parentElement.children);
 	if (e !== h1) e.style.transform = "scale(0.5)";
 });
 
-
+/*
 
 ////////////////////////
 //// Learning 🆘🆘🆘🆘//////////
@@ -332,12 +354,15 @@ let rand = Math.floor(Math.random()*10)+1; // random number 1-10
 console.log(rand);
 
 
-/* 
 
 
 
-let a = 10, b = 10, c = 10;
-if (a == b == c) console.log("hello");
-else console.log("bye bye");
 
- */
+// let a = 10, b = 10, c = 10;
+// if (a == b == c) console.log("hello");
+// else console.log("bye bye");
+
+
+
+
+*/
