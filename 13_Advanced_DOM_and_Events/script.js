@@ -126,23 +126,36 @@ tabsContainer.addEventListener("click", function (e) {
 	document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
 });
 
+
+
 // Menu fade animation
-nav.addEventListener("mouseover", function (el) {
-	if (el.target.classList.contains("nav__link")) {
-		const link = el.target;
+const handleHover = function (e, opacity) {
+	if (e.target.classList.contains("nav__link")) {
+		const link = e.target;
 		const siblings = link.closest(".nav").querySelectorAll(".nav__link");
 		const logo = link.closest(".nav").querySelector("img");
-		siblings.forEach(nl => {
-			if (nl !== link) nl.style.opacity = 0.5;
+		siblings.forEach(el => {
+			if (el !== link) {
+				el.style.opacity = opacity;
+				// el.style.color = "#ff9a9f";
+			}
 		});
-		logo.style.opacity = 1;
+		logo.style.opacity = opacity;
 	}
-})
+};
 
-nav.addEventListener("mouseout", function (el) {
-})
+// nav.addEventListener("mouseover", function (e) {
+// 	handleHover(e, 0.5);
+// });
+
+// nav.addEventListener("mouseout", function (e) {
+// 	handleHover(e, 1);
+// });
 	
-	
+nav.addEventListener("mouseover", handleHover.bind(0.5));
+nav.addEventListener("mouseout", handleHover.bind(1));
+
+
 
 // Slider:
 const slides = document.querySelectorAll(".slide");
@@ -182,14 +195,14 @@ console.log(randomColor());
 document.querySelector(".nav__link").addEventListener("click", function (e) {
 	// console.log("links");
 	// this.style.backgroundColor = randomColor();
-	this.style.backgroundColor = "#ff9a9f";
+	// this.style.backgroundColor = "#ff9a9f";
 	console.log("link", e.target, e.currentTarget);
 	
 });
 document.querySelector(".nav__links").addEventListener("click", function (e) {
 	// console.log("links");
 	// this.style.backgroundColor = randomColor();
-	this.style.backgroundColor = "#ff9a9f";
+	// this.style.backgroundColor = "#ff9a9f";
 	console.log("navlinks", e.target, e.currentTarget);
 	
 	// stop propagation
@@ -198,7 +211,7 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 document.querySelector(".nav").addEventListener("click", function (e) {
 	// console.log("links");
 	// this.style.backgroundColor = randomColor();
-	this.style.backgroundColor = "#ff9a9f";
+	// this.style.backgroundColor = "#ff9a9f";
 	console.log("Nav", e.target, e.currentTarget);
 	
 }, true);
