@@ -93,11 +93,12 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 	// matching srategy 
 	if (e.target.classList.contains("nav__link")) {
 		
-		console.log("Link Link");
+		// console.log("Link Link");
 		const id = e.target.getAttribute("href");
-		console.log(id);
-		
-		document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+		// console.log(id);
+		if (id.startsWith("#")) {
+			document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+		}
 		
 	}
 });
@@ -130,20 +131,28 @@ tabsContainer.addEventListener("click", function (e) {
 
 // Menu fade animation
 const handleHover = function (e, opacity) {
+	// console.log(this);
+	
 	if (e.target.classList.contains("nav__link")) {
 		const link = e.target;
 		const siblings = link.closest(".nav").querySelectorAll(".nav__link");
 		const logo = link.closest(".nav").querySelector("img");
 		siblings.forEach(el => {
+			
+			// el.style.color = "#ff9a9f";
 			if (el !== link) {
-				el.style.opacity = opacity;
-				// el.style.color = "#ff9a9f";
+				// el.style.opacity = opacity;
+				el.style.opacity = this;
+				el.style.color = "black";
+			} else {
+				el.style.color = e.type === "mouseover" ? "red" : ""; // Change color to red on mouseover, reset on mouseout
 			}
 		});
-		logo.style.opacity = opacity;
+		// logo.style.opacity = opacity;
 	}
 };
 
+// way 1:
 // nav.addEventListener("mouseover", function (e) {
 // 	handleHover(e, 0.5);
 // });
@@ -151,10 +160,32 @@ const handleHover = function (e, opacity) {
 // nav.addEventListener("mouseout", function (e) {
 // 	handleHover(e, 1);
 // });
-	
-nav.addEventListener("mouseover", handleHover.bind(0.5));
-nav.addEventListener("mouseout", handleHover.bind(1));
 
+
+// way 2:
+nav.addEventListener("mouseover", handleHover.bind(0.5));
+nav.addEventListener("mouseout", handleHover.bind(1)); 
+
+
+///// Sticky navigation bar //////
+const initialCords = section1.getBoundingClientRect();
+// console.log(initialCords);
+
+window.addEventListener("scroll", function (e) {
+	// console.log(window.scrollY);
+	
+	if (this.window.scrollY > initialCords.top) {
+		nav.classList.add("sticky");
+
+	} else {
+		nav.classList.remove("sticky");
+	}
+});
+
+
+// sticky navigation:intersection observer API
+const observer = new IntersectionObserver();
+observer.observe(section1);
 
 
 // Slider:
@@ -190,20 +221,20 @@ const randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min
 
 const randomColor = () => `rgb(${randomNum(0,255)},${randomNum(0,255)},${randomNum(0,255)})`;
 
-console.log(randomColor());
+// console.log(randomColor());
 
 document.querySelector(".nav__link").addEventListener("click", function (e) {
 	// console.log("links");
 	// this.style.backgroundColor = randomColor();
 	// this.style.backgroundColor = "#ff9a9f";
-	console.log("link", e.target, e.currentTarget);
+	// console.log("link", e.target, e.currentTarget);
 	
 });
 document.querySelector(".nav__links").addEventListener("click", function (e) {
 	// console.log("links");
 	// this.style.backgroundColor = randomColor();
 	// this.style.backgroundColor = "#ff9a9f";
-	console.log("navlinks", e.target, e.currentTarget);
+	// console.log("navlinks", e.target, e.currentTarget);
 	
 	// stop propagation
 	e.stopPropagation();
@@ -212,34 +243,28 @@ document.querySelector(".nav").addEventListener("click", function (e) {
 	// console.log("links");
 	// this.style.backgroundColor = randomColor();
 	// this.style.backgroundColor = "#ff9a9f";
-	console.log("Nav", e.target, e.currentTarget);
+	// console.log("Nav", e.target, e.currentTarget);
 	
 }, true);
 
 // going downwards: child
-console.log(h1.querySelectorAll(".highlight"));
-console.log(h1.childNodes);
-console.log(h1.children);
+// console.log(h1.querySelectorAll(".highlight"));
+// console.log(h1.childNodes);
+// console.log(h1.children);
 
 h1.firstElementChild.style.color = "#be6c00";
 h1.lastElementChild.style.color = "red";
 
 // Going upwards: parents
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
 
 // h1.closest(".header").style.background = "var(--gradient-secondary)";
 // h1.closest("h1").style.background = "var(--gradient-primary)";
 
 // Going sideways : siblings
 
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
-
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
-
-console.log(h1.parentElement.children);
+// console.log(h1.previousElementSibling);          
 [...h1.parentElement.children].forEach(function (e) {
 	if (e !== h1) e.style.transform = "scale(0.5)";
 });
