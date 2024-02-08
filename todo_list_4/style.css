@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+#new-todo {
+  width: 300px;
+}
+
+.todo {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.todo li:last-child {
+  border-bottom: none;
+}
+
+.todo li.completed {
+  text-decoration: line-through;
+}
