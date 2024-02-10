@@ -184,9 +184,44 @@ window.addEventListener("scroll", function (e) {
 
 
 // sticky navigation:intersection observer API
-const observer = new IntersectionObserver();
-observer.observe(section1);
+// const obsCallBack = function (entries, observer) {
+// 	entries.forEach(entry => {
+// 		console.log(entry);
+// 	});
+// };
+// const obsOptions = {
+// 	root: null,
+// 	threshold: 0.1
+// };
+// const observer = new IntersectionObserver(obsCallBack, obsOptions);
+// observer.observe(section1);
 
+const header = document.querySelector(".header");
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+	const [entry] = entries;	
+	console.log(entry);
+	if (!entry.isIntersecting) nav.classList.add("sticky");
+	else nav.classList.remove("sticky");
+};
+const headerObserver = new IntersectionObserver(stickyNav, {
+	root: null,
+	threshold: 0,
+	rootMargin: `-${navHeight}px`,
+});
+
+headerObserver.observe(header);
+
+
+///// Reveal Sections /////
+const allSections = document.querySelectorAll(".section")
+const revealSection = function (entries, observer) {
+
+};
+const sectionObserver = new IntersectionObserver(revealSection, {
+
+});
 
 // Slider:
 const slides = document.querySelectorAll(".slide");
