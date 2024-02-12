@@ -85,7 +85,7 @@ body {
 .btn--text {
 	display: inline-block;
 	background: none;
-	font-size: 1.7rem;
+	font-size: 2.7rem;
 	font-family: inherit;
 	font-weight: 500;
 	color: var(--color-primary);
