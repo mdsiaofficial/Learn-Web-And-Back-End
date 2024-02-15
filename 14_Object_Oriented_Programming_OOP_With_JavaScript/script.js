@@ -62,3 +62,21 @@ console.log(Person.prototype.isPrototypeOf(Person));
 
 Person.prototype.species = "Homo Sapiens";
 console.log(Ashiq.species);
+
+console.log(Ashiq.hasOwnProperty("firstName")); // false
+console.log(Ashiq.hasOwnProperty("first_Name")); // true
+console.log(Ashiq.hasOwnProperty("species")); // false
+
+
+
+console.log(Ashiq.__proto__);
+console.log(Ashiq.__proto__.__proto__);
+console.log(Ashiq.__proto__.__proto__.__proto__);
+
+
+console.log(Person.prototype.constructor);
+
+
+const arr =[2,3,3,4,5,5,6,46,7,35,4,23];
+console.log(arr.__proto__);
+console.log(arr.sort((a,b) => a-b));
