@@ -80,3 +80,14 @@ console.log(Person.prototype.constructor);
 const arr =[2,3,3,4,5,5,6,46,7,35,4,23];
 console.log(arr.__proto__);
 console.log(arr.sort((a,b) => a-b));
+console.log(arr.__proto__ === Array.__proto__);
+
+console.log(arr.__proto__.__proto__);
+Array.prototype.unique = function(){
+    return [...new Set(this)];
+};
+
+console.log(arr.unique());
+
+
+const h1 = document.querySelector("h1");
