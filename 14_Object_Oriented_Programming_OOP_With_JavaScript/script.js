@@ -91,3 +91,95 @@ console.log(arr.unique());
 
 
 const h1 = document.querySelector("h1");
+
+
+// Coding Challenge #1
+
+/* 
+1. Use a constructor function to implement a Car.
+A car has a make and a speed property. The speed
+property is the current speed of the car in km/h;
+2. Implement an 'accelerate' method that will
+increase the car's speed by 10, and log the new speed
+to the console;
+3. Implement a 'brake' method that will decrease the
+car's speed by 5, and log the new speed to the
+console;
+4. Create 2 car objects and experiment with calling
+'accelerate' and 'brake' multiple times on each of
+them.
+
+
+'BMW' going at a 120 km/h
+CAR 1:
+'Mercedes' going at 95 km/h
+CAR 2.
+*/
+
+
+const Car = function(make, speed){
+    this.mk = make;
+    this.spd = speed;
+
+    this.accelarate = function(){
+        this.spd +=10;
+        console.log(this.spd);
+        
+    };
+
+    this.brk = function(){
+        this.spd -=5;
+        console.log(this.spd);
+        
+    };
+};
+
+const BMW = new Car("BMW", 120);
+const Mercedes = new Car("Mercedes", 95);
+
+BMW.accelarate();
+BMW.accelarate();
+BMW.brk();
+BMW.brk();
+BMW.accelarate();
+BMW.brk();
+
+Mercedes.accelarate();
+Mercedes.accelarate();
+Mercedes.accelarate();
+Mercedes.brk();
+Mercedes.brk();
+Mercedes.brk();
+
+
+
+// Class expression
+
+// class declaration
+
+class PersonClass {
+    constructor(firstName, birthYear){
+
+        this.fName = firstName;
+        this.bYear = birthYear;
+    };
+
+
+        // here methods will be added to .prototype property...
+    calcAge(){
+        const current = new Date().getFullYear();
+        console.log(current - this.bYear);
+        
+    }
+};
+
+const AshiqChester = new PersonClass("Ashiq", 2000);
+console.log(AshiqChester);
+console.log(AshiqChester.__proto__);
+
+PersonClass.prototype.greetings = function(){
+    console.log(`Hey Wassup!!! ${this.fName}`);
+    
+};
+
+AshiqChester.greetings();
