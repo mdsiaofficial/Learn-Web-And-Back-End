@@ -171,9 +171,23 @@ class PersonClass {
         console.log(current - this.bYear);
         
     }
+
+    set fullName(name){
+        console.log(name);
+        if(name.includes(" ")){
+            this.full_Name = name;
+
+        }else{
+            alert(`${name} is not a full name!`);
+        }
+    }
+
+    get fullName(){
+        return this.full_Name;
+    }
 };
 
-const AshiqChester = new PersonClass("Ashiq", 2000);
+const AshiqChester = new PersonClass("Ashiq Chester", 2000);
 console.log(AshiqChester);
 console.log(AshiqChester.__proto__);
 
@@ -183,3 +197,36 @@ PersonClass.prototype.greetings = function(){
 };
 
 AshiqChester.greetings();
+
+// 1. Classes are NOT hoisted
+// 2. Classes are first-class citizes
+// 3. Classes are executed in strict mode 
+
+
+const account = {
+    owner: "Ashiq",
+    movements: [65, 23, 12,52],
+
+    get latest(){
+        return this.movements.slice(1);
+    },
+    
+    set latest(move){
+        this.movements.push(move);
+    },
+
+   
+};
+
+
+console.log(account.latest);
+console.log(account.movements);
+account.latest = 98;
+console.log(account.movements);
+console.log(account);
+
+
+
+const Kabir = new PersonClass("Kabir Hossen", 1079);
+console.log(Kabir);
+console.log(Kabir.fullName);
