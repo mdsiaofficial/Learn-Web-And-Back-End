@@ -27,7 +27,7 @@ const Jannat = "Jannat";
 console.log(Jannat instanceof Person);
 
 // 1. New{} is created
-// 2. function is called, this ={}
+// 2. function is called, this = {}
 // 3. {} linked to a prototype 
 // 4. function automatically return {}
 
@@ -215,7 +215,9 @@ const account = {
         this.movements.push(move);
     },
 
-   
+    set fullName(name){
+        if(name.includes(" "));
+    }
 };
 
 
@@ -224,6 +226,7 @@ console.log(account.movements);
 account.latest = 98;
 console.log(account.movements);
 console.log(account);
+// console.log(account.age(10));
 
 
 
