@@ -185,6 +185,11 @@ class PersonClass {
     get fullName(){
         return this.full_Name;
     }
+
+    static hi(){
+        console.log(`Hi, Whats up?`);
+        
+    }
 };
 
 const AshiqChester = new PersonClass("Ashiq Chester", 2000);
@@ -230,6 +235,32 @@ console.log(account);
 
 
 
-const Kabir = new PersonClass("Kabir Hossen", 1079);
+const Kabir = new PersonClass("Kabir Hossen", 1979);
 console.log(Kabir);
 console.log(Kabir.fullName);
+
+const Anika = new PersonClass("Anika Tahsin Jannat", 2009);
+console.log(Number.parseFloat("1234.34 kg"));
+
+PersonClass.hi = function(){
+    console.log('Hi, whats up.');
+}
+
+PersonClass.hi();
+// Kabir.hi(); // error
+
+const PersonPrototype = {
+    calcAge(){
+        console.log(2024- this.birthYear);
+        
+    },
+
+}
+
+
+const chester = Object.create(PersonPrototype);
+
+console.log(chester);
+chester.name = "Chester";
+chester.birthYear = 2000;
+chester.calcAge();
