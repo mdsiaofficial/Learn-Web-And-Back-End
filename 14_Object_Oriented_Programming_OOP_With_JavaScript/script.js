@@ -255,6 +255,11 @@ const PersonPrototype = {
         
     },
 
+    init(firstName, birthYear){
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+    },
+
 }
 
 
@@ -264,3 +269,68 @@ console.log(chester);
 chester.name = "Chester";
 chester.birthYear = 2000;
 chester.calcAge();
+
+
+
+// coding challenge 2
+
+class CarSpeedCalc{
+
+    constructor (make, speed){
+        this.mk = make;
+        this.spd = speed;
+    };
+    accelarate = function(){
+        this.spd +=10;
+        console.log(this.spd);
+        
+    };
+
+    brk = function(){
+        this.spd -=5;
+        console.log(this.spd);
+        
+    };
+
+    get spdBD(){
+        return this.spd/1.6;
+    }
+
+    set spddBD(speed){
+        this.spd = speed*1.6;
+    }
+
+}
+
+const hanif = new CarSpeedCalc("Hanif", 115);
+console.log(hanif.spdBD);
+hanif.accelarate();
+
+hanif.spddBD = hanif.spdBD + 45; // fix error here
+console.log(hanif);
+console.log(hanif);
+
+
+
+// inheritance 
+
+const PPerson = function(firstname, birthyear){
+    this.fname = firstname;
+    this.byear = birthyear;
+}
+const Stu = function(ffname, bb){
+    PPerson.call(this, ffname, bb);
+};
+
+Stu.prototype.calcAge = function(){
+    console.log(2024 - this.birthyear);
+};
+
+Stu.prototype.intro = function(){
+    console.log(`my name ${this.name}`);
+}
+const asq = new Stu("ashiq", "2000");
+console.log(asq);
+asq.intro();
+asq.calcAge();
+
